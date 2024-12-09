@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="About | Dongwook Kim" description="About Dongwook Kim - Junior Embedded Developer">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="임베디드의 미래를 만들고 싶은 주니어 임베디드 개발자"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Dongwook Kim at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>부산소프트웨어마이스터고등학교 재학</p>
+					<p>AI 커리어 스쿨 for 엔지니어 교육 수강중</p>
+				</div>
+			</section>
+			
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<div class="education-item">
+						<h3>부산 소프트웨어 마이스터고등학교</h3>
+						<p>2023.03 ~ 현재</p>
+						<p>임베디드 소프트웨어과</p>
+					</div>
+					<div class="education-item">
+						<h3>AI 커리어 스쿨 for 엔지니어</h3>
+						<p>2024.12 ~ 현재</p>
+					</div>
+					<div class="education-item">
+						<h3>IT 꿈나무 성장지원 사업-화이트해커 양성교육</h3>
+						<p>2024.06 ~ 2024.11</p>
+					</div>
+					<div class="education-item">
+						<h3>National University of Singapore 디자인 교육</h3>
+						<p>2024.05</p>
+						<p>Fundamentals of UI/UX Design</p>
+						<a href="https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787" target="_blank">View Certificate</a>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">자격증</h2>
+				<div class="content">
+					<div class="algorithm-item">
+						<h3>Problem Reviewer</h3>
+						<ul>
+							<li>Daejeon Science High School Programming Competition (2024.11)</li>
+							<li>DJMJ Forever Cup (2024.11)</li>
+							<li>2nd Util Cup (2024.11)</li>
+							<li>7th Coding Test with Gahui (2024.10)</li>
+							<li>PIMM Algorithm Party (2024.09)</li>
+						</ul>
+					</div>
+					<div class="algorithm-item">
+						<h3>Achievements</h3>
+						<ul>
+							<li>PCCE Level 3 C++ Certification (2024.10)</li>
+							<li>NYPC 2024 Round 2 Advancement (2024.08)</li>
+							<li>Korea Informatics Olympiad Finalist (2024.07)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">알고리즘</h2>
+				<div class="content">
+					<div class="algorithm-item">
+						<h3>Problem Reviewer</h3>
+						<ul>
+							<li>Daejeon Science High School Programming Competition (2024.11)</li>
+							<li>DJMJ Forever Cup (2024.11)out</li>
+							<li>2nd Util Cup (2024.11)</li>
+							<li>7th Coding Test with Gahui (2024.10)</li>
+							<li>PIMM Algorithm Party (2024.09)</li>
+						</ul>
+					</div>
+					<div class="algorithm-item">
+						<h3>Achievements</h3>
+						<ul>
+							<li>PCCE Level 3 C++ Certification (2024.10)</li>
+							<li>NYPC 2024 Round 2 Advancement (2024.08)</li>
+							<li>Korea Informatics Olympiad Finalist (2024.07)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	.education-item, .algorithm-item {
+		margin-bottom: 2rem;
+	}
+
+	.education-item h3, .algorithm-item h3 {
+		color: var(--gray-0);
+		font-size: var(--text-lg);
+		margin-bottom: 0.5rem;
+	}
+
+	.education-item p, .algorithm-item p {
+		margin-bottom: 0.25rem;
+	}
+
+	.algorithm-item ul {
+		list-style-type: disc;
+		margin-left: 1.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.algorithm-item li {
+		margin-bottom: 0.25rem;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
