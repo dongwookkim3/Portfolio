@@ -86,7 +86,14 @@ import '../styles/about.css';
                                     </button>
                                     <ul class="problem-list" id={contest.id}>
                                         {contest.problems.map((problem, index) => (
-                                            <li>문제 {index + 1}: {problem}</li>
+                                            <li>
+                                                {contest.Nums[index] || index + 1} : 
+                                                <a href={`https://www.acmicpc.net/problem/${contest.problemsNum[index]}`} 
+                                                   target="_blank" 
+                                                   rel="noopener">
+                                                    {problem}
+                                                </a>
+                                            </li>
                                         ))}
                                     </ul>
                                 </li>
@@ -109,7 +116,15 @@ import '../styles/about.css';
                         <h3>문제 출제</h3>
                         <ul>
                             {problemCreationData.map(problem => (
-                                <li>{problem.title}</li>
+                                <li>
+                                    {problem.title}
+                                    <br />
+                                    <a href={`https://codeup.kr/problem.php?id=${problem.problemNum}`} 
+                                       target="_blank" 
+                                       rel="noopener">
+                                        {problem.platform}
+                                    </a>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -144,3 +159,22 @@ import '../styles/about.css';
         }
     });
 </script>
+
+<style>
+.problem-list {
+    display: none;
+    padding-left: 2rem;
+    margin-top: 0.5rem;
+    max-height: none; /* 높이 제한 제거 */
+    overflow: visible; /* overflow 제한 제거 */
+}
+
+.problem-list.active {
+    display: block;
+}
+
+.problem-list li {
+    margin: 0.5rem 0;
+    color: var(--gray-300);
+}
+</style>
