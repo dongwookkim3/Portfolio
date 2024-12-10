@@ -56,7 +56,10 @@ const projects = (await getCollection('work'))
 							{
 								title: 'CounterSpell in BUSAN GameJAM Track',
 								date: '2024.11',
-								detail: 'Team Project with BSM & GSM Students'
+								award: 'CounterSpell 지역 대상',
+								isTeam: true,
+								teamDetail: 'Team Project with BSM & GSM Students',
+								team: ['김동욱 (BSM)', '홍길동 (GSM)', '이철수 (BSM)']
 							},
 							{
 								title: '2024 IT 꿈나무 성장지원사업 화이트해커 경진대회',
@@ -71,30 +74,46 @@ const projects = (await getCollection('work'))
 							{
 								title: '2024 한국정보올림피아드 1차 대회',
 								date: '2024.05',
-								award: '동상, 장려상 - 정보올림피아드위원회위원장상'
+								award: '동상 - 정보올림피아드위원회위원장상',
+								isTeam: false
 							},
 							{
 								title: '2024 부산소프트웨어마이스터고등학교 교내 AI 웹 프로젝트 공모전',
-								date: '2024.11',
-								award: '대상 - 교육부 장관상'
+								date: '2024.04',
+								award: '장려상 - 부산소프트웨어마이스터고등학교장상'
 							},
 							{
 								title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
-								date: '2024.08',
-								award: '최우수상 - 코드코리아대표상'
+								date: '2023.09',
+								award: '최우수상 - 부산소프트웨어마이스터고등학교장상'
 							},
 							{
 								title: '2023 부산 SW AI교육 중등학생 해카톤',
-								date: '2024.05',
-								award: '동상, 장려상 - 정보올림피아드위원회위원장상'
+								date: '2023.07',
+								award: '장려상 - 교육연구정보원장상'
 							}
 						].map((award) => (
-							<li class="award-card">
-								<h4>{award.title}</h4>
-								<p class="date">{award.date}</p>
-								{award.award && <p class="award">{award.award}</p>}
-								{award.detail && <p class="team">{award.detail}</p>}
-							</li>
+							<div class="award-wrapper">
+								<li class="award-card">
+									<h4>{award.title}</h4>
+									<p class="date">{award.date}</p>
+									<p class="award">{award.award}</p>
+									{award.isTeam && (
+										<div class="team-section">
+											<details class="team-details">
+												<summary class="team-summary">
+													 {award.teamDetail}
+												</summary>
+												<ul class="team-list">
+													{award.team.map((member) => (
+														<li>{member}</li>
+													))}
+												</ul>
+											</details>
+										</div>
+									)}
+								</li>
+							</div>
 						))}
 					</Grid>
 				</div>
@@ -267,10 +286,15 @@ const projects = (await getCollection('work'))
 		}
 	}
 
+	.award-wrapper {
+		height: auto;
+		width: 100%;
+	}
+
 	.award-card {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
-		height: 100%;
 		padding: 1.5rem;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
@@ -278,29 +302,71 @@ const projects = (await getCollection('work'))
 		color: var(--gray-300);
 	}
 
-	.award-card h4 {
+	:global(.grid) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	@media (max-width: 50em) {
+		:global(.grid) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.team-section {
+		margin-top: 0.5rem;
+	}
+
+	.team-details {
+		width: 100%;
+	}
+
+	.team-summary {
+		cursor: pointer;
+		color: var(--accent-regular);
+		font-size: var(--text-sm);
+		list-style: none;
+		padding: 0.5rem 0;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.team-summary::before {
+		content: '▶';
+		font-size: 0.8em;
+		transition: transform 0.3s ease;
+	}
+
+	.team-details[open] .team-summary::before {
+		transform: rotate(90deg);
+	}
+
+	.team-list {
+		padding: 0.5rem 0 0 1.5rem;
+		margin: 0;
+		list-style: disc;
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+	}
+
+	h4 {
+		margin: 0;
 		font-size: var(--text-lg);
 		color: var(--gray-0);
-		margin-bottom: 0.5rem;
-		word-break: keep-all;
-		line-height: 1.4;
 	}
 
 	.date {
-		font-size: var(--text-sm);
 		color: var(--accent-regular);
+		font-size: var(--text-sm);
+		margin: 0.5rem 0;
 	}
 
 	.award {
-		font-size: var(--text-sm);
 		color: var(--gray-200);
-		margin-top: 0.5rem;
-	}
-
-	.team {
 		font-size: var(--text-sm);
-		color: var(--gray-200);
-		margin-top: 0.5rem;
+		margin: 0.5rem 0;
 	}
 
 	.contact-card {
@@ -363,4 +429,58 @@ const projects = (await getCollection('work'))
 		width: 100%;
 		margin-top: 2rem;
 	}
+
+	.team-container {
+		margin-top: 0.5rem;
+	}
+
+	.toggle-btn {
+		width: 100%;
+		text-align: left;
+		background: none;
+		border: none;
+		color: var(--gray-200);
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem;
+	}
+
+	.arrow {
+		transition: transform 0.3s ease;
+	}
+
+	.toggle-btn.active .arrow {
+		transform: rotate(180deg);
+	}
+
+	.team-info {
+		padding: 0.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	:global(.grid) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+	@media (max-width: 50em) {
+		:global(.grid) {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
+
+<script>
+	function toggleTeam(btn) {
+		btn.classList.toggle('active');
+		const teamInfo = btn.nextElementSibling;
+		teamInfo.classList.toggle('hidden');
+	}
+</script>
