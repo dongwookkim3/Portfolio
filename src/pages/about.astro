@@ -2,194 +2,148 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
+import { 
+    contestData, 
+    educationData, 
+    certificateData, 
+    algorithmContestData, 
+    problemCreationData 
+} from '../data/about';
+import '../styles/about.css';
 ---
 
 <BaseLayout title="About | Dongwook Kim" description="About Dongwook Kim - Junior Embedded Developer">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About Me"
-				tagline="임베디드의 미래를 만들고 싶은 주니어 임베디드 개발자"
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Dongwook Kim at work"
-				/>
-			</Hero>
-			
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<div class="education-item">
-						<h3>부산 소프트웨어 마이스터고등학교</h3>
-						<p>2023.03 ~ 현재</p>
-						<p>임베디드 소프트웨어과</p>
-					</div>
-					<div class="education-item">
-						<h3>AI 커리어 스쿨 for 엔지니어</h3>
-						<p>2024.12 ~ 현재</p>
-					</div>
-					<div class="education-item">
-						<h3>IT 꿈나무 성장지원 사업-화이트해커 양성교육</h3>
-						<p>2024.06 ~ 2024.11</p>
-					</div>
-					<div class="education-item">
-						<h3>National University of Singapore 디자인 교육</h3>
-						<p>2024.05</p>
-						<p>Fundamentals of UI/UX Design</p>
-						<a href="https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787" target="_blank">View Certificate</a>
-					</div>
-				</div>
-			</section>
+    <div class="stack gap-20">
+        <main class="wrapper about">
+            <Hero
+                title="About Me"
+                tagline="임베디드의 미래를 만들고 싶은 주니어 임베디드 개발자"
+            >
+                <img
+                    width="1553"
+                    height="873"
+                    src="/assets/at-work.jpg"
+                    alt="Dongwook Kim at work"
+                />
+            </Hero>
+            
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="content">
+                    {educationData.map(edu => (
+                        <div class="education-item">
+                            <h3>{edu.school}</h3>
+                            <p>{edu.period}</p>
+                            {edu.department && <p>{edu.department}</p>}
+                            {edu.certificate && (
+                                <a href={edu.certificate} target="_blank" rel="noopener">View Certificate</a>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </section>
 
-			<section>
-				<h2 class="section-title">Certificate</h2>
-				<div class="content">
-					<div class="algorithm-item">
-						<h3>국가기술자격</h3>
-						<ul>
-							<li>정보처리산업기사 (2024.07)</li>
-							<a href="https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787" target="_blank">View Certificate</a>
-						</ul>
-					</div>
-					<div class="algorithm-item">
-						<h3>민간자격</h3>
-						<ul>
-							<li>PCCE Level 3 C++ (2024.10)</li>
-							<a href="https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787" target="_blank">View Certificate</a>
-							<br><br>
-							<li>COS Pro 1급 C++ (2024.11)</li>
-							<a href="https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787" target="_blank">View Certificate</a>
-						</ul>
-					</div>
-					
-				</div>
-			</section>
+            <section>
+                <h2 class="section-title">Certificate</h2>
+                <div class="content">
+                    <div class="algorithm-item">
+                        <h3>국가기술자격</h3>
+                        <ul>
+                            {certificateData.national.map(cert => (
+                                <li>
+                                    {cert.title} ({cert.date})
+                                    <br />
+                                    <a href={cert.link} target="_blank" rel="noopener">View Certificate</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div class="algorithm-item">
+                        <h3>민간자격</h3>
+                        <ul>
+                            {certificateData.private.map(cert => (
+                                <li>
+                                    {cert.title} ({cert.date})
+                                    <br />
+                                    <a href={cert.link} target="_blank" rel="noopener">View Certificate</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-			<section>
-				<h2 class="section-title">Algorithm</h2>
-				<div class="content">
-					<div class="algorithm-item">
-						<h3>대회 검수진</h3>
-						<ul>
-							<li>2024 하반기 전남대학교 PIMM 알고리즘 파티 (2024.09)</li>
-							<li>2024 DGIST 알고리즘 경진대회 (2024.11)</li>
-							<li>SASA Programming Contest 2024 (2024.11)</li>
-							<li>가희와 함께 하는 7회 코딩테스트 (2024.11)</li>
-							<li>2024 서울시립대학교 프로그래밍 경진대회(UOSPC) (2024.12)</li>
-							<li>제2회 유틸컵 (진행중)</li>
-							<li>DJMJ 포에버컵 (진행중)</li>
-							<li>제1회 대전과학고등학교 프로그래밍 경진대회 DSHStack (진행중)</li>
-						</ul>
-					</div>
-					<div class="algorithm-item">
-						<h3>대회 참여</h3>
-						<ul>
-							<li>2023 NYPC 1 Round</li>
-							<li>2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회</li>
-							<li>2024 한국정보올림피아드 1차 대회</li>
-							<li>2024 한국정보올림피아드 2차 대회</li>
-							<li>2024 NYPC 1 Round</li>
-							<li>2024 NYPC 2 Round</li>
-							<li>Solved.ac Grand Arena Party</li>
-						</ul>
-					</div>
-					<div class="algorithm-item">
-						<h3>문제 출제</h3>
-						<ul>
-							<li>지원이의 여자친구</li>
-						</ul>
-					</div>
-					
-				</div>
-			</section>
-		</main>
+            <section>
+                <h2 class="section-title">Algorithm</h2>
+                <div class="content">
+                    <div class="algorithm-item">
+                        <h3>대회 검수진</h3>
+                        <ul class="contest-list">
+                            {contestData.map(contest => (
+                                <li>
+                                    <button 
+                                        class="toggle-btn" 
+                                        data-id={contest.id}
+                                    >
+                                        <span class="arrow">▶</span> {contest.title} ({contest.date})
+                                    </button>
+                                    <ul class="problem-list" id={contest.id}>
+                                        {contest.problems.map((problem, index) => (
+                                            <li>문제 {index + 1}: {problem}</li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div class="algorithm-item">
+                        <h3>대회 참여</h3>
+                        <ul>
+                            {algorithmContestData.map(contest => (
+                                <li>
+                                    {contest.title} ({contest.date})
+                                    <br />
+                                    <a href={contest.link} target="_blank" rel="noopener">View Certificate</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div class="algorithm-item">
+                        <h3>문제 출제</h3>
+                        <ul>
+                            {problemCreationData.map(problem => (
+                                <li>{problem.title}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-		<ContactCTA />
-	</div>
+        <ContactCTA />
+    </div>
 </BaseLayout>
 
-<style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+<script>
+    function toggleProblems(id: string) {
+        const problemList = document.getElementById(id);
+        if (!problemList) return;
+        
+        const button = problemList.previousElementSibling as HTMLButtonElement;
+        const arrow = button.querySelector('.arrow');
+        
+        problemList.classList.toggle('active');
+        arrow?.classList.toggle('active');
+    }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	.education-item, .algorithm-item {
-		margin-bottom: 2rem;
-	}
-
-	.education-item h3, .algorithm-item h3 {
-		color: var(--gray-0);
-		font-size: var(--text-lg);
-		margin-bottom: 0.5rem;
-	}
-
-	.education-item p, .algorithm-item p {
-		margin-bottom: 0.25rem;
-	}
-
-	.algorithm-item ul {
-		list-style-type: disc;
-		margin-left: 1.5rem;
-		margin-top: 0.5rem;
-	}
-
-	.algorithm-item li {
-		margin-bottom: 0.25rem;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
-</style>
+    // 이벤트 위임을 사용하여 토글 버튼 클릭 처리
+    document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const toggleBtn = target.closest('.toggle-btn');
+        
+        if (toggleBtn) {
+            const id = toggleBtn.getAttribute('data-id');
+            if (id) toggleProblems(id);
+        }
+    });
+</script>
