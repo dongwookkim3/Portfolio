@@ -52,41 +52,50 @@ const projects = (await getCollection('work'))
 
 				<div class="gallery">
 					<Grid variant="offset">
-						<li class="award-card">
-							<h4>CounterSpell in BUSAN GameJAM Track</h4>
-							<p class="date">2024.11</p>
-							<p class="team">Team Project with BSM & GSM Students</p>
-						</li>
-						<li class="award-card">
-							<h4>2024 IT 꿈나무 성장지원사업 화이트해커 경진대회</h4>
-							<p class="date">2024.11</p>
-							<p class="award">대상 - 교육부 장관상</p>
-						</li>금정구 인구문제 해커톤
-						<li class="award-card">
-							<h4>2024 금정구 인구문제 해커톤</h4>
-							<p class="date">2024.08</p>
-							<p class="award">최우수상 - 코드코리아대표상</p>
-						</li>
-						<li class="award-card">
-							<h4>2024 한국정보올림피아드 1차 대회</h4>
-							<p class="date">2024.05</p>
-							<p class="award">동상, 장려상 - 정보올림피아드위원회위원장상</p>
-						</li>
-						<li class="award-card">
-							<h4>2024 부산소프트웨어마이스터고등학교 교내 AI 웹 프로젝트 공모전</h4>
-							<p class="date">2024.11</p>
-							<p class="award">대상 - 교육부 장관상</p>
-						</li>
-						<li class="award-card">
-							<h4>2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회</h4>
-							<p class="date">2024.08</p>
-							<p class="award">최우수상 - 코드코리아대표상</p>
-						</li>
-						<li class="award-card">
-							<h4>2023 부산 SW AI교육 중등학생 해카톤</h4>
-							<p class="date">2024.05</p>
-							<p class="award">동상, 장려상 - 정보올림피아드위원회위원장상</p>
-						</li>
+						{[
+							{
+								title: 'CounterSpell in BUSAN GameJAM Track',
+								date: '2024.11',
+								detail: 'Team Project with BSM & GSM Students'
+							},
+							{
+								title: '2024 IT 꿈나무 성장지원사업 화이트해커 경진대회',
+								date: '2024.11',
+								award: '대상 - 교육부 장관상'
+							},
+							{
+								title: '2024 금정구 인구문제 해커톤',
+								date: '2024.08',
+								award: '최우수상 - 코드코리아대표상'
+							},
+							{
+								title: '2024 한국정보올림피아드 1차 대회',
+								date: '2024.05',
+								award: '동상, 장려상 - 정보올림피아드위원회위원장상'
+							},
+							{
+								title: '2024 부산소프트웨어마이스터고등학교 교내 AI 웹 프로젝트 공모전',
+								date: '2024.11',
+								award: '대상 - 교육부 장관상'
+							},
+							{
+								title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
+								date: '2024.08',
+								award: '최우수상 - 코드코리아대표상'
+							},
+							{
+								title: '2023 부산 SW AI교육 중등학생 해카톤',
+								date: '2024.05',
+								award: '동상, 장려상 - 정보올림피아드위원회위원장상'
+							}
+						].map((award) => (
+							<li class="award-card">
+								<h4>{award.title}</h4>
+								<p class="date">{award.date}</p>
+								{award.award && <p class="award">{award.award}</p>}
+								{award.detail && <p class="team">{award.detail}</p>}
+							</li>
+						))}
 					</Grid>
 				</div>
 			</section>
@@ -253,7 +262,7 @@ const projects = (await getCollection('work'))
 	.award-card {
 		display: flex;
 		flex-direction: column;
-		height: auto;
+		height: 100%;
 		padding: 1.5rem;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
@@ -265,6 +274,8 @@ const projects = (await getCollection('work'))
 		font-size: var(--text-lg);
 		color: var(--gray-0);
 		margin-bottom: 0.5rem;
+		word-break: keep-all;
+		line-height: 1.4;
 	}
 
 	.date {
@@ -338,5 +349,10 @@ const projects = (await getCollection('work'))
 		padding: 50px 0;
 		background: transparent;
 		z-index: 1;
+	}
+
+	.gallery {
+		width: 100%;
+		margin-top: 2rem;
 	}
 </style>
