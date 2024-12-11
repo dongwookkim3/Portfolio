@@ -58,18 +58,24 @@ const projects = (await getCollection('work'))
 								date: '2024.11',
 								award: 'CounterSpell 지역 대상',
 								isTeam: true,
-								teamDetail: 'Team Project with BSM & GSM Students',
-								team: ['김동욱 (BSM)', '홍길동 (GSM)', '이철수 (BSM)']
+								teamDetail: 'Team : CounterAttack',
+								team: ['김규민 (BSM)', '변정현 (GSM)', '조윤서 (BSM)', '이지우 (BSM)']
 							},
 							{
 								title: '2024 IT 꿈나무 성장지원사업 화이트해커 경진대회',
 								date: '2024.11',
-								award: '대상 - 교육부 장관상'
+								award: '대상 - 교육부 장관상',
+								isTeam: true,
+								teamDetail: 'Team : Worst Of the Worst',
+								team: ['김민수 (BSM)', '김필립 (GSM)', '박지후 (BSM)']
 							},
 							{
 								title: '2024 금정구 인구문제 해커톤',
 								date: '2024.08',
-								award: '최우수상 - 코드코리아대표상'
+								award: '최우수상 - 코드코리아대표상',
+								isTeam: true,
+								teamDetail: 'Team : 나 김동욱인데 조윤서 조금 좋아한다.',
+								team: ['조윤서 (BSM)', '한예준 (GSM)', '홍예원 (BSM)']
 							},
 							{
 								title: '2024 한국정보올림피아드 1차 대회',
@@ -80,17 +86,24 @@ const projects = (await getCollection('work'))
 							{
 								title: '2024 부산소프트웨어마이스터고등학교 교내 AI 웹 프로젝트 공모전',
 								date: '2024.04',
-								award: '장려상 - 부산소프트웨어마이스터고등학교장상'
+								award: '장려상 - 부산소프트웨어마이스터고등학교장상',
+								isTeam: true,
+								teamDetail: 'Team : 0.0',
+								team: ['이지우 (BSM)', '박강은 (GSM)', '신희성 (BSM)']
 							},
 							{
 								title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
 								date: '2023.09',
-								award: '최우수상 - 부산소프트웨어마이스터고등학교장상'
+								award: '최우수상 - 부산소프트웨어마이스터고등학교장상',
+								isTeam: false
 							},
 							{
 								title: '2023 부산 SW AI교육 중등학생 해카톤',
 								date: '2023.07',
-								award: '장려상 - 교육연구정보원장상'
+								award: '장려상 - 교육연구정보원장상',
+								isTeam: true,
+								teamDetail: 'Team : 은둔자',
+								team: ['안예성 (BSM)', '신희성 (GSM)', '이승현 (BSM)']
 							}
 						].map((award) => (
 							<div class="award-wrapper">
