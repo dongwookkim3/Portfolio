@@ -87,8 +87,8 @@ import '../styles/about.css';
                                     <ul class="problem-list" id={contest.id}>
                                         {contest.problems.map((problem, index) => (
                                             <li>
-                                                {contest.Nums[index] || index + 1} : 
-                                                <a href={`https://www.acmicpc.net/problem/${contest.problemsNum[index]}`} 
+                                                {contest.Nums?.[index] ?? (index + 1)} : 
+                                                <a href={`https://www.acmicpc.net/problem/${contest.problemsNum?.[index]}`} 
                                                    target="_blank" 
                                                    rel="noopener">
                                                     {problem}
@@ -146,6 +146,11 @@ import '../styles/about.css';
         
         problemList.classList.toggle('active');
         arrow?.classList.toggle('active');
+
+        // 각 li 요소에 인덱스 설정
+        problemList.querySelectorAll('li').forEach((li, index) => {
+            li.style.setProperty('--item-index', index.toString());
+        });
     }
 
     // 이벤트 위임을 사용하여 토글 버튼 클릭 처리
@@ -162,19 +167,43 @@ import '../styles/about.css';
 
 <style>
 .problem-list {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
     padding-left: 2rem;
     margin-top: 0.5rem;
-    max-height: none; /* 높이 제한 제거 */
-    overflow: visible; /* overflow 제한 제거 */
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .problem-list.active {
-    display: block;
+    max-height: 1000px;
+    opacity: 1;
 }
 
 .problem-list li {
     margin: 0.5rem 0;
     color: var(--gray-300);
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.problem-list.active li {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.05s * var(--item-index, 0));
+}
+
+/* JavaScript로 동적으로 --item-index 설정 */
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.arrow.active {
+    transform: rotate(90deg);
 }
 </style>

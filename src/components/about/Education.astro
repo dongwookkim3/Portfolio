@@ -1,0 +1,62 @@
+---
+import { educationData } from '../../data/about';
+---
+
+<section>
+    <h2 class="section-title">Education</h2>
+    <br />
+    <div class="content">
+        {educationData.map(edu => (
+            <div class="education-item">
+                <h3>{edu.school}</h3>
+                <p class="period">{edu.period}</p>
+                {edu.department && <p class="department">{edu.department}</p>}
+                {edu.certificate && (
+                    <a href={edu.certificate} target="_blank" rel="noopener">View Certificate</a>
+                )}
+            </div>
+        ))}
+    </div>
+</section>
+
+<style>
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
+
+    .content {
+        grid-column: 2 / 4;
+    }
+
+    .education-item {
+        margin-bottom: 2rem;
+    }
+
+    .education-item h3 {
+        color: var(--gray-0);
+        font-size: var(--text-lg);
+    }
+
+    .period {
+        color: var(--gray-200);
+        font-size: var(--text-sm);
+        margin: 0.5rem 0;
+    }
+
+    .department {
+        color: var(--gray-300);
+        font-size: var(--text-sm);
+    }
+
+    a {
+        color: var(--accent-regular);
+        text-decoration: none;
+        font-size: var(--text-sm);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style> 

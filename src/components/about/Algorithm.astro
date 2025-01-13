@@ -1,0 +1,169 @@
+---
+import { contestData, algorithmContestData, problemCreationData } from '../../data/about';
+---
+
+<section>
+    <h2 class="section-title">Algorithm</h2>
+    <br />
+    <div class="content">
+        <div class="algorithm-item">
+            <h3>대회 검수진</h3>
+            <ul class="contest-list">
+                {contestData.map(contest => (
+                    <li>
+                        <button 
+                            class="toggle-btn" 
+                            data-id={contest.id}
+                        >
+                            <span class="arrow">▶</span> {contest.title} ({contest.date})
+                        </button>
+                        <ul class="problem-list" id={contest.id}>
+                            {contest.problems.map((problem, index) => (
+                                <li>
+                                    {contest.Nums[index] || index + 1} : 
+                                    <a href={`https://www.acmicpc.net/problem/${contest.problemsNum[index]}`} 
+                                       target="_blank" 
+                                       rel="noopener">
+                                        {problem}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        <div class="algorithm-item">
+            <h3>대회 참여</h3>
+            <ul>
+                {algorithmContestData.map(contest => (
+                    <li>
+                        {contest.title} ({contest.date})
+                        <br />
+                        <a href={contest.link} target="_blank" rel="noopener">View Certificate</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        <div class="algorithm-item">
+            <h3>문제 출제</h3>
+            <ul>
+                {problemCreationData.map(problem => (
+                    <li>
+                        {problem.title}
+                        <br />
+                        <a href={`https://codeup.kr/problem.php?id=${problem.problemNum}`} 
+                           target="_blank" 
+                           rel="noopener">
+                            {problem.platform}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-title {
+        grid-column-start: 1;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+    }
+
+    .content {
+        grid-column: 2 / 4;
+    }
+
+    .algorithm-item {
+        margin-bottom: 2rem;
+    }
+
+    .algorithm-item h3 {
+        color: var(--gray-0);
+        font-size: var(--text-lg);
+        margin-bottom: 1rem;
+    }
+
+    .contest-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .toggle-btn {
+        background: none;
+        border: none;
+        color: var(--gray-200);
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .arrow {
+        display: inline-block;
+        margin-right: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .arrow.active {
+        transform: rotate(90deg);
+    }
+
+    .problem-list {
+        display: none;
+        padding-left: 2rem;
+    }
+
+    .problem-list.active {
+        display: block;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        color: var(--gray-300);
+        font-size: var(--text-sm);
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: var(--accent-regular);
+        text-decoration: none;
+        font-size: var(--text-sm);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function toggleProblems(id: string) {
+        const problemList = document.getElementById(id);
+        if (!problemList) return;
+        
+        const button = problemList.previousElementSibling as HTMLButtonElement;
+        const arrow = button.querySelector('.arrow');
+        
+        problemList.classList.toggle('active');
+        arrow?.classList.toggle('active');
+    }
+
+    document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const toggleBtn = target.closest('.toggle-btn');
+        
+        if (toggleBtn) {
+            const id = toggleBtn.getAttribute('data-id');
+            if (id) toggleProblems(id);
+        }
+    });
+</script>

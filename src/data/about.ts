@@ -8,18 +8,6 @@ export const contestData = [
         Nums: ['A', 'B']
     },
     {
-        id: 'B',
-        title: '2024 DGIST 알고리즘 경진대회',
-        date: '2024.11',
-        problems: []
-    },
-    {
-        id: 'C',
-        title: 'SASA Programming Contest 2024',
-        date: '2024.11',
-        problems: []
-    },
-    {
         id: 'D',
         title: '가희와 함께 하는 7회 코딩테스트',
         date: '2024.11',
@@ -50,8 +38,10 @@ export const contestData = [
     {
         id: 'H',
         title: '제1회 대전과학고등학교 프로그래밍 경진대회 DSHStack',
-        date: '진행중',
-        problems: []
+        date: '2024.12',
+        problems: ['왜 맘대로 예약하냐고', '그래프와 그래프', '자리 신청'],
+        problemsNum: [32941, 32942, 32943],
+        Nums: ['A', 'B', 'C']
     }
 ];
 
