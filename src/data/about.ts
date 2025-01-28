@@ -24,18 +24,6 @@ export const contestData = [
         Nums: ['A', 'B', 'D']
     },
     {
-        id: 'F',
-        title: '제2회 유틸컵',
-        date: '진행중',
-        problems: []
-    },
-    {
-        id: 'G',
-        title: 'DJMJ 포에버컵',
-        date: '진행중',
-        problems: []
-    },
-    {
         id: 'H',
         title: '제1회 대전과학고등학교 프로그래밍 경진대회 DSHStack',
         date: '2024.12',
@@ -105,11 +93,6 @@ export const algorithmContestData = [
     {
         title: '2024 한국정보올림피아드 1차 대회',
         date: '2024.05',
-        link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
-    },
-    {
-        title: 'Solved.ac Grand Arena Party',
-        date: '2024.02',
         link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
     },
     {
