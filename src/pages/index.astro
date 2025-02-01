@@ -26,7 +26,7 @@ const projects = (await getCollection('work'))
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Embedded Engineer</Pill>
 						<Pill><Icon icon="trophy" size="1.33em" /> Algorithm Expert</Pill>
 						<Pill><Icon icon="strategy" size="1.33em" /> Problem Solving</Pill>
 					</div>
@@ -40,14 +40,12 @@ const projects = (await getCollection('work'))
 				/>
 			</header>
 
-			<Skills />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
+			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Awards & Achievements</h3>
-					<p>Check out our major awards</p>
+					<h3>Achievements</h3>
 				</header>
 
 				<div class="gallery">
@@ -118,7 +116,7 @@ const projects = (await getCollection('work'))
 													 {award.teamDetail}
 												</summary>
 												<ul class="team-list">
-													{award.team.map((member) => (
+													{award.team?.map((member) => (
 														<li>{member}</li>
 													))}
 												</ul>
@@ -135,7 +133,6 @@ const projects = (await getCollection('work'))
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Connect With Me</h3>
-					<p>Contact information</p>
 				</header>
 
 				<div class="gallery">
