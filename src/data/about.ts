@@ -1,8 +1,19 @@
+interface ContestData {
+    id: string;
+    title: string;
+    date: string;
+    link: string;
+    problems: string[];
+    problemsNum?: number[];
+    Nums?: string[];
+}
+
 export const contestData = [
     {
         id: 'A',
         title: '2024 하반기 전남대학교 PIMM 알고리즘 파티',
         date: '2024.09',
+        link: 'https://www.acmicpc.net/category/detail/4296',
         problems: ['더블팰린드롬', '근성아 일하자'],
         problemsNum: [32357, 32358],
         Nums: ['A', 'B']
@@ -11,6 +22,7 @@ export const contestData = [
         id: 'D',
         title: '가희와 함께 하는 7회 코딩테스트',
         date: '2024.11',
+        link: 'https://www.acmicpc.net/category/detail/4357',
         problems: ['가희와 4시간의 벽 1', '가희와 4시간의 벽 2', '가희와 서울 지하철 2호선', '가희와 부역명', '가희와 전기 요금 1', '가희와 클럽 오디션 3', 'gahui and sousenkyo 7', '가희와 전기 요금 2'],
         problemsNum: [32775, 32776, 32777, 32778, 32779, 32780, 32786, 32783],
         Nums: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I']
@@ -19,6 +31,7 @@ export const contestData = [
         id: 'E',
         title: '2024 서울시립대학교 프로그래밍 경진대회(UOSPC)',
         date: '2024.12',
+        link: 'https://www.acmicpc.net/category/1072',
         problems: ['UOS 문자열', '슈팅 연습', '드론 조작'],
         problemsNum: [32929, 32930, 32932],
         Nums: ['A', 'B', 'D']
@@ -27,6 +40,7 @@ export const contestData = [
         id: 'H',
         title: '제1회 대전과학고등학교 프로그래밍 경진대회 DSHStack',
         date: '2024.12',
+        link: 'https://www.acmicpc.net/category/detail/4370',
         problems: ['왜 맘대로 예약하냐고', '그래프와 그래프', '자리 신청'],
         problemsNum: [32941, 32942, 32943],
         Nums: ['A', 'B', 'C']

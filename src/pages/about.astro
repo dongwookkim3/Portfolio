@@ -18,7 +18,7 @@ import '../styles/about.css';
             <Hero
                 title="About Me"
             >
-                <span style="display: inline;">임베디드의 미래를 만들고 싶은 엔지니어 <a href="https://github.com/dongwookkim3" target="_blank" rel="noopener">김동욱</a>입니다.</span>
+                <span style="display: inline;">임베디드의 미래를 만들고 싶은 엔지니어 <a href="https://github.com/dongwookkim3" target="_blank" rel="noopener" class="no-underline">김동욱</a>입니다.</span>
             </Hero>
             
             <section>
@@ -85,6 +85,9 @@ import '../styles/about.css';
                                         <span class="arrow">▶</span> {contest.title} ({contest.date})
                                     </button>
                                     <ul class="problem-list" id={contest.id}>
+                                        
+                                            <a href={contest.link} target="_blank" rel="noopener">대회 링크</a>
+                                        
                                         {contest.problems.map((problem, index) => (
                                             <li>
                                                 {contest.Nums?.[index] ?? (index + 1)} : 
@@ -205,5 +208,26 @@ import '../styles/about.css';
 
 .arrow.active {
     transform: rotate(90deg);
+}
+
+.contest-link {
+    margin-bottom: 1rem !important;
+    font-weight: bold;
+}
+
+.contest-link a {
+    color: var(--gray-300);
+}
+
+.contest-link a:hover {
+    color: var(--accent-regular);
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.no-underline:hover {
+    color: var(--accent-regular);
 }
 </style>
