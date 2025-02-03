@@ -27,7 +27,7 @@ const projects = (await getCollection('work')).sort(
 			<Grid variant="offset">
 				{
 					projects.map((project) => (
-						<li>
+						<li class="project-item">
 							<PortfolioPreview project={project} />
 						</li>
 					))
@@ -44,16 +44,18 @@ const projects = (await getCollection('work')).sort(
         padding-bottom: 5rem;
     }
 
-    li {
-        list-style: none;
+    .project-item {
+        display: flex;
+        flex-direction: column;
+        height: auto;
         margin: 0;
         padding: 0;
     }
 
     :global(.grid) {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 3rem !important;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+        gap: 2rem !important;
     }
 
     @media (max-width: 50em) {

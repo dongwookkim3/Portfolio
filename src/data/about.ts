@@ -61,7 +61,8 @@ export const educationData = [
     {
         school: 'IT 꿈나무 성장지원 사업-화이트해커 양성교육',
         period: '2024.06 ~ 2024.11',
-        department: '정보보안개론, 해킹(애플리케이션, 네트워크, 웹, 앱), 취약점 진단, 침해사고 대응, 악성코드 분석'
+        department: '정보보안개론, 해킹(애플리케이션, 네트워크, 웹, 앱), 취약점 진단, 침해사고 대응, 악성코드 분석',
+        certificate: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
     },
     {
         school: 'National University of Singapore 디자인 교육',
@@ -76,7 +77,7 @@ export const certificateData = {
         {
             title: '정보처리산업기사',
             date: '2024.07',
-            link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+            link: '../../public/assets/cartificates/A.pdf'
         }
     ],
     private: [

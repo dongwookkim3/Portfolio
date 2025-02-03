@@ -85,9 +85,9 @@ import '../styles/about.css';
                                         <span class="arrow">▶</span> {contest.title} ({contest.date})
                                     </button>
                                     <ul class="problem-list" id={contest.id}>
-                                        
-                                            <a href={contest.link} target="_blank" rel="noopener">대회 링크</a>
-                                        
+                                        <li class="contest-link">
+                                            <a href={contest.link} target="_blank" rel="noopener">대회 PDF</a>
+                                        </li>
                                         {contest.problems.map((problem, index) => (
                                             <li>
                                                 {contest.Nums?.[index] ?? (index + 1)} : 
