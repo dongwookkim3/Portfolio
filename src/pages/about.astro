@@ -77,7 +77,7 @@ import '../styles/about.css';
                         <h3>대회 검수진</h3>
                         <ul class="contest-list">
                             {contestData.map(contest => (
-                                <li>
+                                <li style={{ margin: '0.7rem 0' }}>
                                     <button 
                                         class="toggle-btn" 
                                         data-id={contest.id}
@@ -85,9 +85,9 @@ import '../styles/about.css';
                                         <span class="arrow">▶</span> {contest.title} ({contest.date})
                                     </button>
                                     <ul class="problem-list" id={contest.id}>
-                                        <li class="contest-link">
-                                            <a href={contest.link} target="_blank" rel="noopener">대회 PDF</a>
-                                        </li>
+                                        
+                                            <a href={contest.link} target="_blank" rel="noopener">대회 링크</a>
+                                        
                                         {contest.problems.map((problem, index) => (
                                             <li>
                                                 {contest.Nums?.[index] ?? (index + 1)} : 
@@ -107,10 +107,8 @@ import '../styles/about.css';
                         <h3>대회 참여</h3>
                         <ul>
                             {algorithmContestData.map(contest => (
-                                <li>
+                                <li style={{ margin: '0.7rem 0' }}>
                                     {contest.title} ({contest.date})
-                                    <br />
-                                    <a href={contest.link} target="_blank" rel="noopener">View Certificate</a>
                                 </li>
                             ))}
                         </ul>

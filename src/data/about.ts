@@ -59,16 +59,16 @@ export const educationData = [
         department: '데이터 분석, 머신러닝, 딥러닝, LLM, 프롬프트 엔지니어링'
     },
     {
-        school: 'IT 꿈나무 성장지원 사업-화이트해커 양성교육',
+        school: 'IT 꿈나무 성장지원사업 화이트해커 양성교육',
         period: '2024.06 ~ 2024.11',
         department: '정보보안개론, 해킹(애플리케이션, 네트워크, 웹, 앱), 취약점 진단, 침해사고 대응, 악성코드 분석',
-        certificate: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+        certificate: '../../public/assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf'
     },
     {
         school: 'National University of Singapore 디자인 교육',
         period: '2024.05',
         department: 'Fundamentals of UI/UX Design',
-        certificate: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+        certificate: '../../public/assets/certificates/education/National_University_of_Singapore_디자인교육.pdf'
     }
 ];
 
@@ -77,19 +77,19 @@ export const certificateData = {
         {
             title: '정보처리산업기사',
             date: '2024.07',
-            link: '../../public/assets/cartificates/A.pdf'
+            link: '../../public/assets/certificates/certificate/정보처리산업기사_과정평가형.pdf'
         }
     ],
     private: [
         {
             title: 'PCCE Level 3 C++',
             date: '2024.10',
-            link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+            link: '../../public/assets/certificates/certificate/PCCE_Lv.3_C++.pdf'
         },
         {
             title: 'COS Pro 1급 C++',
             date: '2024.11',
-            link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+            link: '../../public/assets/certificates/certificate/COS_Pro_1급_C++.pdf'
         }
     ]
 };
@@ -97,23 +97,19 @@ export const certificateData = {
 export const algorithmContestData = [
     {
         title: '2024 NYPC 1 Round',
-        date: '2024.08',
-        link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+        date: '2024.08'
     },
     {
         title: '2024 한국정보올림피아드 2차 대회',
-        date: '2024.07',
-        link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+        date: '2024.07'
     },
     {
         title: '2024 한국정보올림피아드 1차 대회',
-        date: '2024.05',
-        link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+        date: '2024.05'
     },
     {
         title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
-        date: '2023.09',
-        link: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787'
+        date: '2023.09'
     }
 ];
 

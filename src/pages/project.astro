@@ -44,18 +44,16 @@ const projects = (await getCollection('work')).sort(
         padding-bottom: 5rem;
     }
 
-    .project-item {
-        display: flex;
-        flex-direction: column;
-        height: auto;
+    li {
+        list-style: none;
         margin: 0;
         padding: 0;
     }
 
     :global(.grid) {
         display: grid !important;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-        gap: 2rem !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3rem !important;
     }
 
     @media (max-width: 50em) {
