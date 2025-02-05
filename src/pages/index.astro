@@ -1,18 +1,21 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CallToAction from '../components/CallToAction.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
-import type { CollectionEntry } from 'astro:content';
-
-const projects = (await getCollection('work'))
-	.sort((a: CollectionEntry<'work'>, b: CollectionEntry<'work'>) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CallToAction from "../components/CallToAction.astro";
+import Grid from "../components/Grid.astro";
+import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Skills from "../components/Skills.astro";
+import type { CollectionEntry } from "astro:content";
+import SpeedInsights from "@vercel/speed-insights/astro";
+const projects = (await getCollection("work"))
+	.sort(
+		(a: CollectionEntry<"work">, b: CollectionEntry<"work">) =>
+			b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+	)
 	.slice(0, 4);
 ---
 
@@ -26,9 +29,15 @@ const projects = (await getCollection('work'))
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Embedded Engineer</Pill>
-						<Pill><Icon icon="trophy" size="1.33em" /> Algorithm Expert</Pill>
-						<Pill><Icon icon="strategy" size="1.33em" /> Problem Solving</Pill>
+						<Pill
+							><Icon icon="code" size="1.33em" /> Embedded Engineer</Pill
+						>
+						<Pill
+							><Icon icon="trophy" size="1.33em" /> Algorithm Expert</Pill
+						>
+						<Pill
+							><Icon icon="strategy" size="1.33em" /> Problem Solving</Pill
+						>
 					</div>
 				</Hero>
 
@@ -37,10 +46,9 @@ const projects = (await getCollection('work'))
 					width="360"
 					height="465"
 					src="/assets/portrait.jpg"
-					style={{ objectFit: 'cover' }}
+					style={{ objectFit: "cover" }}
 				/>
 			</header>
-
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
@@ -51,82 +59,110 @@ const projects = (await getCollection('work'))
 
 				<div class="gallery">
 					<Grid variant="offset">
-						{[
-							{
-								title: 'CounterSpell in BUSAN GameJAM Track',
-								date: '2024.11',
-								award: 'CounterSpell 지역 대상',
-								isTeam: true,
-								teamDetail: 'Team : CounterAttack',
-								team: ['김규민 (BSM)', '변정현 (GSM)', '조윤서 (BSM)', '이지우 (BSM)']
-							},
-							{
-								title: '2024 IT 꿈나무 성장지원사업 화이트해커 경진대회',
-								date: '2024.11',
-								award: '대상 - 교육부 장관상',
-								isTeam: true,
-								teamDetail: 'Team : Worst Of the Worst',
-								team: ['김민수 (BSM)', '김필립 (GSM)', '박지후 (BSM)']
-							},
-							{
-								title: '2024 금정구 인구문제 해커톤',
-								date: '2024.08',
-								award: '최우수상 - 코드코리아대표상',
-								isTeam: true,
-								teamDetail: 'Team : 나 김동욱인데 조윤서 조금 좋아한다.',
-								team: ['조윤서 (BSM)', '한예준 (GSM)', '홍예원 (BSM)']
-							},
-							{
-								title: '2024 한국정보올림피아드 1차 대회',
-								date: '2024.05',
-								award: '동상 - 정보올림피아드위원회위원장상',
-								isTeam: false
-							},
-							{
-								title: '2024 부산소프트웨어마이스터고등학교 교내 AI 웹 프로젝트 공모전',
-								date: '2024.04',
-								award: '장려상 - 부산소프트웨어마이스터고등학교장상',
-								isTeam: true,
-								teamDetail: 'Team : 0.0',
-								team: ['이지우 (BSM)', '박강은 (GSM)', '신희성 (BSM)']
-							},
-							{
-								title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
-								date: '2023.09',
-								award: '최우수상 - 부산소프트웨어마이스터고등학교장상',
-								isTeam: false
-							},
-							{
-								title: '2023 부산 SW AI교육 중등학생 해카톤',
-								date: '2023.07',
-								award: '장려상 - 교육연구정보원장상',
-								isTeam: true,
-								teamDetail: 'Team : 은둔자',
-								team: ['안예성 (BSM)', '신희성 (GSM)', '이승현 (BSM)']
-							}
-						].map((award) => (
-							<div class="award-wrapper">
-								<li class="award-card">
-									<h4>{award.title}</h4>
-									<p class="date">{award.date}</p>
-									<p class="award">{award.award}</p>
-									{award.isTeam && (
-										<div class="team-section">
-											<details class="team-details">
-												<summary class="team-summary">
-													 {award.teamDetail}
-												</summary>
-												<ul class="team-list">
-													{award.team?.map((member) => (
-														<li>{member}</li>
-													))}
-												</ul>
-											</details>
-										</div>
-									)}
-								</li>
-							</div>
-						))}
+						{
+							[
+								{
+									title: "CounterSpell in BUSAN GameJAM Track",
+									date: "2024.11",
+									award: "CounterSpell 지역 대상",
+									isTeam: true,
+									teamDetail: "Team : CounterAttack",
+									team: [
+										"김규민 (BSM)",
+										"변정현 (GSM)",
+										"조윤서 (BSM)",
+										"이지우 (BSM)",
+									],
+								},
+								{
+									title: "2024 IT 꿈나무 성장지원사업 화이트해커 경진대회",
+									date: "2024.11",
+									award: "대상 - 교육부 장관상",
+									isTeam: true,
+									teamDetail: "Team : Worst Of the Worst",
+									team: [
+										"김민수 (BSM)",
+										"김필립 (GSM)",
+										"박지후 (BSM)",
+									],
+								},
+								{
+									title: "2024 금정구 인구문제 해커톤",
+									date: "2024.08",
+									award: "최우수상 - 코드코리아대표상",
+									isTeam: true,
+									teamDetail:
+										"Team : 나 김동욱인데 조윤서 조금 좋아한다.",
+									team: [
+										"조윤서 (BSM)",
+										"한예준 (GSM)",
+										"홍예원 (BSM)",
+									],
+								},
+								{
+									title: "2024 한국정보올림피아드 1차 대회",
+									date: "2024.05",
+									award: "동상 - 정보올림피아드위원회위원장상",
+									isTeam: false,
+								},
+								{
+									title: "2024 부산소프트웨어마이스터고등학교 교내 AI 웹 프로젝트 공모전",
+									date: "2024.04",
+									award: "장려상 - 부산소프트웨어마이스터고등학교장상",
+									isTeam: true,
+									teamDetail: "Team : 0.0",
+									team: [
+										"이지우 (BSM)",
+										"박강은 (GSM)",
+										"신희성 (BSM)",
+									],
+								},
+								{
+									title: "2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회",
+									date: "2023.09",
+									award: "최우수상 - 부산소프트웨어마이스터고등학교장상",
+									isTeam: false,
+								},
+								{
+									title: "2023 부산 SW AI교육 중등학생 해카톤",
+									date: "2023.07",
+									award: "장려상 - 교육연구정보원장상",
+									isTeam: true,
+									teamDetail: "Team : 은둔자",
+									team: [
+										"안예성 (BSM)",
+										"신희성 (GSM)",
+										"이승현 (BSM)",
+									],
+								},
+							].map((award) => (
+								<div class="award-wrapper">
+									<li class="award-card">
+										<h4>{award.title}</h4>
+										<p class="date">{award.date}</p>
+										<p class="award">{award.award}</p>
+										{award.isTeam && (
+											<div class="team-section">
+												<details class="team-details">
+													<summary class="team-summary">
+														{award.teamDetail}
+													</summary>
+													<ul class="team-list">
+														{award.team?.map(
+															(member) => (
+																<li>
+																	{member}
+																</li>
+															),
+														)}
+													</ul>
+												</details>
+											</div>
+										)}
+									</li>
+								</div>
+							))
+						}
 					</Grid>
 				</div>
 			</section>
@@ -142,31 +178,58 @@ const projects = (await getCollection('work'))
 							<Icon icon="terminal-window" size="2.5rem" />
 							<p>010-5872-7459</p>
 						</a>
-						<a href="mailto:dongwook.3.kim@gmail.com" class="contact-card">
+						<a
+							href="mailto:dongwook.3.kim@gmail.com"
+							class="contact-card"
+						>
 							<Icon icon="paper-plane-tilt" size="2.5rem" />
 							<p>dongwook.3.kim@gmail.com</p>
 						</a>
-						<a href="https://www.acmicpc.net/user/dongwook7" target="_blank" class="contact-card">
+						<a
+							href="https://www.acmicpc.net/user/dongwook7"
+							target="_blank"
+							class="contact-card"
+						>
 							<Icon icon="code" size="2.5rem" />
 							<p>BOJ</p>
 						</a>
-						<a href="https://github.com/dongwookkim3" target="_blank" class="contact-card">
+						<a
+							href="https://github.com/dongwookkim3"
+							target="_blank"
+							class="contact-card"
+						>
 							<Icon icon="github-logo" size="2.5rem" />
 							<p>GitHub</p>
 						</a>
-						<a href="https://swbsnewby7.tistory.com" target="_blank" class="contact-card">
+						<a
+							href="https://swbsnewby7.tistory.com"
+							target="_blank"
+							class="contact-card"
+						>
 							<Icon icon="pencil-line" size="2.5rem" />
 							<p>Blog</p>
 						</a>
-						<a href="https://www.linkedin.com/in/dongwook7/" target="_blank" class="contact-card">
+						<a
+							href="https://www.linkedin.com/in/dongwook7/"
+							target="_blank"
+							class="contact-card"
+						>
 							<Icon icon="linkedin-logo" size="2.5rem" />
 							<p>LinkedIn</p>
 						</a>
-						<a href="https://www.instagram.com/d0ngwook7/" target="_blank" class="contact-card">
+						<a
+							href="https://www.instagram.com/d0ngwook7/"
+							target="_blank"
+							class="contact-card"
+						>
 							<Icon icon="instagram-logo" size="2.5rem" />
 							<p>Instagram</p>
 						</a>
-						<a href="https://discord.com/users/bssm_dongwook" target="_blank" class="contact-card">
+						<a
+							href="https://discord.com/users/bssm_dongwook"
+							target="_blank"
+							class="contact-card"
+						>
 							<Icon icon="discord-logo" size="2.5rem" />
 							<p>Discord</p>
 						</a>
@@ -231,7 +294,7 @@ const projects = (await getCollection('work'))
 
 	.with-background::before {
 		--hero-bg: var(--bg-image-subtle-2);
-		content: '';
+		content: "";
 		position: absolute;
 		pointer-events: none;
 		left: 50%;
@@ -239,7 +302,8 @@ const projects = (await getCollection('work'))
 		aspect-ratio: calc(2.25 / var(--bg-scale));
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
-		background: url('/assets/backgrounds/noise.png') top center/220px repeat,
+		background:
+			url("/assets/backgrounds/noise.png") top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
 			var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;
@@ -266,12 +330,12 @@ const projects = (await getCollection('work'))
 	@media (min-width: 50em) {
 		.section {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			grid-template-areas: "header header header header" "gallery gallery gallery gallery";
 			gap: 5rem;
 		}
 
 		.section.with-cta {
-			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+			grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
 		}
 
 		.section-header {
@@ -345,7 +409,7 @@ const projects = (await getCollection('work'))
 	}
 
 	.team-summary::before {
-		content: '▶';
+		content: "▶";
 		font-size: 0.8em;
 		transition: transform 0.3s ease;
 	}
@@ -490,8 +554,8 @@ const projects = (await getCollection('work'))
 
 <script>
 	function toggleTeam(btn) {
-		btn.classList.toggle('active');
+		btn.classList.toggle("active");
 		const teamInfo = btn.nextElementSibling;
-		teamInfo.classList.toggle('hidden');
+		teamInfo.classList.toggle("hidden");
 	}
 </script>

@@ -62,13 +62,13 @@ export const educationData = [
         school: 'IT 꿈나무 성장지원사업 화이트해커 양성교육',
         period: '2024.06 ~ 2024.11',
         department: '정보보안개론, 해킹(애플리케이션, 네트워크, 웹, 앱), 취약점 진단, 침해사고 대응, 악성코드 분석',
-        certificate: '../../public/assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf'
+        certificate: '../../assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf'
     },
     {
         school: 'National University of Singapore 디자인 교육',
         period: '2024.05',
         department: 'Fundamentals of UI/UX Design',
-        certificate: '../../public/assets/certificates/education/National_University_of_Singapore_디자인교육.pdf'
+        certificate: '../../assets/certificates/education/National_University_of_Singapore_디자인교육.pdf'
     }
 ];
 
@@ -77,19 +77,19 @@ export const certificateData = {
         {
             title: '정보처리산업기사',
             date: '2024.07',
-            link: '../../public/assets/certificates/certificate/정보처리산업기사_과정평가형.pdf'
+            link: '../../assets/certificates/certificate/정보처리산업기사_과정평가형.pdf'
         }
     ],
     private: [
         {
             title: 'PCCE Level 3 C++',
             date: '2024.10',
-            link: '../../public/assets/certificates/certificate/PCCE_Lv.3_C++.pdf'
+            link: '../../assets/certificates/certificate/PCCE_Lv.3_C++.pdf'
         },
         {
             title: 'COS Pro 1급 C++',
             date: '2024.11',
-            link: '../../public/assets/certificates/certificate/COS_Pro_1급_C++.pdf'
+            link: '../../assets/certificates/certificate/COS_Pro_1급_C++.pdf'
         }
     ]
 };
@@ -118,6 +118,8 @@ export const problemCreationData = [
         title: '지원이의 여자친구',
         date: '2024.03',
         platform: 'CodeUP',
-        problemNum: 2054
+        problemNum: 2054,
+        NotionLink: 'https://github.com/dongwookkim3/dgdghjfghj',
+        GithubLink: 'https://github.com/dongwookkim3/dgdghjfghj'
     }
 ];
