@@ -45,7 +45,7 @@ const projects = (await getCollection("work"))
 					alt="김동욱의 프로필 사진"
 					width="360"
 					height="465"
-					src="/assets/portrait.jpg"
+					src="../../assets/portrait.jpg"
 					style={{ objectFit: "cover" }}
 				/>
 			</header>
@@ -143,7 +143,6 @@ const projects = (await getCollection("work"))
 										<p class="award">{award.award}</p>
 										{award.isTeam && (
 											<div class="team-section">
-												<details class="team-details">
 													<summary class="team-summary">
 														{award.teamDetail}
 													</summary>
@@ -156,7 +155,6 @@ const projects = (await getCollection("work"))
 															),
 														)}
 													</ul>
-												</details>
 											</div>
 										)}
 									</li>
