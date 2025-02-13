@@ -94,6 +94,25 @@ export const certificateData = {
     ]
 };
 
+export const OnlineJudgeProfile = [
+    {
+        title: 'BOJ',
+        Profile: 'https://www.acmicpc.net/user/dongwook7'
+    },
+    {
+        title: 'SolvedAC',
+        Profile: 'https://solved.ac/profile/dongwook7'
+    },
+    {
+        title: 'Codeforces',
+        Profile: 'https://codeforces.com/profile/dongwook7'
+    },
+    {
+        title: 'CodeUP',
+        Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459'
+    }
+];
+
 export const algorithmContestData = [
     {
         title: '2024 NYPC 1 Round',

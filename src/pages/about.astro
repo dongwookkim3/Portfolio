@@ -8,6 +8,7 @@ import {
     certificateData,
     algorithmContestData,
     problemCreationData,
+OnlineJudgeProfile,
 } from "../data/about";
 import "../styles/about.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
@@ -106,6 +107,25 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 <h2 class="section-title">Algorithm</h2>
                 <br />
                 <div class="content">
+                    <div class="algorithm-item">
+                        <h3>온라인 저지 프로필</h3>
+                        <ul>
+                            {
+                                OnlineJudgeProfile.map((Profile) => (
+                                    <li style={{ margin: "0.7rem 0" }}>
+                                        
+                                        <a 
+                                        href={`${Profile.Profile}`}
+                                        target="_blank"
+                                                            rel="noopener"
+                                        >
+{Profile.title}
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
                     <div class="algorithm-item">
                         <h3>대회 검수진</h3>
                         <ul class="contest-list">
