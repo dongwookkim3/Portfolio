@@ -44,6 +44,15 @@ export const contestData = [
         problems: ['왜 맘대로 예약하냐고', '그래프와 그래프', '자리 신청'],
         problemsNum: [32941, 32942, 32943],
         Nums: ['A', 'B', 'C']
+    },
+    {
+        id: 'I',
+        title: '2025 KSA Automata Winter Contest',
+        date: '2025.02',
+        link: 'https://www.acmicpc.net/contest/view/1438',
+        problems: ['아름다운 수열', '수열의 점수', '자습 째기', 'KSA 문자열 2', '미술 수업', '저녁 태권도'],
+        problemsNum: [33488, 33489, 33491, 33495, 33496, 33497],
+        Nums: ['A', 'E', 'G', 'I', 'C', 'B']
     }
 ];
 
