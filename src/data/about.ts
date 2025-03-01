@@ -63,8 +63,13 @@ export const educationData = [
         department: '임베디드 소프트웨어과'
     },
     {
+        school: '자기소개서 완성 2주 챌린지 8기',
+        period: '2025.02 ~ 2025.02',
+        department: '경험 분석, 자기소개서 기초'
+    },
+    {
         school: 'AI 커리어 스쿨 for 엔지니어',
-        period: '2024.12 ~ 현재',
+        period: '2024.12 ~ 2025.02',
         department: '데이터 분석, 머신러닝, 딥러닝, LLM, 프롬프트 엔지니어링'
     },
     {
@@ -109,15 +114,11 @@ export const OnlineJudgeProfile = [
         Profile: 'https://www.acmicpc.net/user/dongwook7'
     },
     {
-        title: 'SolvedAC',
+        title: 'solvedac',
         Profile: 'https://solved.ac/profile/dongwook7'
     },
     {
-        title: 'Codeforces',
-        Profile: 'https://codeforces.com/profile/dongwook7'
-    },
-    {
-        title: 'CodeUP',
+        title: 'CodeUp',
         Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459'
     }
 ];
@@ -139,6 +140,12 @@ export const algorithmContestData = [
         title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
         date: '2023.09'
     }
+    ,
+    {
+        title: 'MatkorCup',
+        date: '2025.02'
+    }
+    
 ];
 
 export const problemCreationData = [
