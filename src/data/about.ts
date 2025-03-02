@@ -170,7 +170,7 @@ export const algorithmContestData = [
 
 export const problemCreationData = [
     {
-        title: '지원이의 여자친구',
+        title: '지원이의 여자친구 (2024.03)',
         date: '2024.03',
         platform: 'CodeUp',
         problemNum: 2054,

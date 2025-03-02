@@ -75,7 +75,7 @@ const isCurrentPage = (href: string) => {
 			{
 				textLinks.map(({ label, href }) => (
 					<li>
-						<a aria-current={isCurrentPage(href) ? 'page' : null} class="link" href={href} target="_blank">
+						<a aria-current={isCurrentPage(href) ? 'page' : null} class="link" href={href}>
 							{label}
 						</a>
 					</li>
@@ -86,7 +86,7 @@ const isCurrentPage = (href: string) => {
 			<div class="socials">
 				{
 					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social">
+						<a href={href} class="social" target="_blank">
 							<span class="sr-only">{label}</span>
 							<Icon icon={icon} />
 						</a>
