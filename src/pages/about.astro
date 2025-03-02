@@ -41,14 +41,35 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                 <h3>{edu.school}</h3>
                                 <p>{edu.period}</p>
                                 {edu.department && <p>{edu.department}</p>}
-                                {edu.certificate && (
+                                {edu.certificate_pdf_ko && (
                                     <a
-                                        href={edu.certificate}
+                                        href={edu.certificate_pdf_ko}
                                         target="_blank"
                                         rel="noopener"
                                     >
-                                        View Certificate
+                                        View Certificate_pdf_ko
                                     </a>
+                                    <br>
+                                )}
+                                {edu.certificate_pdf_en && (
+                                    <a
+                                        href={edu.certificate_pdf_en}
+                                        target="_blank"
+                                        rel="noopener"
+                                    >
+                                        View Certificate_pdf_en
+                                    </a>
+                                    <br>
+                                )}
+                                {edu.certificate_web && (
+                                    <a
+                                        href={edu.certificate_web}
+                                        target="_blank"
+                                        rel="noopener"
+                                    >
+                                        View Certificate_web
+                                    </a>
+                                    <br>
                                 )}
                             </div>
                         ))

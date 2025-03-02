@@ -8,6 +8,15 @@ interface ContestData {
     Nums?: string[];
 }
 
+interface EducationData {
+    school: string;
+    period: string;
+    department?: string;
+    certificate_pdf_ko?: string;
+    certificate_pdf_en?: string;
+    certificate_web?: string;
+}
+
 export const contestData = [
     {
         id: 'A',
@@ -56,7 +65,7 @@ export const contestData = [
     }
 ];
 
-export const educationData = [
+export const educationData: EducationData[] = [
     {
         school: '부산 소프트웨어 마이스터고등학교',
         period: '2023.03 ~ 현재',
@@ -65,24 +74,28 @@ export const educationData = [
     {
         school: '자기소개서 완성 2주 챌린지 8기',
         period: '2025.02 ~ 2025.02',
-        department: '경험 분석, 자기소개서 기초'
+        department: '경험 분석, 자기소개서 기초',
+        certificate_pdf_ko: '../../assets/certificates/education/자기소개서 완성 2주 챌린지 8기 수료증.pdf'
     },
     {
         school: 'AI 커리어 스쿨 for 엔지니어',
         period: '2024.12 ~ 2025.02',
-        department: '데이터 분석, 머신러닝, 딥러닝, LLM, 프롬프트 엔지니어링'
+        department: '데이터 분석, 머신러닝, 딥러닝, LLM, 프롬프트 엔지니어링',
+        certificate_pdf_ko: '../../assets/certificates/education/AI커리어스쿨_수료증_김동욱.pdf',
+        certificate_pdf_en: '../../assets/certificates/education/AI커리어스쿨_수료증_KIM DONG WOOK.pdf'
     },
     {
         school: 'IT 꿈나무 성장지원사업 화이트해커 양성교육',
         period: '2024.06 ~ 2024.11',
         department: '정보보안개론, 해킹(애플리케이션, 네트워크, 웹, 앱), 취약점 진단, 침해사고 대응, 악성코드 분석',
-        certificate: '../../assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf'
+        certificate_pdf_ko: '../../assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf'
     },
     {
         school: 'National University of Singapore 디자인 교육',
         period: '2024.05',
         department: 'Fundamentals of UI/UX Design',
-        certificate: '../../assets/certificates/education/National_University_of_Singapore_디자인교육.pdf'
+        certificate_pdf_en: '../../assets/certificates/education/National_University_of_Singapore_디자인교육.pdf',
+        certificate_web: 'https://credentials.nus.edu.sg/017d78c0-dd71-46db-9db6-2c3155a73787#acc.1vbBGTs3'
     }
 ];
 
@@ -127,6 +140,13 @@ export const algorithmContestData = [
     {
         title: '2024 NYPC 1 Round',
         date: '2024.08'
+    },{
+        title: '2023 NYPC 1 Round',
+        date: '2023.08'
+    },
+    {
+        title: '2024 NYPC 2 Round',
+        date: '2024.09'
     },
     {
         title: '2024 한국정보올림피아드 2차 대회',
@@ -152,7 +172,7 @@ export const problemCreationData = [
     {
         title: '지원이의 여자친구',
         date: '2024.03',
-        platform: 'CodeUP',
+        platform: 'CodeUp',
         problemNum: 2054,
         NotionLink: 'https://github.com/dongwookkim3/dgdghjfghj',
         GithubLink: 'https://github.com/dongwookkim3/dgdghjfghj'

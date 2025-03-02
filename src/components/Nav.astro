@@ -75,7 +75,7 @@ const isCurrentPage = (href: string) => {
 			{
 				textLinks.map(({ label, href }) => (
 					<li>
-						<a aria-current={isCurrentPage(href) ? 'page' : null} class="link" href={href}>
+						<a aria-current={isCurrentPage(href) ? 'page' : null} class="link" href={href} target="_blank">
 							{label}
 						</a>
 					</li>
