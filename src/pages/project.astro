@@ -1,4 +1,4 @@
----
+<!-- ---
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -21,7 +21,10 @@ const projects = (await getCollection("work")).sort(
 		<main class="wrapper stack gap-8">
 			<Hero title="Project" align="center" />
 			<br /><br /><br />
-			<Grid variant="offset">
+			<h3>이 페이지는 아직 준비되지 않았습니다.</h3>
+			<p>조금만 기다려 주세요!</p>
+			{/* 기존의 Grid 및 프로젝트 목록을 주석 처리 */}
+			{/* <Grid variant="offset">
 				{
 					projects.map((project) => (
 						<li class="project-item">
@@ -29,7 +32,7 @@ const projects = (await getCollection("work")).sort(
 						</li>
 					))
 				}
-			</Grid>
+			</Grid> */}
 		</main>
 		<ContactCTA />
 	</div>
@@ -58,4 +61,47 @@ const projects = (await getCollection("work")).sort(
 			grid-template-columns: 1fr !important;
 		}
 	}
+</style>
+-->
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+    <div class="container">
+        <div class="message">
+            <h1>🚧 페이지 준비 중 🚧</h1>
+            <p>현재 이 페이지는 제작 중입니다.</p>
+            <p>조금만 기다려주세요!</p>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 70vh;
+        text-align: center;
+    }
+
+    .message {
+        padding: 2rem;
+        border-radius: 1rem;
+        background: var(--gray-999_40);
+        border: 1px solid var(--gray-800);
+    }
+
+    h1 {
+        font-size: var(--text-2xl);
+        margin-bottom: 1rem;
+        color: var(--gray-0);
+    }
+
+    p {
+        color: var(--gray-300);
+        margin-bottom: 0.5rem;
+    }
 </style>
