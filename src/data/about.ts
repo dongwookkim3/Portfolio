@@ -62,6 +62,15 @@ export const contestData = [
         problems: ['아름다운 수열', '수열의 점수', '자습 째기', 'KSA 문자열 2', '미술 수업', '저녁 태권도'],
         problemsNum: [33488, 33489, 33491, 33495, 33496, 33497],
         Nums: ['A', 'E', 'G', 'I', 'C', 'B']
+    },
+    {
+        id: 'J',
+        title: '제2회 유틸컵',
+        date: '2025.03',
+        link: 'https://www.acmicpc.net/contest/view/1400',
+        problems: ['Java String Equals', '곱셈을 누가 이렇게 해 ㅋㅋ', 'Texture Wrapping', 'Infinite Array Swaps', '수상한 어릿광대'],
+        problemsNum: [33556, 33557, 33558, 33559, 33560],
+        Nums: ['☕🔤🟰', '🅰️✖️🅱️', ' 🏁✂️', '🔁♾️', '🤔🤡 ']
     }
 ];
 
@@ -164,6 +173,16 @@ export const algorithmContestData = [
     {
         title: 'MatkorCup',
         date: '2025.02'
+    }
+    ,
+    {
+        title: 'SFPC 2023',
+        date: '2024.01'
+    }
+    ,
+    {
+        title: 'SFPC 2024',
+        date: '2025.01'
     }
     
 ];
