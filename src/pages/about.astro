@@ -8,7 +8,7 @@ import {
     certificateData,
     algorithmContestData,
     problemCreationData,
-OnlineJudgeProfile,
+    OnlineJudgeProfile,
 } from "../data/about";
 import "../styles/about.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
@@ -21,41 +21,35 @@ import SpeedInsights from "@vercel/speed-insights/astro";
     <div class="stack gap-20">
         <main class="wrapper about">
             <Hero title="About Me">
-                <span style="display: inline;"
-                    >임베디드의 미래를 만들고 싶은 엔지니어 <a
+                <span style="display: inline;">
+                    임베디드의 미래를 만들고 싶은 엔지니어 <a
                         href="https://github.com/dongwookkim3"
                         target="_blank"
                         rel="noopener"
-                        class="no-underline">김동욱</a
-                    >입니다.</span
-                >
+                        class="no-underline"
+                    >김동욱</a>입니다.
+                </span>
             </Hero>
 
             <section>
                 <h2 class="section-title">Information</h2>
-                <br />
                 <div class="content">
-                    <div class="education-item">
-                <h3>Name : 김동욱 (KIM DONG WOOK)</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Age : 만 17세 (2007년생)</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Phone : 010-5872-7459</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Email : dongwook7459@gmail.com</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Affiliation : 부산소프트웨어마이스터고등학교</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Github : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
-                
+                    <div class="education-item" style="line-height: 1.2;">
+                        <h3>Name : 김동욱 (KIM DONG WOOK)</h3>
+                        <h3>Age : 만 17세 (2007년생)</h3>
+                        <h3>Phone : 010-5872-7459</h3>
+                        <h3>Email : dongwook7459@gmail.com</h3>
+                        <h3>Affiliation : 부산소프트웨어마이스터고등학교</h3>
+                        <h3>
+                            Github : 
+                            <a href="https://github.com/dongwookkim3">dongwookkim3</a>
+                        </h3>
+                    </div>
                 </div>
-            </div>
-                
             </section>
 
             <section>
                 <h2 class="section-title">Education</h2>
-                <br />
                 <div class="content">
                     {
                         educationData.map((edu) => (
@@ -64,34 +58,40 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                 <p>{edu.period}</p>
                                 {edu.department && <p>{edu.department}</p>}
                                 {edu.certificate_pdf_ko && (
-                                    <a
-                                        href={edu.certificate_pdf_ko}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_pdf_ko
-                                    </a>
-                                    <br>
+                                    <>
+                                        <a
+                                            href={edu.certificate_pdf_ko}
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            View Certificate_pdf_ko
+                                        </a>
+                                        <br />
+                                    </>
                                 )}
                                 {edu.certificate_pdf_en && (
-                                    <a
-                                        href={edu.certificate_pdf_en}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_pdf_en
-                                    </a>
-                                    <br>
+                                    <>
+                                        <a
+                                            href={edu.certificate_pdf_en}
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            View Certificate_pdf_en
+                                        </a>
+                                        <br />
+                                    </>
                                 )}
                                 {edu.certificate_web && (
-                                    <a
-                                        href={edu.certificate_web}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_web
-                                    </a>
-                                    <br>
+                                    <>
+                                        <a
+                                            href={edu.certificate_web}
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            View Certificate_web
+                                        </a>
+                                        <br />
+                                    </>
                                 )}
                             </div>
                         ))
@@ -101,7 +101,6 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
             <section>
                 <h2 class="section-title">Certificate</h2>
-                <br />
                 <div class="content">
                     <div class="algorithm-item">
                         <h3>국가기술자격</h3>
@@ -146,15 +145,13 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 </div>
             </section>
 
-<section>
+            <section>
                 <h2 class="section-title">Skill</h2>
                 <br />
-                
             </section>
 
             <section>
                 <h2 class="section-title">Algorithm</h2>
-                <br />
                 <div class="content">
                     <div class="algorithm-item">
                         <h3>온라인 저지 프로필</h3>
@@ -162,13 +159,12 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                             {
                                 OnlineJudgeProfile.map((Profile) => (
                                     <li style={{ margin: "0.7rem 0" }}>
-                                        
                                         <a 
-                                        href={`${Profile.Profile}`}
-                                        target="_blank"
-                                                            rel="noopener"
+                                            href={`${Profile.Profile}`}
+                                            target="_blank"
+                                            rel="noopener"
                                         >
-{Profile.title}
+                                            {Profile.title}
                                         </a>
                                     </li>
                                 ))
@@ -199,7 +195,6 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                             >
                                                 대회 링크
                                             </a>
-
                                             {contest.problems.map(
                                                 (problem, index) => (
                                                     <li>
@@ -290,13 +285,11 @@ import SpeedInsights from "@vercel/speed-insights/astro";
         problemList.classList.toggle("active");
         arrow?.classList.toggle("active");
 
-        // 각 li 요소에 인덱스 설정
         problemList.querySelectorAll("li").forEach((li, index) => {
             li.style.setProperty("--item-index", index.toString());
         });
     }
 
-    // 이벤트 위임을 사용하여 토글 버튼 클릭 처리
     document.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;
         const toggleBtn = target.closest(".toggle-btn");
@@ -340,8 +333,6 @@ import SpeedInsights from "@vercel/speed-insights/astro";
         opacity: 1;
         transition-delay: calc(0.05s * var(--item-index, 0));
     }
-
-    /* JavaScript로 동적으로 --item-index 설정 */
 
     .arrow {
         display: inline-block;
