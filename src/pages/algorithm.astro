@@ -20,143 +20,14 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 >
     <div class="stack gap-20">
         <main class="wrapper about">
-            <Hero title="About Me">
-                <span style="display: inline;"
-                    >임베디드의 미래를 만들고 싶은 엔지니어 <a
-                        href="https://github.com/dongwookkim3"
-                        target="_blank"
-                        rel="noopener"
-                        class="no-underline">김동욱</a
-                    >입니다.</span
-                >
+            <Hero title="Algorithm">
             </Hero>
 
-            <section>
-                <h2 class="section-title">Information</h2>
-                <br />
-                <div class="content">
-                    <div class="education-item">
-                <h3>Name : 김동욱 (KIM DONG WOOK)</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Age : 만 17세 (2007년생)</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Phone : 010-5872-7459</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Email : dongwook7459@gmail.com</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Affiliation : 부산소프트웨어마이스터고등학교</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Github : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
-                <br style="line-height: 0.5;" />
-                <h3> 개발블로그 : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
-                
-                </div>
-            </div>
-                
-            </section>
+            
 
             <section>
-                <h2 class="section-title">Education</h2>
                 <br />
-                <div class="content">
-                    {
-                        educationData.map((edu) => (
-                            <div class="education-item">
-                                <h3>{edu.school}</h3>
-                                <p>{edu.period}</p>
-                                {edu.department && <p>{edu.department}</p>}
-                                {edu.certificate_pdf_ko && (
-                                    <a
-                                        href={edu.certificate_pdf_ko}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_pdf_ko
-                                    </a>
-                                    <br>
-                                )}
-                                {edu.certificate_pdf_en && (
-                                    <a
-                                        href={edu.certificate_pdf_en}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_pdf_en
-                                    </a>
-                                    <br>
-                                )}
-                                {edu.certificate_web && (
-                                    <a
-                                        href={edu.certificate_web}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_web
-                                    </a>
-                                    <br>
-                                )}
-                            </div>
-                        ))
-                    }
-                </div>
-            </section>
-
-            <section>
-                <h2 class="section-title">Certificate</h2>
-                <br />
-                <div class="content">
-                    <div class="algorithm-item">
-                        <h3>국가기술자격</h3>
-                        <ul>
-                            {
-                                certificateData.national.map((cert) => (
-                                    <li>
-                                        {cert.title} ({cert.date})
-                                        <br />
-                                        <a
-                                            href={cert.link}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            View Certificate
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                    <div class="algorithm-item">
-                        <h3>민간자격</h3>
-                        <ul>
-                            {
-                                certificateData.private.map((cert) => (
-                                    <li>
-                                        {cert.title} ({cert.date})
-                                        <br />
-                                        <a
-                                            href={cert.link}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            View Certificate
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-<section>
-                <h2 class="section-title">Skill</h2>
-                <br />
-                
-            </section>
-
-            <section>
-                <h2 class="section-title">Algorithm</h2>
-                <br />
+                <br /><br />
                 <div class="content">
                     <div class="algorithm-item">
                         <h3>온라인 저지 프로필</h3>

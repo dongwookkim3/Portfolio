@@ -136,7 +136,7 @@ export const OnlineJudgeProfile = [
         Profile: 'https://www.acmicpc.net/user/dongwook7'
     },
     {
-        title: 'solvedac',
+        title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7'
     },
     {
@@ -184,7 +184,11 @@ export const algorithmContestData = [
         title: 'SFPC 2024',
         date: '2025.01'
     }
-    
+    ,
+    {
+        title: '그랜드아레나파티',
+        date: '2025.01'
+    }
 ];
 
 export const problemCreationData = [
