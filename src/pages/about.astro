@@ -48,13 +48,33 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 <br style="line-height: 0.5;" />
                 <h3>Github : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
                 <br style="line-height: 0.5;" />
-                <h3> 개발블로그 : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
+                <h3> 개발블로그 : <a href="https://swbsnewby7.tistory.com/">swbsnewby7</a></h3>
                 
                 </div>
             </div>
                 
             </section>
+            <section>
+                <h2 class="section-title">Lead</h2>
+                <br />
+                <div class="content">
+                    <div class="education-item">
+                <h3>2025 부산소프트웨어마이스터고등학교 전교부회장</h3>
 
+                <br style="line-height: 0.5;" />
+                
+                <h3>2024 교내 자율주행 안내 및 운반 서비스 (PECO) 팀장</h3>
+
+                <br style="line-height: 0.5;" />
+                <h3>2024 교내 알고리즘 자율동아리 (BSSM 알고리즘) 팀장</h3>
+
+                <br style="line-height: 0.5;" />
+                <h3>2025 교내 임베디드소프트웨어 자율동아리 (창의융합메이커부) 팀장</h3>
+
+                <br style="line-height: 0.5;" />
+                </div>
+            </div>
+            </section>
             <section>
                 <h2 class="section-title">Education</h2>
                 <br />
@@ -154,127 +174,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 
             </section>
 
-            <section>
-                <h2 class="section-title">Algorithm</h2>
-                <br />
-                <div class="content">
-                    <div class="algorithm-item">
-                        <h3>온라인 저지 프로필</h3>
-                        <ul>
-                            {
-                                OnlineJudgeProfile.map((Profile) => (
-                                    <li style={{ margin: "0.7rem 0" }}>
-                                        
-                                        <a 
-                                        href={`${Profile.Profile}`}
-                                        target="_blank"
-                                                            rel="noopener"
-                                        >
-{Profile.title}
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                    <div class="algorithm-item">
-                        <h3>대회 검수진</h3>
-                        <ul class="contest-list">
-                            {
-                                contestData.map((contest) => (
-                                    <li style={{ margin: "0.7rem 0" }}>
-                                        <button
-                                            class="toggle-btn"
-                                            data-id={contest.id}
-                                        >
-                                            <span class="arrow">▶</span>{" "}
-                                            {contest.title} ({contest.date})
-                                        </button>
-                                        <ul
-                                            class="problem-list"
-                                            id={contest.id}
-                                        >
-                                            <a
-                                                href={contest.link}
-                                                target="_blank"
-                                                rel="noopener"
-                                            >
-                                                대회 링크
-                                            </a>
-
-                                            {contest.problems.map(
-                                                (problem, index) => (
-                                                    <li>
-                                                        {contest.Nums?.[
-                                                            index
-                                                        ] ?? index + 1}{" "}
-                                                        :
-                                                        <a
-                                                            href={`https://www.acmicpc.net/problem/${contest.problemsNum?.[index]}`}
-                                                            target="_blank"
-                                                            rel="noopener"
-                                                        >
-                                                            {problem}
-                                                        </a>
-                                                    </li>
-                                                ),
-                                            )}
-                                        </ul>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                    <div class="algorithm-item">
-                        <h3>대회 참여</h3>
-                        <ul>
-                            {
-                                algorithmContestData.map((contest) => (
-                                    <li style={{ margin: "0.7rem 0" }}>
-                                        {contest.title} ({contest.date})
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                    <div class="algorithm-item">
-                        <h3>문제 출제</h3>
-                        <ul>
-                            {
-                                problemCreationData.map((problem) => (
-                                    <li>
-                                        {problem.title}
-                                        <br />
-                                        <a
-                                            href={`https://codeup.kr/problem.php?id=${problem.problemNum}`}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            {problem.platform}
-                                        </a>
-                                        &nbsp;&nbsp;
-                                        <a
-                                            href={problem.NotionLink}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            Notion
-                                        </a>
-                                        &nbsp;&nbsp;
-                                        <a
-                                            href={problem.GithubLink}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            Github
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            
         </main>
 
         <ContactCTA />

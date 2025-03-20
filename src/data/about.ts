@@ -133,15 +133,18 @@ export const certificateData = {
 export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
-        Profile: 'https://www.acmicpc.net/user/dongwook7'
+        Profile: 'https://www.acmicpc.net/user/dongwook7',
+        rank: '2165문제, 340위'
     },
     {
         title: 'solved.ac',
-        Profile: 'https://solved.ac/profile/dongwook7'
+        Profile: 'https://solved.ac/profile/dongwook7',
+        rank: '1429, Gold1, 16820위'
     },
     {
         title: 'CodeUp',
-        Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459'
+        Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459',
+        rank: '1063문제, 56위'
     }
 ];
 
@@ -171,7 +174,7 @@ export const algorithmContestData = [
     }
     ,
     {
-        title: 'MatkorCup',
+        title: '제6회 MatkorCup',
         date: '2025.02'
     }
     ,
@@ -197,7 +200,7 @@ export const problemCreationData = [
         date: '2024.03',
         platform: 'CodeUp',
         problemNum: 2054,
-        NotionLink: 'https://github.com/dongwookkim3/dgdghjfghj',
-        GithubLink: 'https://github.com/dongwookkim3/dgdghjfghj'
+        NotionLink: 'https://wirehaired-equipment-793.notion.site/1bcdb8d457cc80e7a522f9760c6440d9',
+        GithubLink: 'https://github.com/dongwookkim3/Jiwon.s_girlfriend'
     }
 ];
