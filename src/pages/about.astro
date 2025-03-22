@@ -36,42 +36,30 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 <br />
                 <div class="content">
                     <div class="education-item">
-                <h3>Name : 김동욱 (KIM DONG WOOK)</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Age : 만 17세 (2007년생)</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Phone : 010-5872-7459</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Email : dongwook7459@gmail.com</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Affiliation : 부산소프트웨어마이스터고등학교</h3>
-                <br style="line-height: 0.5;" />
-                <h3>Github : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
-                <br style="line-height: 0.5;" />
-                <h3> 개발블로그 : <a href="https://swbsnewby7.tistory.com/">swbsnewby7</a></h3>
-                
+                        <h3 class="info-title">Name : 김동욱 (KIM DONG WOOK)</h3>
+                        <h3 class="info-title">Age : 만 17세 (2007년생)</h3>
+                        <h3 class="info-title">Phone : 010-5872-7459</h3>
+                        <h3 class="info-title">Email : dongwook7459@gmail.com</h3>
+                        <h3 class="info-title">Affiliation : 부산소프트웨어마이스터고등학교</h3>
+                        <h3 class="info-title">Github : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h3>
+                        <h3 class="info-title">개발블로그 : <a href="https://swbsnewby7.tistory.com/">swbsnewby7</a></h3>
                 </div>
             </div>
-                
-            </section>
-            <section>
+        </section>
+        <section>
                 <h2 class="section-title">Lead</h2>
                 <br />
                 <div class="content">
                     <div class="education-item">
-                <h3>2025 부산소프트웨어마이스터고등학교 전교부회장</h3>
+                <h3 class="info-title">2025 부산소프트웨어마이스터고등학교 전교부회장</h3>
 
-                <br style="line-height: 0.5;" />
                 
-                <h3>2024 교내 자율주행 안내 및 운반 서비스 (PECO) 팀장</h3>
+                <h3 class="info-title">2024 교내 자율주행 안내 및 운반 서비스 (PECO) 팀장</h3>
 
-                <br style="line-height: 0.5;" />
-                <h3>2024 교내 알고리즘 자율동아리 (BSSM 알고리즘) 팀장</h3>
+                <h3 class="info-title">2024 교내 알고리즘 자율동아리 (BSSM 알고리즘) 팀장</h3>
 
-                <br style="line-height: 0.5;" />
-                <h3>2025 교내 임베디드소프트웨어 자율동아리 (창의융합메이커부) 팀장</h3>
+                <h3 class="info-title">2025 교내 임베디드소프트웨어 자율동아리 (창의융합메이커부) 팀장</h3>
 
-                <br style="line-height: 0.5;" />
                 </div>
             </div>
             </section>
@@ -164,14 +152,17 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                 ))
                             }
                         </ul>
-                    </div>
+                    </div> 
                 </div>
             </section>
 
 <section>
                 <h2 class="section-title">Skill</h2>
                 <br />
-                
+                <div class="content">
+                    <div class="education-item">
+                        <h3>C++</h3>
+                        </div></div>
             </section>
 
             
@@ -273,5 +264,9 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
     .no-underline:hover {
         color: var(--accent-regular);
+    }
+
+    .info-title {
+        margin-bottom: 1.2rem;
     }
 </style>

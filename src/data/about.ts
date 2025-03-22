@@ -139,7 +139,7 @@ export const OnlineJudgeProfile = [
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: '1429, Gold1, 16820위'
+        rank: 'Gold1, 16820위'
     },
     {
         title: 'CodeUp',

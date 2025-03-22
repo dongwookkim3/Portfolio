@@ -8,7 +8,7 @@ import {
     certificateData,
     algorithmContestData,
     problemCreationData,
-OnlineJudgeProfile,
+    OnlineJudgeProfile,
 } from "../data/about";
 import "../styles/about.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
@@ -20,36 +20,36 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 >
     <div class="stack gap-20">
         <main class="wrapper about">
-            <Hero title="Algorithm">
-            </Hero>
-
-            
-
+            <Hero title="Algorithm" />
+            <div style={{ margin: "4.5rem 0" }}></div>
             <section>
+                <h2 class="section-title">온라인저지 프로필</h2>
                 <br />
-                <br /><br />
                 <div class="content">
                     <div class="algorithm-item">
-                        <h3>온라인 저지 프로필</h3>
                         <ul>
                             {
                                 OnlineJudgeProfile.map((Profile) => (
                                     <li style={{ margin: "0.7rem 0" }}>
-                                        
-                                        <a 
-                                        href={`${Profile.Profile}`}
-                                        target="_blank"
-                                                            rel="noopener"
+                                        <a
+                                            href={`${Profile.Profile}`}
+                                            target="_blank"
+                                            rel="noopener"
                                         >
-{Profile.title} ({Profile.rank})
+                                            {Profile.title} ({Profile.rank})
                                         </a>
                                     </li>
                                 ))
                             }
                         </ul>
                     </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">대회 검수진</h2>
+                <br />
+                <div class="content">
                     <div class="algorithm-item">
-                        <h3>대회 검수진</h3>
                         <ul class="contest-list">
                             {
                                 contestData.map((contest) => (
@@ -96,8 +96,13 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                             }
                         </ul>
                     </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">대회 참여</h2>
+                <br />
+                <div class="content">
                     <div class="algorithm-item">
-                        <h3>대회 참여</h3>
                         <ul>
                             {
                                 algorithmContestData.map((contest) => (
@@ -108,8 +113,13 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                             }
                         </ul>
                     </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">문제 출제</h2>
+                <br />
+                <div class="content">
                     <div class="algorithm-item">
-                        <h3>문제 출제</h3>
                         <ul>
                             {
                                 problemCreationData.map((problem) => (
