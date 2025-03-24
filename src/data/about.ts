@@ -58,7 +58,7 @@ export const contestData = [
         id: 'I',
         title: '2025 KSA Automata Winter Contest',
         date: '2025.02',
-        link: 'https://www.acmicpc.net/contest/view/1438',
+        link: 'https://www.acmicpc.net/category/detail/4436',
         problems: ['아름다운 수열', '수열의 점수', '자습 째기', 'KSA 문자열 2', '미술 수업', '저녁 태권도'],
         problemsNum: [33488, 33489, 33491, 33495, 33496, 33497],
         Nums: ['A', 'E', 'G', 'I', 'C', 'B']
@@ -67,10 +67,19 @@ export const contestData = [
         id: 'J',
         title: '제2회 유틸컵',
         date: '2025.03',
-        link: 'https://www.acmicpc.net/contest/view/1400',
+        link: 'https://www.acmicpc.net/category/detail/4443',
         problems: ['Java String Equals', '곱셈을 누가 이렇게 해 ㅋㅋ', 'Texture Wrapping', 'Infinite Array Swaps', '수상한 어릿광대'],
         problemsNum: [33556, 33557, 33558, 33559, 33560],
         Nums: ['☕🔤🟰', '🅰️✖️🅱️', ' 🏁✂️', '🔁♾️', '🤔🤡 ']
+    },
+    {
+        id: 'Z',
+        title: 'DJMJ 포에버컵',
+        date: '2025.03',
+        link: 'https://www.acmicpc.net/category/detail/4455',
+        problems: ['', '그래프와 그래프', '자리 신청'],
+        problemsNum: [33631, 33632, 33633, 33634, 33635, 33636, 33637],
+        Nums: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     }
 ];
 

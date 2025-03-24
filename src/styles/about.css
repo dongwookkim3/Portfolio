@@ -61,6 +61,12 @@
         margin-top: 0.5rem;
     }
 
+    .algorithm-item2 ul {
+        list-style-type: none;
+        margin-left: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
     .algorithm-item li {
         margin-bottom: 0.25rem;
     }
