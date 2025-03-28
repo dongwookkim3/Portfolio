@@ -77,7 +77,7 @@ export const contestData = [
         title: 'DJMJ 포에버컵',
         date: '2025.03',
         link: 'https://www.acmicpc.net/category/detail/4455',
-        problems: ['', '그래프와 그래프', '자리 신청'],
+        problems: ['1교시: 가정', '2교시: 체육', '3교시: 수학', '4교시: 국어 (Easy)', '─점심시간─', '5교시: 과학', '6교시: 국어 (Hard)'],
         problemsNum: [33631, 33632, 33633, 33634, 33635, 33636, 33637],
         Nums: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     }
@@ -158,16 +158,22 @@ export const OnlineJudgeProfile = [
 ];
 
 export const algorithmContestData = [
+    
+    
     {
-        title: '2024 NYPC 1 Round',
-        date: '2024.08'
+        title: '제6회 MatkorCup',
+        date: '2025.02'
     },{
-        title: '2023 NYPC 1 Round',
-        date: '2023.08'
+        title: 'SFPC 2024',
+        date: '2025.01'
     },
     {
         title: '2024 NYPC 2 Round',
         date: '2024.09'
+    },
+    {
+        title: '2024 NYPC 1 Round',
+        date: '2024.08'
     },
     {
         title: '2024 한국정보올림피아드 2차 대회',
@@ -178,28 +184,20 @@ export const algorithmContestData = [
         date: '2024.05'
     },
     {
-        title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
-        date: '2023.09'
-    }
-    ,
-    {
-        title: '제6회 MatkorCup',
-        date: '2025.02'
-    }
-    ,
+        title: 'solved.ac Grand Arena Party',
+        date: '2024.02'
+    },
     {
         title: 'SFPC 2023',
         date: '2024.01'
-    }
-    ,
+    },
     {
-        title: 'SFPC 2024',
-        date: '2025.01'
-    }
-    ,
+        title: '2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
+        date: '2023.09'
+    },
     {
-        title: '그랜드아레나파티',
-        date: '2025.01'
+        title: '2023 NYPC 1 Round',
+        date: '2023.08'
     }
 ];
 
