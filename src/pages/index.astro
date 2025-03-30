@@ -101,6 +101,7 @@ const projects = (await getCollection("work"))
 										"한예준 (부산소프트웨어마이스터고등학교)",
 										"홍예원 (부산센텀여자고등학교)",
 									],
+									certificate_pdf_ko: '../../assets/certificates/achievements/2024_금정구_인구문제_해커톤.pdf',
 								},
 								{
 									title: "2024 한국정보올림피아드 1차 대회",
@@ -113,6 +114,7 @@ const projects = (await getCollection("work"))
 										</>
 									),
 									isTeam: false,
+									certificate_pdf_ko: '../../assets/certificates/achievements/2024_한국정보올림피아드_1차_대회.pdf',
 								},
 								{
 									title: "2024 부산소프트웨어마이스터고등학교 AI SW 프로젝트 공모전",
@@ -125,12 +127,14 @@ const projects = (await getCollection("work"))
 										"박강은 (부산소프트웨어마이스터고등학교)",
 										"신희성 (부산소프트웨어마이스터고등학교)",
 									],
+									certificate_pdf_ko: '../../assets/certificates/achievements/2024_부산소프트웨어마이스터고등학교_교내_AI_웹_프로젝트_공모전.pdf',
 								},
 								{
 									title: "2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회",
 									date: "2023.09",
 									award: "최우수상 - 부산소프트웨어마이스터고등학교장상",
 									isTeam: false,
+									certificate_pdf_ko: '../../assets/certificates/achievements/2023_부산소프트웨어마이스터고등학교_교내_알고리즘_경진대회.pdf',
 								},
 								{
 									title: "2023 부산 SW AI교육 중등학생 해카톤",
@@ -143,6 +147,7 @@ const projects = (await getCollection("work"))
 										"신희성 (부산소프트웨어마이스터고등학교)",
 										"이승현 (부산소프트웨어마이스터고등학교)",
 									],
+									certificate_pdf_ko: '../../assets/certificates/achievements/2023_부산_SW_AI교육_중등학생_해카톤.pdf',
 								},
 							].map((award) => (
 								<div class="award-wrapper">
@@ -164,6 +169,10 @@ const projects = (await getCollection("work"))
 															),
 														)}
 													</ul>
+													
+													<br>
+											</div>
+										)}
                                 {award.certificate_pdf_ko && (
                                     <a
                                         href={award.certificate_pdf_ko}
@@ -175,9 +184,6 @@ const projects = (await getCollection("work"))
                                     </a>
                                     <br>
                                 )}
-                                
-											</div>
-										)}
 									</li>
 								</div>
 							))
