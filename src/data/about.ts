@@ -86,9 +86,14 @@ export const contestData = [
 export const educationData: EducationData[] = [
     {
         school: '부산 소프트웨어 마이스터고등학교',
-        period: '2023.03 ~ 현재',
+        period: '2023.03 ~ 현재 ( 2026.01 예정 )',
         department: '임베디드 소프트웨어과'
     },
+    {
+        school: '2025 JA Company Of the Year (COY) 청소년 실물 창업 프로젝트',
+        period: '2025.03 ~ 현재 ( 2026.01 예정 )',
+    },
+    
     {
         school: '자기소개서 완성 2주 챌린지 8기',
         period: '2025.02 ~ 2025.02',
