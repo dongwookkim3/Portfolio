@@ -12,10 +12,10 @@ import Skills from "../components/Skills.astro";
 import type { CollectionEntry } from "astro:content";
 import SpeedInsights from "@vercel/speed-insights/astro";
 
-const projects = (await getCollection("work"))
+const projects = (await getCollection("project"))
 
 	.sort(
-		(a: CollectionEntry<"work">, b: CollectionEntry<"work">) =>
+		(a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
 			b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 	)
 	.slice(0, 4);

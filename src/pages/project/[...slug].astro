@@ -36,7 +36,7 @@ const { Content } = await render(entry);
 					<a class="back-link" href="/project/"
 						><Icon icon="arrow-left" /> project</a
 					>
-					<Hero title={entry.data.title} align="start">
+					<Hero title={entry.data.projectName} align="start">
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
@@ -48,14 +48,14 @@ const { Content } = await render(entry);
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{
+					<!-- {
 						entry.data.img && (
 							<img
 								src={entry.data.img}
 								alt={entry.data.img_alt || ""}
 							/>
 						)
-					}
+					} -->
 					<div class="content">
 						<Content />
 					</div>
@@ -87,6 +87,7 @@ const { Content } = await render(entry);
 
 	.tags {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.5rem;
 	}
 

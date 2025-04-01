@@ -1,25 +1,21 @@
 ---
-title: PECO
-projectName: R2BOT
-publishDate: 2030-10-02 00:00:00
+title: Cloud
+projectName: 바로우산
+publishDate: 2019-10-02 00:00:00
 img: /assets/stock-4.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
   We developed brand positioning and design assets for the launch
   of a new colored water product.
 tags:
-  - ROS2
   - STM32
   - RaspberryPI
-  - Arduino
   - AutoCAD
   - Fusion360
-  - RDK X3
-  - Jetson Nano
-  - JavaScript
-  - FastAPI
-  - MQTT
-  - LLAMA3.1 8B
+  - WinForm
+  - NestJS
+  - OpenAI API
+  - CircuirMaker
 ---
 
 <img
