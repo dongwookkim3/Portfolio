@@ -28,7 +28,7 @@ export const contestData = [
         Nums: ['A', 'B']
     },
     {
-        id: 'D',
+        id: 'B',
         title: '가희와 함께 하는 7회 코딩테스트',
         date: '2024.11',
         link: 'https://www.acmicpc.net/category/detail/4357',
@@ -37,7 +37,7 @@ export const contestData = [
         Nums: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'I']
     },
     {
-        id: 'E',
+        id: 'C',
         title: '2024 서울시립대학교 프로그래밍 경진대회(UOSPC)',
         date: '2024.12',
         link: 'https://www.acmicpc.net/category/1072',
@@ -46,7 +46,7 @@ export const contestData = [
         Nums: ['A', 'B', 'D']
     },
     {
-        id: 'H',
+        id: 'D',
         title: '제1회 대전과학고등학교 프로그래밍 경진대회 DSHStack',
         date: '2024.12',
         link: 'https://www.acmicpc.net/category/detail/4370',
@@ -55,7 +55,7 @@ export const contestData = [
         Nums: ['A', 'B', 'C']
     },
     {
-        id: 'I',
+        id: 'E',
         title: '2025 KSA Automata Winter Contest',
         date: '2025.02',
         link: 'https://www.acmicpc.net/category/detail/4436',
@@ -64,7 +64,7 @@ export const contestData = [
         Nums: ['A', 'E', 'G', 'I', 'C', 'B']
     },
     {
-        id: 'J',
+        id: 'F',
         title: '제2회 유틸컵',
         date: '2025.03',
         link: 'https://www.acmicpc.net/category/detail/4443',
@@ -73,13 +73,22 @@ export const contestData = [
         Nums: ['☕🔤🟰', '🅰️✖️🅱️', ' 🏁✂️', '🔁♾️', '🤔🤡 ']
     },
     {
-        id: 'Z',
+        id: 'G',
         title: 'DJMJ 포에버컵',
         date: '2025.03',
         link: 'https://www.acmicpc.net/category/detail/4455',
         problems: ['1교시: 가정', '2교시: 체육', '3교시: 수학', '4교시: 국어 (Easy)', '─점심시간─', '5교시: 과학', '6교시: 국어 (Hard)'],
         problemsNum: [33631, 33632, 33633, 33634, 33635, 33636, 33637],
         Nums: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+    },
+    {
+        id: 'H',
+        title: '2025 상반기 전남대학교 PIMM 알고리즘 파티',
+        date: '2025.03',
+        link: 'https://www.acmicpc.net/category/detail/4462',
+        problems: ['치매예방수칙 3.3.3', '비장의 일격 (Small)'],
+        problemsNum: [33709, 33710],
+        Nums: ['A', 'B']
     }
 ];
 
@@ -148,12 +157,12 @@ export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
         Profile: 'https://www.acmicpc.net/user/dongwook7',
-        rank: '2165문제, 344위'
+        rank: '2181문제, 344위'
     },
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: 'Gold1, 16918위'
+        rank: 'Gold1, 14548위'
     },
     {
         title: 'CodeUp',
