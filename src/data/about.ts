@@ -167,7 +167,7 @@ export const OnlineJudgeProfile = [
     {
         title: 'CodeUp',
         Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459',
-        rank: '1063문제, 56위'
+        rank: '1068문제, 53위'
     }
 ];
 

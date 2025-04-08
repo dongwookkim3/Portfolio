@@ -36,7 +36,8 @@ const { Content } = await render(entry);
 					<a class="back-link" href="/project/"
 						><Icon icon="arrow-left" /> project</a
 					>
-					<Hero title={entry.data.projectName} align="start">
+					<Hero title={entry.data.title} align="start">
+						<h3 style="color:var(--gray-200);">{entry.data.projectName}</entry></h2>
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}

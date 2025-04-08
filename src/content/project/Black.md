@@ -2,7 +2,7 @@
 title: Black
 projectName: BUMITORI
 publishDate: 2019-10-02 00:00:00
-img: /assets/stock-4.jpg
+img: /assets/project/logo (1).png
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
   We developed brand positioning and design assets for the launch
@@ -15,10 +15,7 @@ tags:
   - TinyCAD
   - PyQt5
   - AutoCAD
-  - Spring boot
-  - React
-  - Mysql
-  - AWS
+  - FreeRTOS
 ---
 
 <img
