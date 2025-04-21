@@ -137,6 +137,10 @@ export const certificateData = {
             title: '정보처리산업기사',
             date: '2024.07',
             link: '../../assets/certificates/certificate/정보처리산업기사_과정평가형.pdf'
+        },
+        {
+            title: '전자계산기기능사 - 필기',
+            date: '진행중'
         }
     ],
     private: [
@@ -157,17 +161,17 @@ export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
         Profile: 'https://www.acmicpc.net/user/dongwook7',
-        rank: '2181문제, 344위'
+        rank: '2189문제, 351위'
     },
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: 'Gold1, 14548위'
+        rank: 'Gold1, 14111위'
     },
     {
         title: 'CodeUp',
         Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459',
-        rank: '1068문제, 53위'
+        rank: '1070문제, 53위'
     }
 ];
 
@@ -217,7 +221,7 @@ export const algorithmContestData = [
 
 export const problemCreationData = [
     {
-        title: '지원이의 여자친구 (2024.03)',
+        title: '지원이의 여자친구 ( 2024.03 )',
         date: '2024.03',
         platform: 'CodeUp',
         problemNum: 2054,

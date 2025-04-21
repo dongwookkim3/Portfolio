@@ -2,7 +2,7 @@
 title: PECO
 projectName: R2BOT
 publishDate: 2030-10-02 00:00:00
-img: /assets/project/peco.svg
+img: /assets/project/Group1.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
   We developed brand positioning and design assets for the launch

@@ -36,7 +36,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                             target="_blank"
                                             rel="noopener"
                                         >
-                                            {Profile.title} ({Profile.rank})
+                                            {Profile.title} ( {Profile.rank} )
                                         </a>
                                     </li>
                                 ))
@@ -59,7 +59,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                             data-id={contest.id}
                                         >
                                             <span class="arrow">▶</span>{" "}
-                                            {contest.title} ({contest.date})
+                                            {contest.title} ( {contest.date} )
                                         </button>
                                         <ul
                                             class="problem-list"
@@ -107,7 +107,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                             {
                                 algorithmContestData.map((contest) => (
                                     <li style={{ margin: "0.7rem 0" }}>
-                                        {contest.title} ({contest.date})
+                                        {contest.title} ( {contest.date} )
                                     </li>
                                 ))
                             }
