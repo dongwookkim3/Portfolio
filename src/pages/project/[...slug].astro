@@ -94,7 +94,14 @@ const { Content } = await render(entry);
 
 	.description {
 		font-size: var(--text-lg);
+		width: 100%;
 		max-width: 54ch;
+		height: auto;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
 	}
 
 	.content {
