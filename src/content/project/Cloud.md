@@ -29,6 +29,8 @@ tags:
 
 ### 2. 프로젝트 미리보기
 
+<a href="https://www.youtube.com/watch?v=2xjrkkmunP8"><h4>시연영상</h4></a>
+
 ##### WEB
 
 **메인페이지**
