@@ -2,11 +2,12 @@
 title: PECO
 projectName: R2BOT
 publishDate: 2030-10-02 00:00:00
+status: 진행중
 img: /assets/project/Group1.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
-  We developed brand positioning and design assets for the launch
-  of a new colored water product.
+  R2Bot은 자율주행과 웹 제어 기능을 갖춘 교내 안내 및 물류 운반 로봇입니다.
+  복잡한 캠퍼스 내에서 짐 운반과 길 안내를 도와주는 지능형 로봇 플랫폼입니다.
 tags:
   - ROS2
   - STM32
@@ -22,19 +23,220 @@ tags:
   - LLAMA3.1 8B
 ---
 
-<img
-  src="/assets/stock-4.jpg"
-  alt="Soft pink and baby blue water ripples together in a subtle texture."
-/>
 
-# content
+프로젝트 설명 & 소개
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+    이 챕터는 입구야. 프로젝트의 목적, 주제, 핵심 기능을 짧고 임팩트 있게 정리해.
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+    핵심 질문: “이 프로젝트는 무엇인가?”
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+프로젝트 미리보기
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    결과물이 어떤 형태인지 보여주는 시각적 자료 or 요약.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+    웹/앱이라면 스크린샷, 데모 영상, gif 등.
+
+    핵심 질문: “이게 어떻게 생겼는가?”
+
+프로젝트 동기
+
+    왜 이걸 하게 되었는지, 개인적/사회적 문제의식 등 동기부여 설명.
+
+    핵심 질문: “왜 이 프로젝트를 했는가?”
+
+팀 소개 (팀 프로젝트라면)
+
+    팀원 역할 분배, 협업 방식, 커뮤니케이션 방식 등.
+
+기여 사항
+
+    너가 맡았던 역할, 기술 스택, 주요 작업 내용 정리.
+
+    핵심 질문: “내가 뭘 했는가?”
+
+프로젝트 개발과정
+
+    기획 → 디자인 → 개발 → 배포 등 흐름 설명.
+
+    간단한 타임라인으로 구성해도 좋아.
+
+프로세스 개선
+
+    프로젝트 진행 중 깨달은 점, 다음에 더 잘할 수 있는 부분.
+
+트러블슈팅
+
+    문제상황, 해결방법, 결과 설명.
+
+    이건 기술적인 깊이를 보여주는 챕터.
+
+고객 유치 (운영 프로젝트일 경우)
+
+    실제 유저 데이터, 홍보 전략, 피드백 등.
+
+기대효과 / 결과
+
+    어떤 가치나 효과가 있었는지.
+
+    숫자 (트래픽, 참여자, 성능 향상 등)로 보여주면 좋음.
+
+향후 방향
+
+    유지보수 계획, 추가 개발 아이디어 등.
+
+ETC (기타)
+
+    사용한 기술 스택, 링크, 참고 자료, 느낀 점 등 넣는 곳.
+
+
+
+
+# 🦾 PECO | R2Bot  
+**교내 소개 및 물류 운반 자율주행 로봇**
+
+---
+
+## 1. 🧭 프로젝트 개요
+
+**R2Bot**은 자율주행 기술과 AI 기반 안내 시스템을 결합하여  
+대학교 내에서 **길 안내 및 물류 운반**을 수행하는 스마트 로봇입니다.  
+웹 인터페이스 기반의 제어 시스템과 실시간 경로 설정 기능을 통해  
+학생과 방문객의 **이동 편의성과 물류 효율성**을 모두 높이는 것을 목표로 합니다.
+
+---
+
+## 2. 🎯 기획 의도
+
+### 🔍 문제 상황
+- 학교 구조가 넓고 복잡하여 신입생 및 방문객이 **길 찾기 어려움**
+- 입학 초기 **기숙사 짐 이동**의 불편함
+- 학교 행사 시 **안내 인력 부족**
+- 물류 이동의 **효율성과 안전성 부족**
+
+### 💡 해결 목표
+- **자율주행 안내 및 운반 로봇**으로 이동 문제 해결
+- **웹 제어 기반 서비스**로 사용자 친화적인 인터페이스 제공
+- **기술 기반 학교 이미지 강화 및 실증 사례 구축**
+
+---
+
+## 3. ✨ 주요 기능
+
+### ✅ 수동 및 자동 주행
+- 수동제어: 방향 버튼으로 직접 조종
+- 자동제어: 출발지/도착지 설정 → 자율주행
+
+### ✅ 웹 기반 제어 UI
+- 직관적인 UI를 통해 **접근성 강화**
+- 경로 설정, 위치 추적, 운반 요청 등을 웹에서 간단히 수행
+
+### ✅ 화물 운반 시스템
+- 무거운 짐이나 기자재 등을 **자율적으로 운반**
+
+### ✅ LLM 연동 (진행 중)
+- LLAMA3.1을 이용한 **음성 안내 / 정보 응답 기능 개발 중**
+
+---
+
+## 4. 🛠 기술 스택
+
+| 분류 | 도구/기술 |
+|------|-----------|
+| **하드웨어** | Jetson Nano, Raspberry Pi 4B, RDK X3, STM32, Arduino |
+| **모터** | BLDC 인휠모터, DC 기어드 모터 |
+| **드라이버** | 센서리스 & 센서드 드라이버 |
+| **프레임워크** | ROS2 (Humble, Foxy), ROS1 Noetic |
+| **프론트/백엔드** | JavaScript, FastAPI, MQTT |
+| **설계/디자인** | Fusion360, AutoCAD |
+| **시뮬레이션** | Gazebo, RViz |
+| **AI/LLM** | LLAMA 3.1 |
+
+---
+
+## 5. ⚠️ 트러블슈팅 & 개발 히스토리
+
+| 이슈 | 원인 | 해결 |
+|------|------|------|
+| Jetson Orin NX 고장 | 개발 중 전원 연결 실수 | Jetson Nano → Raspberry Pi → RDK X3로 전환 |
+| ROS2 Humble 미지원 | Jetson Nano의 Ubuntu 18.04 제한 | 중간에 Foxy → 최종적으로 RDK X3에서 Humble 사용 |
+| BLDC 초기토크 불안정 | 센서리스 드라이버 사용 | 센서드 드라이버로 교체 |
+| MCU 불안정 | 성능 및 핀 수 부족 | Nucleo-F755ZI-Q로 업그레이드 |
+
+---
+
+## 6. 🔧 시스템 구성 흐름도 (버전 히스토리)
+
+### MCU
+STM32F103 → Arduino Uno → Nucleo-F103 → **Nucleo-F755ZI-Q**
+
+### 메인보드
+Jetson Nano → Jetson Orin NX → Raspberry Pi → **RDK X3**
+
+### ROS 버전
+ROS2 Humble → ROS2 Foxy → ROS1 Noetic → **ROS2 Humble**
+
+### 모터 & 드라이버
+센서리스 BLDC → DC 기어드 → **센서드 BLDC + 드라이버**
+
+---
+
+## 7. 📈 현재 진행 현황
+
+### ✅ 완료한 작업
+- 하드웨어 통합
+- ROS2 환경 구성
+- 웹 UI 및 제어 시스템 구현
+- 기본 주행 및 운반 테스트 성공
+
+### 🔄 진행 중
+- LLM 연동 (교내 정보 제공 챗봇)
+- SLAM & AMCL 기반 위치 정밀도 개선
+- 자율경로 자동 생성 알고리즘 개발
+
+---
+
+## 8. 🔮 향후 계획
+
+- 📍 지도 기반 **Waypoint 자동 주행 시스템**
+- 🔊 **음성 명령 기능** (시각장애인 등 접근성 향상)
+- 📡 **클라우드 기반 실시간 모니터링**
+- 🧪 **실제 캠퍼스 테스트 및 대외 시연** 준비
+
+---
+
+## 9. 👥 팀원 및 역할
+
+| 이름 | 역할 |
+|------|------|
+| 강도현 | 3D 모델링, 하드웨어 설계 |
+| 김규민 | 웹 UI 개발 |
+| 김동욱 | 프로젝트 기획, ROS2 개발, 2D 설계 |
+| 김상윤 | 펌웨어 & 통신 구축 |
+| 오창민 | LLM 학습 및 2D 설계 |
+
+---
+
+## 10. 🖼 시각 자료 (이미지/설계/시연 영상 등)
+
+- 하드웨어 사진 (Jetson, 모터, 드라이버)
+- 웹 인터페이스 스크린샷
+- RViz/Gazebo 시뮬레이션 장면
+- 설계도 (AutoCAD/Fusion360)
+- 실제 운반 시연 사진 or 영상 링크
+
+---
+
+## 11. 💬 느낀 점 & 배운 점
+
+> 이 프로젝트를 통해 이론으로만 알고 있던 ROS2, 자율주행, MCU, AI 기술들을  
+> **실제 시스템에 통합하고 문제를 해결하며 성장**할 수 있었습니다.  
+> 특히 호환성, 성능, 비용 등 현실적인 제약 속에서 최선의 선택을 해가는 경험은  
+> 졸업 이후에도 **실제 개발자로서의 역량**을 강화하는 데 큰 도움이 될 것입니다.
+
+---
+
+## 12. 📎 기타 링크
+- GitHub: _(링크 입력)_
+- Notion Dev Log: _(링크 입력)_
+- 시연 영상: _(YouTube/Drive)_
+

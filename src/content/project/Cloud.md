@@ -2,6 +2,7 @@
 title: Cloud
 projectName: 바로우산
 publishDate: 2019-10-02 00:00:00
+status: 완료
 img: /assets/stock-4.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
@@ -18,19 +19,132 @@ tags:
   - CircuirMaker
 ---
 
-<img
-  src="/assets/stock-4.jpg"
-  alt="Soft pink and baby blue water ripples together in a subtle texture."
-/>
+# 임베디드소프트웨어과 융합 프로젝트 계획서
 
-# content
+## Ⅰ. 프로젝트 개요
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+### 1. 프로젝트 요약
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+| 항목     | 내용                       |
+|----------|----------------------------|
+| **팀명** | 클라우드                   |
+| **팀원** | 김동욱, 신희성, 이동건, 김은서, 박초영 |
+| **제목** | 바로우산                   |
+| **설명** | 교내 우산 관리 서비스     |
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+### 2. 개발 배경 및 필요성
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- **기숙사 퇴소 시 우산 부족 문제**
+- **기숙사 생활의 불편함 해결**  
+  → 퇴소일에 비가 오면 학생들이 우산 없이 귀가해야 하는 상황 발생
+- **사용자 경험 개선**  
+  → 학생 간 우산 대여 방식은 비효율적이며, 상태 관리가 어려움
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+### 3. 목적
+
+- 학생들의 **편의성 증대**
+- 비로 인한 **학생 건강 보호**
+- **기숙사 퇴소일 환경 개선**
+
+### 4. 관련 연구 조사
+
+- 공유 모빌리티 서비스 (예: SWING)
+- 보조배터리 공유서비스 (예: 완충이, 충전돼지)
+- [대전 공유 우산 서비스](https://www.ccnnews.co.kr/news/articleView.html?idxno=274408)
+- [용산구 공유우산 대여 서비스](http://www.swnews.kr/news/articleView.html?idxno=46775)
+
+---
+
+## Ⅱ. 프로젝트 수행 방법
+
+### 1. 팀원 역할
+
+| 연번 | 성명   | 역할               | 비고(직책) |
+|------|--------|--------------------|------------|
+| 1    | 김동욱 | 설계, STM32, PCB   | 팀장       |
+| 2    | 김은서 | 설계, C#           | 팀원       |
+| 3    | 박초영 | Raspberry Pi, LLM  | 팀원       |
+| 4    | 신희성 | C#, LLM, React     | 팀원       |
+| 5    | 이동건 | STM32              | 팀원       |
+
+### 2. 추진 일정
+
+| 월     | 추진 내용 |
+|--------|-----------|
+| **10월** | 팀원 구성 및 역할 분담<br>아이디어 구상<br>하드웨어 및 소프트웨어 구성 방향 수립 |
+| **11월** | 하드웨어 설계 및 부품 테스트<br>보관함 개폐 구조 설계 및 제작 |
+| **12월** | ChatGPT API 연동<br>C# 서버 및 DB 설계<br>Raspberry Pi ↔ STM32 통신 구현<br>시스템 통합 테스트 |
+| **1월**  | 사용자 UI 개선<br>최종 점검 및 시연 준비<br>최종 발표 |
+
+### 3. 적용 기술
+
+- **STM32, Raspberry Pi**
+- **C#**: WinForm, Firebase, Mono
+- **React**, **ChatGPT API**
+- **설계 툴**: OrCAD, AutoCAD, Fusion360
+
+---
+
+## Ⅲ. 프로젝트 내용
+
+### 1. 예상 결과물
+
+- **1축 로봇팔**: 서보모터를 이용해 우산을 자동으로 잡고 개폐
+- **5칸 우산 보관함**:  
+  → 학생증(NFC) 태그 → 라즈베리파이 모니터에서 칸 선택 → 자동 잠금 해제
+
+### 2. 주요 기능
+
+| 주요 기능        | 설명 |
+|------------------|------|
+| **지문 인식**     | 지문 센서로 사용자 식별, 도난 방지 |
+| **NFC 인식**      | 학생증을 통한 자동 판별 및 인증 |
+| **생성형 AI 대화** | 날씨 정보 제공 및 우산 대여 행동 추천 |
+| **잠금 시스템**   | 대여 여부에 따른 잠금 해제 및 자동 잠금 |
+| **대여 정보 확인**| C# 서버에서 실시간 대여 상태 확인 가능 |
+
+### 3. 시스템 구조
+
+| 구성요소 | 설명 | 개발환경 / 구현 방식 |
+|----------|------|------------------------|
+| **학생증 + NFC 리더기** | 사용자 인증 | STM32 or Raspberry Pi 연동, NFC 리더기 |
+| **지문 인식 센서** | 사용자 식별 | STM32와 연결하여 지문 정보 처리 |
+| **전자 잠금 장치** | 자동 잠금/해제 | STM32 제어, 인증 후 작동 |
+| **생성형 AI** | 대화/날씨 정보 제공 | OpenAI API 연동 |
+| **우산 보관함** | 우산 관리 | 5칸 구성, 자동 잠금 시스템 |
+
+### 4. 프로젝트 흐름도
+
+```
+[학생증 NFC 태그] → [C# 서버 요청 처리] → 
+[잠금 해제 / 잠금] → [센서 모니터링] → 
+[AI 날씨 정보 제공 + 추천] → 
+[웹에서 대여 현황 확인]
+```
+
+---
+
+## Ⅳ. 예산 활용 계획
+
+| 연번 | 사용 내역              | 단가     | 수량 | 금액     |
+|------|-------------------------|----------|------|----------|
+| 1    | 라즈베리파이 4B         | 85,910   | 1    | 85,910   |
+| 2    | 라즈베리파이 모니터     | 93,500   | 1    | 93,500   |
+| 3    | IR 거리 센서            | 770      | 8    | 6,160    |
+| 4    | 지문 센서               | 11,880   | 2    | 23,760   |
+| 5    | NFC 모듈                | 2,750    | 2    | 5,500    |
+| 6    | 스테핑 모터             | 24,750   | 8    | 198,000  |
+| 7    | 모터 드라이버           | 1,980    | 8    | 15,840   |
+| 8    | STM32 Nucleo 보드       | 22,000   | 1    | 22,000   |
+| 9    | 라즈베리파이 UPS 모듈   | 41,800   | 1    | 41,800   |
+| 10   | SMPS                   | 36,300   | 1    | 36,300   |
+|      | **총합계**              |          |      | **516,890** |
+
+---
+
+## Ⅴ. 기대 효과 및 활용 분야
+
+- **타 학교 및 기업에서도 적용 가능**
+- **학생들의 건강 보호 및 귀가 시 불편 해소**
+- **우산 분실 및 구매 비용 절감**
+- **책임감과 신뢰 기반 문화 조성**

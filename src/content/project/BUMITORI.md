@@ -2,6 +2,7 @@
 title: BUMITORI
 projectName: BUMITORI
 publishDate: 2019-10-02 00:00:00
+status: 진행중
 img: /assets/project/Group2(1).jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
@@ -15,7 +16,6 @@ tags:
   - TinyCAD
   - PyQt5
   - AutoCAD
-  - FreeRTOS
 ---
 
 <img
@@ -23,14 +23,66 @@ tags:
   alt="Soft pink and baby blue water ripples together in a subtle texture."
 />
 
-# content
+    프로젝트 설명 & 소개
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+        이 챕터는 입구야. 프로젝트의 목적, 주제, 핵심 기능을 짧고 임팩트 있게 정리해.
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+        핵심 질문: “이 프로젝트는 무엇인가?”
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+    프로젝트 미리보기
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        결과물이 어떤 형태인지 보여주는 시각적 자료 or 요약.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+        웹/앱이라면 스크린샷, 데모 영상, gif 등.
+
+        핵심 질문: “이게 어떻게 생겼는가?”
+
+    프로젝트 동기
+
+        왜 이걸 하게 되었는지, 개인적/사회적 문제의식 등 동기부여 설명.
+
+        핵심 질문: “왜 이 프로젝트를 했는가?”
+
+    팀 소개 (팀 프로젝트라면)
+
+        팀원 역할 분배, 협업 방식, 커뮤니케이션 방식 등.
+
+    기여 사항
+
+        너가 맡았던 역할, 기술 스택, 주요 작업 내용 정리.
+
+        핵심 질문: “내가 뭘 했는가?”
+
+    프로젝트 개발과정
+
+        기획 → 디자인 → 개발 → 배포 등 흐름 설명.
+
+        간단한 타임라인으로 구성해도 좋아.
+
+    프로세스 개선
+
+        프로젝트 진행 중 깨달은 점, 다음에 더 잘할 수 있는 부분.
+
+    트러블슈팅
+
+        문제상황, 해결방법, 결과 설명.
+
+        이건 기술적인 깊이를 보여주는 챕터.
+
+    고객 유치 (운영 프로젝트일 경우)
+
+        실제 유저 데이터, 홍보 전략, 피드백 등.
+
+    기대효과 / 결과
+
+    어떤 가치나 효과가 있었는지.
+
+    숫자 (트래픽, 참여자, 성능 향상 등)로 보여주면 좋음.
+
+    향후 방향
+
+    유지보수 계획, 추가 개발 아이디어 등.
+
+    ETC (기타)
+
+    사용한 기술 스택, 링크, 참고 자료, 느낀 점 등 넣는 곳.
