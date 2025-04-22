@@ -1,7 +1,7 @@
 ---
 title: PECO
 projectName: R2BOT
-publishDate: 2030-10-02 00:00:00
+publishDate: 2025-04-23 00:00:01
 status: 진행중
 img: /assets/project/Group1.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
