@@ -60,6 +60,13 @@ const { Content } = await render(entry);
 						)
 					} -->
 					<div class="content">
+						{entry.data.status === "진행중" && (
+							<div class="status-notice">
+								<Icon icon="pencil-line" />
+								<p>이 프로젝트는 현재 진행 중인 프로젝트이므로 자료가 부족할 수 있습니다.</p>
+							</div>
+						)}
+						<br>
 						<Content />
 					</div>
 				</div>
@@ -70,6 +77,20 @@ const { Content } = await render(entry);
 </BaseLayout>
 
 <style>
+	.status-notice {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 1rem;
+		background-color: var(--gray-800);
+		border-radius: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.status-notice p {
+		margin: 0;
+		color: var(--gray-200);
+	}
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);

@@ -6,8 +6,7 @@ status: 진행중
 img: /assets/project/Group1.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
-  R2Bot은 자율주행과 웹 제어 기능을 갖춘 교내 안내 및 물류 운반 로봇입니다.
-  복잡한 캠퍼스 내에서 짐 운반과 길 안내를 도와주는 지능형 로봇 플랫폼입니다.
+  자율주행 교내 짐 운반 및 안내 서비스
 tags:
   - ROS2
   - STM32

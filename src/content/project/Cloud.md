@@ -83,6 +83,13 @@ tags:
 
 <img src="/assets/project/Cloud/K.png">
 
+##### MCU - STM32CUBEMX - NUCLEO-F103RBT6
+
+<img src="/assets/project/Cloud/P.png">
+<img src="/assets/project/Cloud/Q.png">
+<img src="/assets/project/Cloud/R.png">
+
+
 ##### 결과물
 
 <img src="/assets/project/Cloud/L.png">
@@ -124,8 +131,6 @@ tags:
 
 ### 5. 기여 사항
 
-##### 내가 뭘 했는가?
-
 **설계 및 개발**
 - 전체 시스템 아키텍처 설계, STM32 기반의 회로 및 PCB 설계
 
@@ -140,7 +145,7 @@ tags:
 - STM32CubeIDE와 HAL 라이브러리를 활용하여 NUCLEO-F103RBT6 보드 프로그래밍
 
 **사용 기술 스택**
-- STM32, AutoCAD, Fusion 360, Circuit Maker 2
+- STM32(NUCLEO-F103RBT6), AutoCAD, Fusion 360, Circuit Maker 2
 
 ### 6. 프로젝트 개발과정
 저는 팀 내에서 맡은 역할이 많았기 때문에, 데드라인이 빠른 작업부터 우선적으로 진행했습니다.
@@ -148,7 +153,7 @@ tags:
 이 과정에서 우산을 감지할 센서의 종류와 우산을 고정할 메커니즘에 대해서도 고민했고, 필요한 부품과 재료를 사전에 신청하였습니다.
 
 이후 갑작스럽게 PCB 설계 일정이 확정되면서, 빠르게 Circuit Maker 2를 활용해 설계를 진행했습니다.
-다른 팀들이 EasyEDA나 KiCAD 같은 플랫폼을 사용했던 것과 달리, 저는 현업에서 널리 사용되는 Altium, OrCAD의 워크플로우를 경험해보고자 Altium 기반의 무료 툴인 Circuit Maker를 선택했습니다.
+다른 팀들이 EasyEDA나 KiCAD 같은 플랫폼을 사용했던 것과 달리, 저는 현업에서 널리 사용되는 Altium, OrCAD의 워크플로우를 경험해보고자 Altium 기반의 무료 툴인 Circuit Maker 2를 선택했습니다.
 
 그다음으로 맡은 역할은 MCU 프로그래밍이었습니다.
 기본 시스템은 복잡하지 않았으며, 우산 감지값의 변화에 따라 UART로 데이터를 송신하거나, UART 입력에 따라 모터를 제어하는 구조였습니다.
