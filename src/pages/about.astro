@@ -56,38 +56,43 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                         educationData.map((edu) => (
                             <div class="education-item">
                                 <h3>{edu.school}</h3>
-                                <p>{edu.period}</p>
-                                {edu.department && <p>{edu.department}</p>}
-                                {edu.certificate_pdf_ko && (
-                                    <a
-                                        href={edu.certificate_pdf_ko}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_pdf_ko
-                                    </a>
-                                    <br>
-                                )}
-                                {edu.certificate_pdf_en && (
-                                    <a
-                                        href={edu.certificate_pdf_en}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_pdf_en
-                                    </a>
-                                    <br>
-                                )}
-                                {edu.certificate_web && (
-                                    <a
-                                        href={edu.certificate_web}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        View Certificate_web
-                                    </a>
-                                    <br>
-                                )}
+                                <ul class="education-details">
+                                    <li>{edu.period}</li>
+                                    {edu.department && <li>{edu.department}</li>}
+                                    {edu.certificate_pdf_ko && (
+                                        <li>
+                                            <a
+                                                href={edu.certificate_pdf_ko}
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                View Certificate_pdf_ko
+                                            </a>
+                                        </li>
+                                    )}
+                                    {edu.certificate_pdf_en && (
+                                        <li>
+                                            <a
+                                                href={edu.certificate_pdf_en}
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                View Certificate_pdf_en
+                                            </a>
+                                        </li>
+                                    )}
+                                    {edu.certificate_web && (
+                                        <li>
+                                            <a
+                                                href={edu.certificate_web}
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                View Certificate_web
+                                            </a>
+                                        </li>
+                                    )}
+                                </ul>
                             </div>
                         ))
                     }
@@ -209,6 +214,19 @@ import SpeedInsights from "@vercel/speed-insights/astro";
         transform: translateY(0);
         opacity: 1;
         transition-delay: calc(0.05s * var(--item-index, 0));
+    }
+
+    /* Education bullet styling */
+    .education-details {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .education-details li {
+        color: var(--gray-300);
+        margin-bottom: 0.5rem;
+        display: list-item;
     }
 
     /* JavaScript로 동적으로 --item-index 설정 */

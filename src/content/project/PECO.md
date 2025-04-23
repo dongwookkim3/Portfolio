@@ -37,25 +37,22 @@ R2BOT은 교내를 자율적으로 이동하며 짐을 운반하거나 방문객
 
 ##### 2륜 초기 시연영상
 
-**영상 당시 세팅**
-
-메인 컨트롤러 : RDK X3
-
-MCU : NUCLEO-F755ZI-Q
-
-배터리 : 24V, 3.4A, 45C (2개 병렬연결)
-
-로봇 무게 : 약 50KG ~ 60KG
-
-로봇 크기 : 50 * 50 * 35+a (cm)
-
-모터 : BL41105
-
-모터드라이버 : BDD-860S
-
-로봇 정격중량 : 약 250KG (300KG-로봇 무게)
-
-최소속도 : 5Km/h (현재 최소속도가 매우 빠른편임)
+<button class="toggle-btn" data-id="robot-specs">
+  <span class="arrow">▶</span> 영상 당시 세팅
+</button>
+<div class="spec-list" id="robot-specs">
+  <ul>
+    <li>메인 컨트롤러 : RDK X3</li>
+    <li>MCU : NUCLEO-F755ZI-Q</li>
+    <li>배터리 : 24V, 3.4A, 45C (2개 병렬연결)</li>
+    <li>로봇 무게 : 약 50KG ~ 60KG</li>
+    <li>로봇 크기 : 50 * 50 * 35+a (cm)</li>
+    <li>모터 : BL41105</li>
+    <li>모터드라이버 : BDD-860S</li>
+    <li>로봇 정격중량 : 약 250KG (300KG-로봇 무게)</li>
+    <li>최소속도 : 5Km/h (현재 최소속도가 매우 빠른편임)</li>
+  </ul>
+</div>
 
 <video controls>
   <source src="/assets/project/peco/A.mp4" type="video/mp4">
@@ -68,13 +65,16 @@ MCU : NUCLEO-F755ZI-Q
 
 <img src="/assets/project/peco/a.png">
 
-##### Fusion360
-
-<img src="/assets/project/peco/b.png">
-
-##### AutoCAD
-
-<img src="/assets/project/peco/c.png">
+<div class="two-column-grid">
+  <div>
+    <h5>Fusion360</h5>
+    <img src="/assets/project/peco/b.png" class="smaller-image">
+  </div>
+  <div>
+    <h5>AutoCAD</h5>
+    <img src="/assets/project/peco/c.png" class="smaller-image">
+  </div>
+</div>
 
 ##### 중간 결과물
 
@@ -218,3 +218,124 @@ DDS로의 통신 방식 개선
 CAN 통신 도입
 
 하드웨어 최적화 및 확장성 고려
+
+<style>
+.toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--gray-0);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.arrow {
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.arrow.active {
+  transform: rotate(90deg);
+}
+
+.spec-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: 
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spec-list.active {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec-list ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.spec-list li {
+  margin: 0.5rem 0;
+  color: var(--gray-300);
+  transform: translateY(-10px);
+  opacity: 0;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spec-list.active li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.spec-list.active li:nth-child(1) { transition-delay: 0.05s; }
+.spec-list.active li:nth-child(2) { transition-delay: 0.1s; }
+.spec-list.active li:nth-child(3) { transition-delay: 0.15s; }
+.spec-list.active li:nth-child(4) { transition-delay: 0.2s; }
+.spec-list.active li:nth-child(5) { transition-delay: 0.25s; }
+.spec-list.active li:nth-child(6) { transition-delay: 0.3s; }
+.spec-list.active li:nth-child(7) { transition-delay: 0.35s; }
+.spec-list.active li:nth-child(8) { transition-delay: 0.4s; }
+.spec-list.active li:nth-child(9) { transition-delay: 0.45s; }
+
+/* 추가된 스타일 */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.smaller-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.two-column-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-column-grid h5 {
+  margin-bottom: 0.5rem;
+}
+</style>
+
+<script>
+function toggleSpecs(id) {
+  const specList = document.getElementById(id);
+  if (!specList) return;
+
+  const button = document.querySelector(`[data-id="${id}"]`);
+  const arrow = button.querySelector(".arrow");
+
+  specList.classList.toggle("active");
+  arrow?.classList.toggle("active");
+}
+
+// 이벤트 위임을 사용하여 토글 버튼 클릭 처리
+document.addEventListener("click", (e) => {
+  const target = e.target;
+  const toggleBtn = target.closest(".toggle-btn");
+
+  if (toggleBtn) {
+    const id = toggleBtn.getAttribute("data-id");
+    if (id) toggleSpecs(id);
+  }
+});
+</script>
