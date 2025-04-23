@@ -190,15 +190,16 @@ const projects = (await getCollection("project"))
 											</div>
 										)}
                                 {award.certificate_pdf_ko && (
-                                    <a
-                                        href={award.certificate_pdf_ko}
-                                        target="_blank"
-                                        rel="noopener"
-										class="no-underline"
-                                    >
-                                        View Certificate_pdf_ko
-                                    </a>
-                                    <br>
+                                    <div class="tab-container">
+                                        <a
+                                            href={award.certificate_pdf_ko}
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="tab-link"
+                                        >
+                                            증명서 보기
+                                        </a>
+                                    </div>
                                 )}
 									</li>
 								</div>
@@ -530,13 +531,33 @@ const projects = (await getCollection("project"))
 		padding: 20px;
 	}
 
-.no-underline {
-        text-decoration: none;
-    }
+	.tab-container {
+		display: flex;
+		margin: 0.2rem 0 0.3rem 0;
+	}
+	
+	.tab-link {
+		display: inline-block;
+		padding: 0.3rem 0.6rem;
+		background-color: var(--gray-999);
+		color: var(--accent-regular);
+		font-weight: 600;
+		text-decoration: none;
+		border-radius: 4px;
+		transition: none;
+	}
+	
+	.tab-link:hover {
+		color: var(--accent-regular);
+	}
 
-    .no-underline:hover {
-        color: var(--accent-regular);
-    }
+	.no-underline {
+		text-decoration: none;
+	}
+
+	.no-underline:hover {
+		color: var(--accent-regular);
+	}
 
 	.awards_section {
 		margin-bottom: 200px;
