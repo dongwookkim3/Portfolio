@@ -65,13 +65,16 @@ R2BOT은 교내를 자율적으로 이동하며 짐을 운반하거나 방문객
 
 <img src="/assets/project/peco/a.png">
 
-##### Fusion360
-
-<img src="/assets/project/peco/b.png">
-
-##### AutoCAD
-
-<img src="/assets/project/peco/c.png">
+<div class="two-column-grid">
+  <div>
+    <h5>Fusion360</h5>
+    <img src="/assets/project/peco/b.png" class="smaller-image">
+  </div>
+  <div>
+    <h5>AutoCAD</h5>
+    <img src="/assets/project/peco/c.png" class="smaller-image">
+  </div>
+</div>
 
 ##### 중간 결과물
 
@@ -287,6 +290,30 @@ CAN 통신 도입
 .spec-list.active li:nth-child(7) { transition-delay: 0.35s; }
 .spec-list.active li:nth-child(8) { transition-delay: 0.4s; }
 .spec-list.active li:nth-child(9) { transition-delay: 0.45s; }
+
+/* 추가된 스타일 */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.smaller-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.two-column-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-column-grid h5 {
+  margin-bottom: 0.5rem;
+}
 </style>
 
 <script>
