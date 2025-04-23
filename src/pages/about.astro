@@ -60,37 +60,40 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                     <li>{edu.period}</li>
                                     {edu.department && <li>{edu.department}</li>}
                                     {edu.certificate_pdf_ko && (
-                                        <li>
+                                        <div class="tab-container">
                                             <a
                                                 href={edu.certificate_pdf_ko}
                                                 target="_blank"
                                                 rel="noopener"
+                                                class="tab-link"
                                             >
-                                                View Certificate_pdf_ko
+                                                증명서 (KOR)
                                             </a>
-                                        </li>
+                                        </div>
                                     )}
                                     {edu.certificate_pdf_en && (
-                                        <li>
+                                        <div class="tab-container">
                                             <a
                                                 href={edu.certificate_pdf_en}
                                                 target="_blank"
                                                 rel="noopener"
+                                                class="tab-link"
                                             >
-                                                View Certificate_pdf_en
+                                                증명서 (ENG)
                                             </a>
-                                        </li>
+                                        </div>
                                     )}
                                     {edu.certificate_web && (
-                                        <li>
+                                        <div class="tab-container">
                                             <a
                                                 href={edu.certificate_web}
                                                 target="_blank"
                                                 rel="noopener"
+                                                class="tab-link"
                                             >
-                                                View Certificate_web
+                                                Certificate (Web)
                                             </a>
-                                        </li>
+                                        </div>
                                     )}
                                 </ul>
                             </div>
@@ -105,43 +108,47 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 <div class="content">
                     <div class="algorithm-item">
                         <h3>국가기술자격</h3>
-                        <ul>
+                        <div class="cert-container">
                             {
                                 certificateData.national.map((cert) => (
-                                    <li>
-                                        {cert.title} ( {cert.date} )
-                                        <br />
-                                        <a
-                                            href={cert.link}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            View Certificate
-                                        </a>
-                                    </li>
+                                    <div class="cert-item">
+                                        <p>{cert.title} ({cert.date})</p>
+                                        <div class="tab-container">
+                                            <a
+                                                href={cert.link}
+                                                target="_blank"
+                                                rel="noopener"
+                                                class="tab-link"
+                                            >
+                                                인증서 보기
+                                            </a>
+                                        </div>
+                                    </div>
                                 ))
                             }
-                        </ul>
+                        </div>
                     </div>
                     <div class="algorithm-item">
                         <h3>민간자격</h3>
-                        <ul>
+                        <div class="cert-container">
                             {
                                 certificateData.private.map((cert) => (
-                                    <li>
-                                        {cert.title} ( {cert.date} )
-                                        <br />
-                                        <a
-                                            href={cert.link}
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            View Certificate
-                                        </a>
-                                    </li>
+                                    <div class="cert-item">
+                                        <p>{cert.title} ({cert.date})</p>
+                                        <div class="tab-container">
+                                            <a
+                                                href={cert.link}
+                                                target="_blank"
+                                                rel="noopener"
+                                                class="tab-link"
+                                            >
+                                                인증서 보기
+                                            </a>
+                                        </div>
+                                    </div>
                                 ))
                             }
-                        </ul>
+                        </div>
                     </div> 
                 </div>
             </section>
@@ -225,7 +232,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
     .education-details li {
         color: var(--gray-300);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
         display: list-item;
     }
 
@@ -263,5 +270,46 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
     .info-title {
         margin-bottom: 0.7rem;
+    }
+
+    /* 탭 스타일 */
+    .tab-container {
+        display: flex;
+        margin: 0.2rem 0 0.3rem 0;
+    }
+    
+    .tab-link {
+        display: inline-block;
+        padding: 0.3rem 0.6rem;
+        background-color: var(--gray-999);
+        color: var(--gray-200);
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+    
+    .tab-link:hover {
+        background-color: var(--accent-regular);
+        color: var(--accent-text-over);
+        transform: translateY(-2px);
+    }
+    
+    .cert-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .cert-item {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cert-item p {
+        margin: 0;
+        padding: 0;
+        color: var(--gray-300);
     }
 </style>
