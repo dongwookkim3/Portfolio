@@ -33,70 +33,97 @@ tags:
 
 ##### WEB
 
-**메인페이지**
-
-<img src="/assets/project/Cloud/A.png">
-
-**AI페이지**
-
-<img src="/assets/project/Cloud/B.png">
-
-**마이페이지**
-
-<img src="/assets/project/Cloud/C.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <p>메인페이지</p>
+    <img src="/assets/project/Cloud/A.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>AI페이지</p>
+    <img src="/assets/project/Cloud/B.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>마이페이지</p>
+    <img src="/assets/project/Cloud/C.png" class="grid-image">
+  </div>
+</div>
 
 ##### WinForm
 
-**WinForm 메인페이지 및 대여화면**
-
-<img src="/assets/project/Cloud/J.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <p>WinForm 메인페이지 및 대여화면</p>
+    <img src="/assets/project/Cloud/J.png" class="grid-image">
+  </div>
+</div>
 
 ##### CAD - AutoCAD
 
-**본테 덮개 & 라즈베리파이 모니터 고정용 아크릴**
-
-<img src="/assets/project/Cloud/E.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <p>본테 덮개 & 라즈베리파이 모니터 고정용 아크릴</p>
+    <img src="/assets/project/Cloud/E.png" class="grid-image">
+  </div>
+</div>
 
 ##### CAD - Fusion360
 
-**본체 프로파일 모델링**
-
-<img src="/assets/project/Cloud/D.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <p>본체 프로파일 모델링</p>
+    <img src="/assets/project/Cloud/D.png" class="grid-image">
+  </div>
+</div>
 
 ##### PCB - Circuit Maker 2
 
-**스케메틱 파일**
-
-<img src="/assets/project/Cloud/F.png">
-
-**PCB Multi Layer**
-
-<img src="/assets/project/Cloud/G.png">
-
-**PCB Top Layer**
-
-<img src="/assets/project/Cloud/H.png">
-
-**PCB Bottom Layer**
-
-<img src="/assets/project/Cloud/I.png">
-
-**PCB 3D Simulation**
-
-<img src="/assets/project/Cloud/K.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <p>스케메틱 파일</p>
+    <img src="/assets/project/Cloud/F.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>PCB Multi Layer</p>
+    <img src="/assets/project/Cloud/G.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>PCB Top Layer</p>
+    <img src="/assets/project/Cloud/H.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>PCB Bottom Layer</p>
+    <img src="/assets/project/Cloud/I.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>PCB 3D Simulation</p>
+    <img src="/assets/project/Cloud/K.png" class="grid-image">
+  </div>
+</div>
 
 ##### MCU - STM32CUBEMX - NUCLEO-F103RBT6
 
-<img src="/assets/project/Cloud/P.png">
-<img src="/assets/project/Cloud/Q.png">
-<img src="/assets/project/Cloud/R.png">
-
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/P.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/Q.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/R.png" class="grid-image">
+  </div>
+</div>
 
 ##### 결과물
 
-<img src="/assets/project/Cloud/L.png">
-<img src="/assets/project/Cloud/M.png">
-
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/L.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/M.png" class="grid-image">
+  </div>
+</div>
 
 ### 3. 프로젝트 동기
 
@@ -210,15 +237,63 @@ tags:
 프로젝트의 많은 부분을 제가 직접 제작했지만, 다른 파트와의 통합 과정에서 팀원들의 작업 속도 차이로 인해 일정이 지연되는 상황이 예상보다 자주 발생했습니다.
 
 당시에는 개발자 각자가 자신의 시간을 잘 관리해야 한다고 생각했지만, 프로젝트가 끝난 후 돌아보니 팀장인 제가 팀원들에게 명확한 일정과 우선순위, 진행 상황을 공유하고 조율하는 역할을 충분히 하지 못했다는 점을 반성하게 되었습니다.
-조금은 부담스럽더라도, “현재 우리는 어디쯤 와 있고, 언제까지 무엇을 마쳐야 한다”는 기준을 제시했다면 상황이 달라졌을 수도 있다고 생각합니다.
+조금은 부담스럽더라도, "현재 우리는 어디쯤 와 있고, 언제까지 무엇을 마쳐야 한다"는 기준을 제시했다면 상황이 달라졌을 수도 있다고 생각합니다.
 
 앞으로는 제가 맡는 역할이 점점 세분화되고 팀 전체에서 차지하는 비중이 줄어들 수도 있겠지만, 그만큼 협업과 조율 능력은 더 중요해질 것이라 생각합니다.
 이 경험을 통해 얻은 교훈을 바탕으로, 앞으로는 더 나은 리더십과 협업 능력을 갖춘 개발자로 성장해 나가고자 합니다.
 
 **임베디드소프트웨어과 융합프로젝트 최우수상**
 
-<img src="/assets/project/Cloud/N.jpg">
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/N.jpg" class="grid-image">
+  </div>
+</div>
 
 **임베디드소프트웨어과 융합프로젝트 개인상 MVP 1등상**
 
-<img src="/assets/project/Cloud/O.jpg">
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/Cloud/O.jpg" class="grid-image">
+  </div>
+</div>
+
+<style>
+/* 그리드 레이아웃 스타일 */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item p {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.grid-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
