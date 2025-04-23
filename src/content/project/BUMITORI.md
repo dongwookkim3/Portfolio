@@ -29,38 +29,63 @@ tags:
 
 ##### GUI - PyQt5
 
-<img src="/assets/project/BUMITORI/h.png">
-<img src="/assets/project/BUMITORI/i.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/h.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/i.png" class="grid-image">
+  </div>
+</div>
 
 
 ##### PCB - KiCAD
 
-**스케메틱 파일**
-
-<img src="/assets/project/BUMITORI/e.png">
-
-**PCB Multi Layer**
-
-<img src="/assets/project/BUMITORI/f.png">
-
-**PCB 3D Simulation**
-
-<img src="/assets/project/BUMITORI/g.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <p>스케메틱 파일</p>
+    <img src="/assets/project/BUMITORI/e.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>PCB Multi Layer</p>
+    <img src="/assets/project/BUMITORI/f.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <p>PCB 3D Simulation</p>
+    <img src="/assets/project/BUMITORI/g.png" class="grid-image">
+  </div>
+</div>
 
 ##### PCB - TinyCAD
 
-<img src="/assets/project/BUMITORI/d.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/d.png" class="grid-image">
+  </div>
+</div>
 
 ##### MCU - STM32CUBEMX - NUCLEO-F303K8
 
-<img src="/assets/project/BUMITORI/a.png">
-<img src="/assets/project/BUMITORI/b.png">
-<img src="/assets/project/BUMITORI/c.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/a.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/b.png" class="grid-image">
+  </div>
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/c.png" class="grid-image">
+  </div>
+</div>
 
 
 ##### 중간 결과물
 
-<img src="/assets/project/BUMITORI/j.png">
+<div class="grid-layout">
+  <div class="grid-item">
+    <img src="/assets/project/BUMITORI/j.png" class="grid-image">
+  </div>
+</div>
 
 
 ### 3. 프로젝트 동기
@@ -146,3 +171,43 @@ MCU도 F103에서 **NUCLEO-F303K8**로 변경하게 되었고, 이로 인해 기
 **변화하는 환경에 유연하게 적응하는 능력**이 제 개발자로서의 성장에 얼마나 중요한지 다시금 느꼈습니다.
 
 앞으로도 새로운 기술을 두려워하지 않고, 능동적으로 배우고 도전하는 개발자가 되겠습니다.
+
+<style>
+/* 그리드 레이아웃 스타일 */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item p {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.grid-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
