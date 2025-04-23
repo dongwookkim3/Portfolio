@@ -54,6 +54,22 @@ const projects = (await getCollection("project"))
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
+			<section>
+				<h3 class="section-title">Information</h3>
+				<div class="content">
+					<div class="education-item">
+						<div class="info-tab">
+							<h4 class="info-title">Name : 김동욱 ( KIM DONG WOOK )</h4>
+							<h4 class="info-title">Age : 만 17세 ( 2007년생 )</h4>
+							<h4 class="info-title">Phone : 010 - 5872 - 7459</h4>
+							<h4 class="info-title">Email : dongwook7459@gmail.com</h4>
+							<h4 class="info-title">Affiliation : 부산소프트웨어마이스터고등학교</h4>
+							<h4 class="info-title">Github : <a href="https://github.com/dongwookkim3">dongwookkim3</a></h4>
+							<h4 class="info-title">개발블로그 : <a href="https://swbsnewby7.tistory.com/">swbsnewby7</a></h4>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Achievements</h3>
@@ -389,6 +405,16 @@ const projects = (await getCollection("project"))
 	.award-wrapper {
 		height: auto;
 		width: 100%;
+	}
+	.info-tab {
+		margin-top: 1.5rem;
+		padding-left: 3rem;
+		border-left: 2px solid var(--accent-regular);
+	}
+
+	.info-title {
+		margin-bottom: 0.7rem;
+		line-height: 1.5;
 	}
 
 	.award-card {
