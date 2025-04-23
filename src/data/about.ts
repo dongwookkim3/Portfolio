@@ -139,7 +139,7 @@ export const certificateData = {
             link: '../../assets/certificates/certificate/정보처리산업기사_과정평가형.pdf'
         },
         {
-            title: '전자계산기기능사 - 필기',
+            title: '전자계산기기능사 - 필기합격',
             date: '진행중'
         }
     ],
