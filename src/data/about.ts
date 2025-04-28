@@ -221,7 +221,6 @@ export const problemCreationData = [
         date: '2024.03',
         platform: 'CodeUp',
         problemNum: 2054,
-        NotionLink: 'https://wirehaired-equipment-793.notion.site/1bcdb8d457cc80e7a522f9760c6440d9',
-        GithubLink: 'https://github.com/dongwookkim3/Jiwon.s_girlfriend'
+        NotionLink: 'https://wirehaired-equipment-793.notion.site/1bcdb8d457cc80e7a522f9760c6440d9'
     }
 ];
