@@ -98,10 +98,6 @@ export const educationData: EducationData[] = [
         period: '2023.03 ~ 현재 ( 2026.01 예정 )',
         department: '임베디드 소프트웨어과'
     },
-    {
-        school: '2025 JA Company Of the Year (COY) 청소년 실물 창업 프로젝트',
-        period: '2025.03 ~ 현재 ( 2026.01 예정 )',
-    },
     
     {
         school: '자기소개서 완성 2주 챌린지 8기',
@@ -161,17 +157,17 @@ export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
         Profile: 'https://www.acmicpc.net/user/dongwook7',
-        rank: '2189문제, 351위'
+        rank: '2193문제, 350위'
     },
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: 'Gold1, 14111위'
+        rank: 'Gold1, 13718위'
     },
     {
         title: 'CodeUp',
         Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459',
-        rank: '1070문제, 53위'
+        rank: '1073문제, 53위'
     }
 ];
 

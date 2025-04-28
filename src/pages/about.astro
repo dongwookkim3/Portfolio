@@ -21,14 +21,14 @@ import SpeedInsights from "@vercel/speed-insights/astro";
     <div class="stack gap-20">
         <main class="wrapper about">
             <Hero title="About Me">
-                <span style="display: inline;"
+                <b><span style="display: inline;"
                     >임베디드의 미래를 만들고 싶은 엔지니어 <a
                         href="https://github.com/dongwookkim3"
                         target="_blank"
                         rel="noopener"
                         class="no-underline">김동욱</a
                     >입니다.</span
-                >
+                ></b>
             </Hero>
 
             
@@ -113,7 +113,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                 certificateData.national.map((cert) => (
                                     <div class="cert-item">
                                         <p>{cert.title} ({cert.date})</p>
-                                        <div class="tab-container">
+                                        { cert.link && <div class="tab-container">
                                             <a
                                                 href={cert.link}
                                                 target="_blank"
@@ -122,7 +122,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                             >
                                                 인증서 보기
                                             </a>
-                                        </div>
+                                        </div>}
                                     </div>
                                 ))
                             }
@@ -282,7 +282,6 @@ import SpeedInsights from "@vercel/speed-insights/astro";
         display: inline-block;
         padding: 0.3rem 0.6rem;
         background-color: var(--gray-999);
-        color: var(--accent-regular);
         font-weight: 600;
         text-decoration: none;
         border-radius: 4px;
