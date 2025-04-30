@@ -15,6 +15,7 @@ interface EducationData {
     certificate_pdf_ko?: string;
     certificate_pdf_en?: string;
     certificate_web?: string;
+    good?: string;
 }
 
 export const contestData = [
@@ -100,12 +101,6 @@ export const educationData: EducationData[] = [
     },
     
     {
-        school: '자기소개서 완성 2주 챌린지 8기',
-        period: '2025.02 ~ 2025.02',
-        department: '경험 분석, 자기소개서 기초',
-        certificate_pdf_ko: '../../assets/certificates/education/자기소개서 완성 2주 챌린지 8기 수료증.pdf'
-    },
-    {
         school: 'AI 커리어 스쿨 for 엔지니어',
         period: '2024.12 ~ 2025.02',
         department: '데이터 분석, 머신러닝, 딥러닝, LLM, 프롬프트 엔지니어링',
@@ -116,7 +111,8 @@ export const educationData: EducationData[] = [
         school: 'IT 꿈나무 성장지원사업 화이트해커 양성교육',
         period: '2024.06 ~ 2024.11',
         department: '정보보안개론, 해킹(애플리케이션, 네트워크, 웹, 앱), 취약점 진단, 침해사고 대응, 악성코드 분석',
-        certificate_pdf_ko: '../../assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf'
+        certificate_pdf_ko: '../../assets/certificates/education/IT_꿈나무_성징지원사업_화이트해커_양성교육.pdf',
+        good:'../../assets/certificates/20250401210558238-1_rotated.pdf'
     },
     {
         school: 'National University of Singapore 디자인 교육',
@@ -157,12 +153,12 @@ export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
         Profile: 'https://www.acmicpc.net/user/dongwook7',
-        rank: '2193문제, 350위'
+        rank: '2195문제, 350위'
     },
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: 'Gold1, 13718위'
+        rank: 'Gold1, 13389위'
     },
     {
         title: 'CodeUp',

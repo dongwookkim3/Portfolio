@@ -37,7 +37,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                 <br />
                 <div class="content">
                     <div class="education-item">
-                <h3 class="info-title">2025 부산소프트웨어마이스터고등학교 전교부회장</h3>
+                <h3 class="info-title">2025 부산소프트웨어마이스터고등학교 <a href="../../assets/certificates/20250401210558238-7_rotated.pdf" target="_blank" rel="noopener">전교부회장</a></h3>
 <h3 class="info-title">2025 교내 임베디드소프트웨어 자율동아리 ( 창의융합메이커부 ) 팀장</h3>
                 <h3 class="info-title">2024 교내 자율주행 안내 및 운반 서비스 ( <a href="../project/peco">PECO</a> ) 팀장</h3>
 
@@ -92,6 +92,18 @@ import SpeedInsights from "@vercel/speed-insights/astro";
                                                 class="tab-link"
                                             >
                                                 증명서 (Web)
+                                            </a>
+                                        </div>
+                                    )}
+                                    {edu.good && (
+                                        <div class="tab-container">
+                                            <a
+                                                href={edu.good}
+                                                target="_blank"
+                                                rel="noopener"
+                                                class="tab-link"
+                                            >
+                                                장학증서 (KOR)
                                             </a>
                                         </div>
                                     )}

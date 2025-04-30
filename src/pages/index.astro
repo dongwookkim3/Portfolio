@@ -116,7 +116,7 @@ const projects = (await getCollection("project"))
 										"김필립 (세명컴퓨터고등학교)",
 										"박지후 (서울디지텍고등학교)",
 									],
-									certificate_pdf_ko: '../../assets/certificates/achievements/2024_IT_꿈나무_성장지원사업_화이트해커_경진대회.pdf',
+									certificate_pdf_ko: '../../assets/certificates/20250401210558238-8_rotated.pdf',
 								},
 								{
 									title: "2024 금정구 인구문제 해커톤",
@@ -143,7 +143,8 @@ const projects = (await getCollection("project"))
 										</>
 									),
 									isTeam: false,
-									certificate_pdf_ko: '../../assets/certificates/achievements/2024_한국정보올림피아드_1차_대회.pdf',
+									certificate_pdf_ko: '../../assets/certificates/20250401210558238-3_rotated.pdf',
+									certificate_pdf_ko2: '../../assets/certificates/20250401210558238-4_rotated.pdf',
 								},
 								{
 									title: "2024 부산소프트웨어마이스터고등학교 AI SW 프로젝트 공모전",
@@ -156,14 +157,14 @@ const projects = (await getCollection("project"))
 										"박강은 (부산소프트웨어마이스터고등학교)",
 										"신희성 (부산소프트웨어마이스터고등학교)",
 									],
-									certificate_pdf_ko: '../../assets/certificates/achievements/2024_부산소프트웨어마이스터고등학교_교내_AI_웹_프로젝트_공모전.pdf',
+									certificate_pdf_ko: '../../assets/certificates/20250401210558238-5_rotated.pdf',
 								},
 								{
 									title: "2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회",
 									date: "2023.09",
 									award: "최우수상 - 부산소프트웨어마이스터고등학교장상",
 									isTeam: false,
-									certificate_pdf_ko: '../../assets/certificates/achievements/2023_부산소프트웨어마이스터고등학교_교내_알고리즘_경진대회.pdf',
+									certificate_pdf_ko: '../../assets/certificates/20250401210558238-6_rotated.pdf',
 								},
 								{
 									title: "2023 부산 SW AI교육 중등학생 해카톤",
@@ -176,7 +177,7 @@ const projects = (await getCollection("project"))
 										"신희성 (부산소프트웨어마이스터고등학교)",
 										"이승현 (부산소프트웨어마이스터고등학교)",
 									],
-									certificate_pdf_ko: '../../assets/certificates/achievements/2023_부산_SW_AI교육_중등학생_해카톤.pdf',
+									certificate_pdf_ko: '../../assets/certificates/20250401210558238-2_rotated.pdf',
 								},
 							].map((award) => (
 								<div class="award-wrapper">
@@ -206,6 +207,18 @@ const projects = (await getCollection("project"))
                                     <div class="tab-container">
                                         <a
                                             href={award.certificate_pdf_ko}
+                                            target="_blank"
+                                            rel="noopener"
+                                            class="tab-link"
+                                        >
+                                            증명서 보기
+                                        </a>
+                                    </div>
+                                )}
+								{award.certificate_pdf_ko2 && (
+                                    <div class="tab-container">
+                                        <a
+                                            href={award.certificate_pdf_ko2}
                                             target="_blank"
                                             rel="noopener"
                                             class="tab-link"
