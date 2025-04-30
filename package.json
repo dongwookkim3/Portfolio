@@ -10,7 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.1.0",
     "astro": "^5.7.4"
+  },
+  "devDependencies": {
+    "knip": "^5.51.0"
   }
 }
