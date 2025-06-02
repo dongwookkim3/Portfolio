@@ -8,7 +8,7 @@ import {
     certificateData,
     algorithmContestData,
     problemCreationData,
-OnlineJudgeProfile,
+    OnlineJudgeProfile,
 } from "../data/about";
 import "../styles/about.css";
 ---
@@ -20,32 +20,44 @@ import "../styles/about.css";
     <div class="stack gap-20">
         <main class="wrapper about">
             <Hero title="About Me">
-                <b><span style="display: inline;"
-                    >임베디드의 미래를 만들고 싶은 엔지니어 <a
-                        href="https://github.com/dongwookkim3"
-                        target="_blank"
-                        rel="noopener"
-                        class="no-underline">김동욱</a
-                    >입니다.</span
-                ></b>
+                <b
+                    ><span style="display: inline;"
+                        >임베디드의 미래를 만들고 싶은 엔지니어 <a
+                            href="https://github.com/dongwookkim3"
+                            target="_blank"
+                            rel="noopener"
+                            class="no-underline">김동욱</a
+                        >입니다.</span
+                    ></b
+                >
             </Hero>
 
-            
-        <section>
+            <section>
                 <h2 class="section-title">Lead</h2>
                 <br />
                 <div class="content">
                     <div class="education-item">
-                <h3 class="info-title">2025 부산소프트웨어마이스터고등학교 <a href="../../assets/certificates/20250401210558238-7_rotated.pdf" target="_blank" rel="noopener">전교부회장</a></h3>
-<h3 class="info-title">2025 교내 임베디드소프트웨어 자율동아리 ( 창의융합메이커부 ) 팀장</h3>
-                <h3 class="info-title">2024 교내 자율주행 안내 및 운반 서비스 ( <a href="../project/peco">PECO</a> ) 팀장</h3>
+                        <h3 class="info-title">
+                            2025 부산소프트웨어마이스터고등학교 <a
+                                href="../../assets/certificates/20250401210558238-7_rotated.pdf"
+                                target="_blank"
+                                rel="noopener">전교부회장</a>
+                        </h3>
+                        <h3 class="info-title">
+                            2025 교내 임베디드소프트웨어 자율동아리 (
+                            창의융합메이커부 ) 부장
+                        </h3>
+                        <h3 class="info-title">
+                            2024 교내 자율주행 안내 및 운반 서비스 ( <a
+                                href="../project/peco">PECO</a
+                            > ) 팀장
+                        </h3>
 
-                <h3 class="info-title">2024 교내 알고리즘 자율동아리 ( BSSM 알고리즘 ) 팀장</h3>
-
-                
-
+                        <h3 class="info-title">
+                            2024 교내 알고리즘 자율동아리 ( BSSM 알고리즘 ) 부장
+                        </h3>
+                    </div>
                 </div>
-            </div>
             </section>
             <section>
                 <h2 class="section-title">Education</h2>
@@ -57,7 +69,9 @@ import "../styles/about.css";
                                 <h3>{edu.school}</h3>
                                 <ul class="education-details">
                                     <li>{edu.period}</li>
-                                    {edu.department && <li>{edu.department}</li>}
+                                    {edu.department && (
+                                        <li>{edu.department}</li>
+                                    )}
                                     {edu.certificate_pdf_ko && (
                                         <div class="tab-container">
                                             <a
@@ -119,21 +133,54 @@ import "../styles/about.css";
                 <div class="content">
                     <div class="algorithm-item">
                         <h3>국가기술자격</h3>
+                                <ul class="education-details">
                         <div class="cert-container">
                             {
                                 certificateData.national.map((cert) => (
                                     <div class="cert-item">
-                                        <p>{cert.title} ({cert.date})</p>
-                                        { cert.link && <div class="tab-container">
-                                            <a
-                                                href={cert.link}
-                                                target="_blank"
-                                                rel="noopener"
-                                                class="tab-link"
-                                            >
-                                                인증서 보기
-                                            </a>
-                                        </div>}
+                                        <li>
+                                            {cert.title} ({cert.date})
+                                        </li>
+                                        {cert.link && (
+                                            <div class="tab-container">
+                                                <a
+                                                    href={cert.link}
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    class="tab-link"
+                                                >
+                                                    인증서 보기
+                                                </a>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))
+                            }
+                        </div>
+                                </ul>
+                    </div>
+                    <div class="algorithm-item">
+                        <h3>국가전문자격</h3>
+
+                        <div class="cert-container">
+                            {
+                                certificateData.specialty.map((cert) => (
+                                    <div class="cert-item">
+                                        <p>
+                                            {cert.title} ({cert.date})
+                                        </p>
+                                        {cert.link && (
+                                            <div class="tab-container">
+                                                <a
+                                                    href={cert.link}
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    class="tab-link"
+                                                >
+                                                    인증서 보기
+                                                </a>
+                                            </div>
+                                        )}
                                     </div>
                                 ))
                             }
@@ -145,7 +192,9 @@ import "../styles/about.css";
                             {
                                 certificateData.private.map((cert) => (
                                     <div class="cert-item">
-                                        <p>{cert.title} ({cert.date})</p>
+                                        <p>
+                                            {cert.title} ({cert.date})
+                                        </p>
                                         <div class="tab-container">
                                             <a
                                                 href={cert.link}
@@ -160,12 +209,9 @@ import "../styles/about.css";
                                 ))
                             }
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </section>
-
-
-            
         </main>
 
         <ContactCTA />
@@ -288,7 +334,7 @@ import "../styles/about.css";
         display: flex;
         margin: 0.2rem 0 0.3rem 0;
     }
-    
+
     .tab-link {
         display: inline-block;
         padding: 0.3rem 0.6rem;
@@ -298,24 +344,24 @@ import "../styles/about.css";
         border-radius: 4px;
         transition: none;
     }
-    
+
     .tab-link:hover {
         color: var(--accent-regular);
         transform: none;
     }
-    
+
     .cert-container {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin-top: 1rem;
     }
-    
+
     .cert-item {
         display: flex;
         flex-direction: column;
     }
-    
+
     .cert-item p {
         margin: 0;
         padding: 0;

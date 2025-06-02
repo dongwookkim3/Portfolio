@@ -135,6 +135,13 @@ export const certificateData = {
             date: '진행중'
         }
     ],
+    specialty:[
+        {
+            title: '무인동력비행장치 4종 무인멀티콥터',
+            date: '2025.05',
+            link: '../../assets/certificates/A.pdf'
+        },
+    ],
     private: [
         {
             title: 'PCCE Level 3 C++',
