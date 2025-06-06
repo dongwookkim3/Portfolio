@@ -90,7 +90,17 @@ export const contestData = [
         problems: ['치매예방수칙 3.3.3', '비장의 일격 (Small)'],
         problemsNum: [33709, 33710],
         Nums: ['A', 'B']
+    },
+    {
+        id: 'I',
+        title: '경희대학교 2025 봄 프로그래밍 경시대회 KHSPC 2025',
+        date: '2025.05',
+        link: 'https://www.acmicpc.net/category/detail/4490',
+        problems: ['태권도와 복싱을 합한 운동', '간단한 동전 문제 (Easy)'],
+        problemsNum: [33937, 33938],
+        Nums: ['A', 'B']
     }
+    
 ];
 
 export const educationData: EducationData[] = [
@@ -175,7 +185,10 @@ export const OnlineJudgeProfile = [
 ];
 
 export const algorithmContestData = [
-    
+    {
+        title: '2025 한국정보올림피아드 1차 대회',
+        date: '2025.06'
+    },
     
     {
         title: '제6회 MatkorCup',
