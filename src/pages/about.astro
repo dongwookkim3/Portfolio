@@ -131,7 +131,7 @@ import "../styles/about.css";
                 <h2 class="section-title">Certificate</h2>
                 <br />
                 <div class="content">
-                    <div class="algorithm-item">
+                    <div class="algorithm-item3">
                         <h3>국가기술자격</h3>
                                 <ul class="education-details">
                         <div class="cert-container">
@@ -159,16 +159,17 @@ import "../styles/about.css";
                         </div>
                                 </ul>
                     </div>
-                    <div class="algorithm-item">
+                    <div class="algorithm-item3">
                         <h3>국가전문자격</h3>
+                        <ul class="education-details">
 
                         <div class="cert-container">
                             {
                                 certificateData.specialty.map((cert) => (
                                     <div class="cert-item">
-                                        <p>
+                                        <li>
                                             {cert.title} ({cert.date})
-                                        </p>
+                                        </li>
                                         {cert.link && (
                                             <div class="tab-container">
                                                 <a
@@ -185,16 +186,18 @@ import "../styles/about.css";
                                 ))
                             }
                         </div>
+                    </ul>
                     </div>
-                    <div class="algorithm-item">
+                    <div class="algorithm-item3">
                         <h3>민간자격</h3>
+                        <ul class="education-details">
                         <div class="cert-container">
                             {
                                 certificateData.private.map((cert) => (
                                     <div class="cert-item">
-                                        <p>
+                                        <li>
                                             {cert.title} ({cert.date})
-                                        </p>
+                                        </li>
                                         <div class="tab-container">
                                             <a
                                                 href={cert.link}
@@ -209,6 +212,7 @@ import "../styles/about.css";
                                 ))
                             }
                         </div>
+                    </ul>
                     </div>
                 </div>
             </section>

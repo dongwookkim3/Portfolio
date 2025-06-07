@@ -109,7 +109,11 @@ export const educationData: EducationData[] = [
         period: '2023.03 ~ 현재 ( 2026.01 예정 )',
         department: '임베디드 소프트웨어과'
     },
-    
+    {
+        school: 'OSRA Supporting Member 2025',
+        period: '2025.04 ~ 현재 ( 2025.12 예정 )',
+        certificate_web: 'https://credentials.openrobotics.org/af4d1e8e-78d7-477c-b75a-3e8e195cfb84#acc.hCwPm9VL'
+    },
     {
         school: 'AI 커리어 스쿨 for 엔지니어',
         period: '2024.12 ~ 2025.02',
