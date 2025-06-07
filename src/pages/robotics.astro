@@ -22,12 +22,70 @@ import "../styles/about.css";
             <Hero title="Robotics" />
             <div style={{ margin: "4.5rem 0" }}></div>
             <section>
-                <h2 class="section-title"><span style="white-space: nowrap;">제작한 ROS2 패키지</span></h2>
+                <h2 class="section-title">제작한 ROS2 패키지</h2>
                 <br />
                 <div class="content">
-                    라이다 2개 레이저로 뿌리는 패키지
-                    <br>
-                    라이다 2개 융합하는 패키지
+                    <div class="package-container">
+                        <div class="package-item">
+                            <div class="package-header">
+                                <h3 class="package-title">라이다 2개 레이저로 뿌리는 패키지</h3>
+                                <div class="package-tags">
+                                    <span class="tag">ROS2</span>
+                                    <span class="tag">Python</span>
+                                    <span class="tag">C++</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <div class="package-media">
+                                    <img src="/assets/images/robotics/lidar-spray.jpg" alt="라이다 스프레이 패키지 이미지">
+                                </div>
+                                <div class="package-info">
+                                    <div class="info-section">
+                                        <h4>주요 기능</h4>
+                                        <ul>
+                                            <li>이중 라이다 센서 통합</li>
+                                            <li>레이저 스프레이 제어</li>
+                                            <li>실시간 데이터 처리</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info-section">
+                                        <h4>개발 기간</h4>
+                                        <p>2024.03 ~ 2024.04</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="package-item">
+                            <div class="package-header">
+                                <h3 class="package-title">라이다 2개 융합하는 패키지</h3>
+                                <div class="package-tags">
+                                    <span class="tag">ROS2</span>
+                                    <span class="tag">PCL</span>
+                                    <span class="tag">C++</span>
+                                </div>
+                            </div>
+                            <div class="package-content">
+                                <div class="package-media">
+                                    <img src="/assets/images/robotics/lidar-fusion.jpg" alt="라이다 융합 패키지 이미지">
+                                </div>
+                                <div class="package-info">
+                                    <div class="info-section">
+                                        <h4>주요 기능</h4>
+                                        <ul>
+                                            <li>이중 라이다 데이터 동기화</li>
+                                            <li>포인트 클라우드 융합</li>
+                                            <li>노이즈 필터링</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info-section">
+                                        <h4>개발 기간</h4>
+                                        <p>2024.04 ~ 2024.05</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -66,67 +124,125 @@ import "../styles/about.css";
 </script>
 
 <style>
-    .problem-list {
-        max-height: 0;
+    .package-container {
+        max-width: 1000px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 0 1rem;
+    }
+
+    .package-item {
+        background: var(--gray-800);
+        border-radius: 1rem;
         overflow: hidden;
-        opacity: 0;
-        padding-left: 2rem;
-        margin-top: 0.5rem;
-        transition:
-            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.3s ease;
+        width: 100%;
     }
 
-    .problem-list.active {
-        max-height: 1000px;
-        opacity: 1;
+    .package-item:hover {
+        transform: translateY(-5px);
     }
 
-    .problem-list li {
-        margin: 0.5rem 0;
+    .package-header {
+        padding: 2rem;
+        border-bottom: 1px solid var(--gray-700);
+    }
+
+    .package-title {
+        font-size: 1.8rem;
+        color: var(--gray-0);
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .package-tags {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        background: var(--gray-700);
+        color: var(--gray-0);
+        padding: 0.4rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .package-content {
+        display: flex;
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    .package-media {
+        flex: 1.5;
+        min-width: 300px;
+        max-width: 700px;
+    }
+
+    .package-media img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+    }
+
+    .package-info {
+        flex: 0.7;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .info-section h4 {
+        color: var(--gray-0);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .info-section ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
         color: var(--gray-300);
-        transform: translateY(-10px);
-        opacity: 0;
-        transition:
-            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .problem-list.active li {
-        transform: translateY(0);
-        opacity: 1;
-        transition-delay: calc(0.05s * var(--item-index, 0));
+    .info-section li {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
     }
 
-    /* JavaScript로 동적으로 --item-index 설정 */
-
-    .arrow {
-        display: inline-block;
-        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .arrow.active {
-        transform: rotate(90deg);
-    }
-
-    .contest-link {
-        margin-bottom: 1rem !important;
-        font-weight: bold;
-    }
-
-    .contest-link a {
+    .info-section p {
         color: var(--gray-300);
+        line-height: 1.5;
     }
 
-    .contest-link a:hover {
-        color: var(--accent-regular);
-    }
+    @media (max-width: 768px) {
+        .package-content {
+            flex-direction: column;
+            padding: 1.5rem;
+            gap: 2rem;
+        }
 
-    .no-underline {
-        text-decoration: none;
-    }
+        .package-header {
+            padding: 1.5rem;
+        }
 
-    .no-underline:hover {
-        color: var(--accent-regular);
+        .package-title {
+            font-size: 1.5rem;
+        }
+
+        .package-media {
+            min-width: 100%;
+            max-width: none;
+        }
+
+        .package-info {
+            flex: 1;
+        }
     }
 </style>

@@ -174,17 +174,17 @@ export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
         Profile: 'https://www.acmicpc.net/user/dongwook7',
-        rank: '2195문제, 350위'
+        rank: '2197문제, 354위'
     },
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: 'Gold1, 13389위'
+        rank: 'Gold1, 13602위'
     },
     {
         title: 'CodeUp',
         Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459',
-        rank: '1073문제, 53위'
+        rank: '1074문제, 53위'
     }
 ];
 
