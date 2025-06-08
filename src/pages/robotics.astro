@@ -22,67 +22,58 @@ import "../styles/about.css";
             <Hero title="Robotics" />
             <div style={{ margin: "4.5rem 0" }}></div>
             <section>
-                <h2 class="section-title">제작한 ROS2 패키지</h2>
+                <h2 class="section-title">제작한 ROS2 Pkg</h2>
                 <br />
                 <div class="content">
                     <div class="package-container">
                         <div class="package-item">
                             <div class="package-header">
-                                <h3 class="package-title">라이다 2개 레이저로 뿌리는 패키지</h3>
-                                <div class="package-tags">
-                                    <span class="tag">ROS2</span>
-                                    <span class="tag">Python</span>
-                                    <span class="tag">C++</span>
-                                </div>
+                                <h3 class="package-title">RPLidar A1 Dual publish Pkg</h3>
+                            </div>
+                            <div class="package-description">
+                                <p>RPLidar 2개를 Launch 파일로 묶은 패키지입니다.</p>
                             </div>
                             <div class="package-content">
-                                <div class="package-media">
-                                    <img src="/assets/images/robotics/lidar-spray.jpg" alt="라이다 스프레이 패키지 이미지">
-                                </div>
-                                <div class="package-info">
-                                    <div class="info-section">
-                                        <h4>주요 기능</h4>
-                                        <ul>
-                                            <li>이중 라이다 센서 통합</li>
-                                            <li>레이저 스프레이 제어</li>
-                                            <li>실시간 데이터 처리</li>
-                                        </ul>
+                                <div class="media-grid">
+                                    <div class="package-media overlay-media">
+                                        <img src="/assets/robotics/A.png" alt="라이다 스프레이 패키지 이미지">
+                                        <div class="media-overlay-text">패키지 구조도</div>
                                     </div>
-                                    <div class="info-section">
-                                        <h4>개발 기간</h4>
-                                        <p>2024.03 ~ 2024.04</p>
+                                    <div class="package-media overlay-media">
+                                        <video src="/assets/robotics/D.webm" controls style="width:100%; border-radius:0.5rem;"></video>
+                                        <div class="media-overlay-text">데이터 시각화</div>
                                     </div>
+                                    <div class="package-media overlay-media">
+                                        <img src="/assets/robotics/B.png" alt="센서 연결 예시">
+                                        <div class="media-overlay-text">front Lidar</div>
+                                    </div>
+                                    <div class="package-media overlay-media">
+                                        <img src="/assets/robotics/C.png" alt="실행 화면">
+                                        <div class="media-overlay-text">rear Lidar</div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
 
                         <div class="package-item">
                             <div class="package-header">
-                                <h3 class="package-title">라이다 2개 융합하는 패키지</h3>
-                                <div class="package-tags">
-                                    <span class="tag">ROS2</span>
-                                    <span class="tag">PCL</span>
-                                    <span class="tag">C++</span>
-                                </div>
+                                <h3 class="package-title">Dual Lidar Merge Pkg</h3>
+                            </div>
+                            <div class="package-description">
+                                <p>2개의 라이다를 사용할 때 각각의 데이터를 융합하여 정확도가 높은 1개의 토픽으로 발행하는 패키지입니다.</p>
                             </div>
                             <div class="package-content">
-                                <div class="package-media">
-                                    <img src="/assets/images/robotics/lidar-fusion.jpg" alt="라이다 융합 패키지 이미지">
+                                <div class="package-media overlay-media">
+                                    <video src="/assets/robotics/E.webm" controls style="width:100%; border-radius:0.5rem;"></video>
+                                    <div class="media-overlay-text">데이터 시각화</div>
                                 </div>
-                                <div class="package-info">
-                                    <div class="info-section">
-                                        <h4>주요 기능</h4>
-                                        <ul>
-                                            <li>이중 라이다 데이터 동기화</li>
-                                            <li>포인트 클라우드 융합</li>
-                                            <li>노이즈 필터링</li>
-                                        </ul>
-                                    </div>
-                                    <div class="info-section">
-                                        <h4>개발 기간</h4>
-                                        <p>2024.04 ~ 2024.05</p>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="package-description">
+                                <p>아직 물리적인 라이다의 위치 차이를 감안하지 못해서 중간의 레이저가 겹치는 이슈가 있음.</p>
+                            </div>
+                            <div class="package-description">
+                                <p>아직 물리적인 라이다의 위치 차이를 감안하지 못해서 중간의 레이저가 겹치는 이슈가 있음.</p>
                             </div>
                         </div>
                     </div>
@@ -125,7 +116,7 @@ import "../styles/about.css";
 
 <style>
     .package-container {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -148,6 +139,18 @@ import "../styles/about.css";
     .package-header {
         padding: 2rem;
         border-bottom: 1px solid var(--gray-700);
+    }
+
+    .package-description {
+        padding: 1.5rem 2rem;
+        background: var(--gray-750);
+        border-bottom: 1px solid var(--gray-700);
+    }
+
+    .package-description p {
+        color: var(--gray-300);
+        line-height: 1.6;
+        font-size: 1.1rem;
     }
 
     .package-title {
@@ -179,16 +182,32 @@ import "../styles/about.css";
     }
 
     .package-media {
-        flex: 1.5;
-        min-width: 300px;
+        position: relative;
+        width: 100%;
         max-width: 700px;
+        margin: 0 auto;
     }
 
-    .package-media img {
+    .overlay-media img {
         width: 100%;
         height: auto;
         border-radius: 0.5rem;
         object-fit: cover;
+        display: block;
+    }
+
+    .media-overlay-text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        border-radius: 0 0 0.5rem 0.5rem;
+        box-sizing: border-box;
+        text-align: left;
     }
 
     .package-info {
@@ -243,6 +262,37 @@ import "../styles/about.css";
 
         .package-info {
             flex: 1;
+        }
+    }
+
+    .section-title {
+        display: block;
+        width: 100%;
+        max-width: none;
+        font-size: var(--text-xl);
+        color: var(--gray-0);
+        margin-bottom: 2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .media-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .package-media.overlay-media {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @media (max-width: 800px) {
+        .media-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>
