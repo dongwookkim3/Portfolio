@@ -143,10 +143,6 @@ export const certificateData = {
             title: '정보처리산업기사',
             date: '2024.07',
             link: '../../assets/certificates/certificate/정보처리산업기사_과정평가형.pdf'
-        },
-        {
-            title: '전자계산기기능사 - 필기합격',
-            date: '진행중'
         }
     ],
     specialty:[
@@ -195,7 +191,7 @@ export const algorithmContestData = [
     },
     {
         title: '2025 한국정보올림피아드 1차 대회',
-        date: '2025.06'
+        date: '2025.07'
     },
     
     {
