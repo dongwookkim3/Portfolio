@@ -174,21 +174,25 @@ export const OnlineJudgeProfile = [
     {
         title: 'BOJ',
         Profile: 'https://www.acmicpc.net/user/dongwook7',
-        rank: '2197문제, 354위'
+        rank: '2300문제, 340위'
     },
     {
         title: 'solved.ac',
         Profile: 'https://solved.ac/profile/dongwook7',
-        rank: 'Gold1, 13602위'
+        rank: 'Platinum 4, 4046위'
     },
     {
         title: 'CodeUp',
         Profile: 'https://codeup.kr/userinfo.php?user=dongwook7459',
-        rank: '1074문제, 53위'
+        rank: '1086문제, 52위'
     }
 ];
 
 export const algorithmContestData = [
+    {
+        title: '2025 한국정보올림피아드 2차 대회',
+        date: '2025.07'
+    },
     {
         title: '2025 한국정보올림피아드 1차 대회',
         date: '2025.06'
