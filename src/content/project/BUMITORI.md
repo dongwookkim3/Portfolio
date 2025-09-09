@@ -2,9 +2,8 @@
 title: BUMITORI
 projectName: BUMITORI
 publishDate: 2025-04-23 00:00:00
-status: 진행중
-img: /assets/project/Group2(1).jpg
-img_alt: Soft pink and baby blue water ripples together in a subtle texture.
+status: 완료
+img: /assets/project/BUMITORI/Group2(1).jpg
 description: |
   학생증으로 간편하게 관리하는 교내 기숙사 입사 관리 서비스
 tags:

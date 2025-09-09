@@ -2,9 +2,8 @@
 title: PECO
 projectName: R2BOT
 publishDate: 2025-04-23 00:00:01
-status: 진행중
-img: /assets/project/Group1.jpg
-img_alt: Soft pink and baby blue water ripples together in a subtle texture.
+status: 완료
+img: /assets/project/peco/Group1.jpg
 description: |
   자율주행 교내 짐 운반 및 안내 서비스
 tags:

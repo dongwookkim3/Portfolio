@@ -11,8 +11,5 @@
   },
   "dependencies": {
     "astro": "^5.7.10"
-  },
-  "devDependencies": {
-    "knip": "^5.51.0"
   }
 }

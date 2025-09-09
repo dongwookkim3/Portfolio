@@ -3,8 +3,7 @@ title: Cloud
 projectName: 바로우산
 publishDate: 2025-01-08 00:00:00
 status: 완료
-img: /assets/project/Mask.jpg
-img_alt: Soft pink and baby blue water ripples together in a subtle texture.
+img: /assets/project/Cloud/Mask.jpg
 description: |
   우산 없는 하교는 끝! 학생들을 위한 교내 우산 대여 서비스
 tags:
