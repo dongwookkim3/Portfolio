@@ -103,6 +103,18 @@ export const contestData = [
     
 ];
 
+export const contestData2 = [
+    {
+        id: 'A',
+        title: '2025 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회',
+        date: '2025.07',
+        link: 'https://github.com/BSSM-Algorithm-Competition-Not-official/2025-First-Half-Algorithm-Competition',
+        problems: ['우리의 친구 알이', '선생님을 도와드리자', '체스는 어려워', '목이 너무 아파요', '친구들과 족구를 해보자', '학교 급식 먹기'],
+        problemsNum: ['1학년/A. 우리의 친구 알이.md', '1학년/B. 선생님을 도와드리자.md', '1학년/C. 체스는 어려워', '1학년/D. 목이 너무 아파요', '1학년/E. 친구들과 족구를 해보자.md', '1학년/F. 학교 급식 먹기.md'],
+        Nums: ['1 - A', '1 - B', '1 - C', '1 - D', '1 - E', '1 - F']
+    }
+];
+
 export const educationData: EducationData[] = [
     {
         school: '부산 소프트웨어 마이스터고등학교',

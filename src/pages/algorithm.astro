@@ -4,6 +4,7 @@ import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 import {
     contestData,
+    contestData2,
     educationData,
     certificateData, 
     algorithmContestData,
@@ -37,6 +38,59 @@ import "../styles/about.css";
                                         >
                                             {Profile.title} ( {Profile.rank} )
                                         </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">대회 개최</h2>
+                <br />
+                <div class="content">
+                    <div class="algorithm-item">
+                        <ul class="contest-list">
+                            {
+                                contestData2.map((contest) => (
+                                    <li style={{ margin: "0.7rem 0" }}>
+                                        <button
+                                            class="toggle-btn"
+                                            data-id={contest.id}
+                                        >
+                                            <span class="arrow">▶</span>{" "}
+                                            {contest.title} ( {contest.date} )
+                                        </button>
+                                        <ul
+                                            class="problem-list"
+                                            id={contest.id}
+                                        >
+                                            <a
+                                                href={contest.link}
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                깃허브 링크
+                                            </a>
+
+                                            {contest.problems.map(
+                                                (problem, index) => (
+                                                    <li>
+                                                        {contest.Nums?.[
+                                                            index
+                                                        ] ?? index + 1}{" "}
+                                                        :
+                                                        <a
+                                                            href={`https://github.com/BSSM-Algorithm-Competition-Not-official/2025-First-Half-Algorithm-Competition/blob/main/problem/${contest.problemsNum?.[index]}`}
+                                                            target="_blank"
+                                                            rel="noopener"
+                                                        >
+                                                            {problem}
+                                                        </a>
+                                                    </li>
+                                                ),
+                                            )}
+                                        </ul>
                                     </li>
                                 ))
                             }
@@ -97,23 +151,6 @@ import "../styles/about.css";
                     </div>
                 </div>
             </section>
-            <!--<section>
-                <h2 class="section-title">대회 참여</h2>
-                <br />
-                <div class="content">
-                    <div class="algorithm-item">
-                        <ul>
-                            {
-                                algorithmContestData.map((contest) => (
-                                    <li style={{ margin: "0.7rem 0" }}>
-                                        {contest.title} ( {contest.date} )
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </section>-->
             <section>
                 <h2 class="section-title">문제 출제</h2>
                 <br />
