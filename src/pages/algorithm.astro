@@ -99,59 +99,6 @@ import "../styles/about.css";
                 </div>
             </section>
             <section>
-                <h2 class="section-title">대회 검수진</h2>
-                <br />
-                <div class="content">
-                    <div class="algorithm-item">
-                        <ul class="contest-list">
-                            {
-                                contestData.map((contest) => (
-                                    <li style={{ margin: "0.7rem 0" }}>
-                                        <button
-                                            class="toggle-btn"
-                                            data-id={contest.id}
-                                        >
-                                            <span class="arrow">▶</span>{" "}
-                                            {contest.title} ( {contest.date} )
-                                        </button>
-                                        <ul
-                                            class="problem-list"
-                                            id={contest.id}
-                                        >
-                                            <a
-                                                href={contest.link}
-                                                target="_blank"
-                                                rel="noopener"
-                                            >
-                                                대회 링크
-                                            </a>
-
-                                            {contest.problems.map(
-                                                (problem, index) => (
-                                                    <li>
-                                                        {contest.Nums?.[
-                                                            index
-                                                        ] ?? index + 1}{" "}
-                                                        :
-                                                        <a
-                                                            href={`https://www.acmicpc.net/problem/${contest.problemsNum?.[index]}`}
-                                                            target="_blank"
-                                                            rel="noopener"
-                                                        >
-                                                            {problem}
-                                                        </a>
-                                                    </li>
-                                                ),
-                                            )}
-                                        </ul>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section>
                 <h2 class="section-title">문제 출제</h2>
                 <br />
                 <div class="content">
