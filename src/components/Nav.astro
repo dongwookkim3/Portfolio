@@ -1,50 +1,19 @@
 ---
 import Icon from "./Icon.astro";
 import ThemeToggle from "./ThemeToggle.astro";
-import type { iconPaths } from "./IconPaths";
+import { getSocialLinksFor } from "../data/social";
+import { siteConfig } from "../data/site";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
 	{ label: "Home", href: "/" },
 	{ label: "About", href: "/about/" },
 	{ label: "Project", href: "/project/" },
-
 	{ label: "Algorithm", href: "/algorithm/" },
-	//{ label: "Robotics", href: "/robotics/" },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: {
-	label: string;
-	href: string;
-	icon: keyof typeof iconPaths;
-}[] = [
-	{
-		label: "Email",
-		href: "mailto:dongwook.3.kim@gmail.com",
-		icon: "paper-plane-tilt",
-	},
-	{
-		label: "GitHub",
-		href: "https://github.com/dongwookkim3",
-		icon: "github-logo",
-	},
-	{
-		label: "Linkedin",
-		href: "https://www.linkedin.com/in/dongwook7/",
-		icon: "linkedin-logo",
-	},
-	{
-		label: "Instagram",
-		href: "https://www.instagram.com/d0ngwook7/",
-		icon: "instagram-logo",
-	},
-	{
-		label: "Discord",
-		href: "https://discord.com/users/bssm_dongwook",
-		icon: "discord-logo",
-	},
-];
+/** Icon links — 소셜 데이터에서 nav용만 가져옴 */
+const iconLinks = getSocialLinksFor('nav');
 
 /** Test if a link is pointing to the current page. */
 const isCurrentPage = (href: string) => {
@@ -55,7 +24,7 @@ const isCurrentPage = (href: string) => {
 };
 ---
 
-<nav>
+<nav aria-label="메인 네비게이션">
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			<Icon
@@ -64,7 +33,7 @@ const isCurrentPage = (href: string) => {
 				size="1.6em"
 				gradient
 			/>
-			Dongwook Kim
+			{siteConfig.name}
 		</a>
 		<menu-button>
 			<template>
@@ -81,7 +50,7 @@ const isCurrentPage = (href: string) => {
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={isCurrentPage(href) ? "page" : null}
+							aria-current={isCurrentPage(href) ? "page" : false}
 							class="link"
 							href={href}
 						>
@@ -97,7 +66,7 @@ const isCurrentPage = (href: string) => {
 			<div class="socials">
 				{
 					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social">
+						<a href={href} class="social" target="_blank" rel="noopener">
 							<span class="sr-only">{label}</span>
 							<Icon icon={icon} />
 						</a>
@@ -112,7 +81,7 @@ const isCurrentPage = (href: string) => {
 				textLinks.map(({ label, href }) => (
 					<li>
 						<a
-							aria-current={isCurrentPage(href) ? "page" : null}
+							aria-current={isCurrentPage(href) ? "page" : false}
 							class="link"
 							href={href}
 						>
@@ -126,7 +95,7 @@ const isCurrentPage = (href: string) => {
 			<div class="socials">
 				{
 					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social" target="_blank">
+						<a href={href} class="social" target="_blank" rel="noopener">
 							<span class="sr-only">{label}</span>
 							<Icon icon={icon} />
 						</a>

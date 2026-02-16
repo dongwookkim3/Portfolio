@@ -3,6 +3,9 @@ title: PECO
 projectName: R2BOT
 publishDate: 2025-04-23 00:00:01
 status: 완료
+published: false
+category: robot
+role: 팀장 · ROS2 · 펌웨어 · 2D 설계
 img: /assets/project/peco/Group1.jpg
 description: |
   자율주행 교내 짐 운반 및 안내 서비스
@@ -53,8 +56,8 @@ R2BOT은 교내를 자율적으로 이동하며 짐을 운반하거나 방문객
   </ul>
 </div>
 
-<video controls style="width: 50%; max-width: 800px;">
-  <source src="/assets/project/peco/A.mp4" type="video/mp4">
+<video controls style={{width: "50%", maxWidth: "800px"}}>
+  <source src="/assets/project/peco/A.mp4" type="video/mp4" />
   브라우저가 비디오를 지원하지 않습니다.
   다른 브라우저로 접속해주세요.
 </video>
@@ -78,36 +81,36 @@ R2BOT은 교내를 자율적으로 이동하며 짐을 운반하거나 방문객
   </ul>
 </div>
 
-<video controls style="width: 50%; max-width: 800px;">
-  <source src="/assets/project/peco/D.mp4" type="video/mp4">
+<video controls style={{width: "50%", maxWidth: "800px"}}>
+  <source src="/assets/project/peco/D.mp4" type="video/mp4" />
   브라우저가 비디오를 지원하지 않습니다.
   다른 브라우저로 접속해주세요.
 </video>
-<video controls style="width: 50%; max-width: 800px;">
-  <source src="/assets/project/peco/C.mp4" type="video/mp4">
+<video controls style={{width: "50%", maxWidth: "800px"}}>
+  <source src="/assets/project/peco/C.mp4" type="video/mp4" />
   브라우저가 비디오를 지원하지 않습니다.
   다른 브라우저로 접속해주세요.
 </video>
 
 ##### WEB
 
-<img src="/assets/project/peco/a.png">
+<img src="/assets/project/peco/a.png" />
 
 <div class="two-column-grid">
   <div>
     <h5>Fusion360</h5>
-    <img src="/assets/project/peco/b.png" class="smaller-image">
+    <img src="/assets/project/peco/b.png" class="smaller-image" />
   </div>
   <div>
     <h5>AutoCAD</h5>
-    <img src="/assets/project/peco/c.png" class="smaller-image">
+    <img src="/assets/project/peco/c.png" class="smaller-image" />
   </div>
 </div>
 
 ##### 중간 결과물
 
-<img src="/assets/project/peco/A.jpg" style="width: 20%; max-width: 800px;">
-<img src="/assets/project/peco/B.jpg" style="width: 20%; max-width: 800px;">
+<img src="/assets/project/peco/A.jpg" style={{width: "20%", maxWidth: "800px"}} />
+<img src="/assets/project/peco/B.jpg" style={{width: "20%", maxWidth: "800px"}} />
 
 
 ### 3. 프로젝트 동기
@@ -240,123 +243,4 @@ PWM 한계 문제
 
 
 
-<style>
-.toggle-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  font-weight: bold;
-  color: var(--gray-0);
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
 
-.arrow {
-  display: inline-block;
-  margin-right: 0.5rem;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.arrow.active {
-  transform: rotate(90deg);
-}
-
-.spec-list {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  margin-top: 0;
-  transition: 
-    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.spec-list.active {
-  max-height: 400px;
-  opacity: 1;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.spec-list ul {
-  padding-left: 1.5rem;
-  margin: 0;
-}
-
-.spec-list li {
-  margin: 0.5rem 0;
-  color: var(--gray-300);
-  transform: translateY(-10px);
-  opacity: 0;
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.spec-list.active li {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.spec-list.active li:nth-child(1) { transition-delay: 0.05s; }
-.spec-list.active li:nth-child(2) { transition-delay: 0.1s; }
-.spec-list.active li:nth-child(3) { transition-delay: 0.15s; }
-.spec-list.active li:nth-child(4) { transition-delay: 0.2s; }
-.spec-list.active li:nth-child(5) { transition-delay: 0.25s; }
-.spec-list.active li:nth-child(6) { transition-delay: 0.3s; }
-.spec-list.active li:nth-child(7) { transition-delay: 0.35s; }
-.spec-list.active li:nth-child(8) { transition-delay: 0.4s; }
-.spec-list.active li:nth-child(9) { transition-delay: 0.45s; }
-
-/* 추가된 스타일 */
-.two-column-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.smaller-image {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 16/9;
-}
-
-.two-column-grid > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.two-column-grid h5 {
-  margin-bottom: 0.5rem;
-}
-</style>
-
-<script>
-function toggleSpecs(id) {
-  const specList = document.getElementById(id);
-  if (!specList) return;
-
-  const button = document.querySelector(`[data-id="${id}"]`);
-  const arrow = button.querySelector(".arrow");
-
-  specList.classList.toggle("active");
-  arrow?.classList.toggle("active");
-}
-
-// 이벤트 위임을 사용하여 토글 버튼 클릭 처리
-document.addEventListener("click", (e) => {
-  const target = e.target;
-  const toggleBtn = target.closest(".toggle-btn");
-
-  if (toggleBtn) {
-    const id = toggleBtn.getAttribute("data-id");
-    if (id) toggleSpecs(id);
-  }
-});
-</script>

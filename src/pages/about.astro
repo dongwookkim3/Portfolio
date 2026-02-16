@@ -2,217 +2,158 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
-import {
-    contestData,
-    educationData,
-    certificateData,
-    algorithmContestData,
-    problemCreationData,
-    OnlineJudgeProfile,
-} from "../data/about";
+import CertSection from "../components/CertSection.astro";
+import { careerData } from "../data/career";
+import { educationData } from "../data/education";
+import { certificateData } from "../data/certificates";
+import { achievementsData } from "../data/achievements";
+import { pageTitle, siteConfig } from "../data/site";
 import "../styles/about.css";
 ---
 
 <BaseLayout
-    title="Dongwook Kim"
-    description="About Dongwook Kim - Junior Embedded Developer"
+    title={pageTitle('About')}
+    description="About Dongwook Kim - Robot Developer"
 >
     <div class="stack gap-20">
         <main class="wrapper about">
             <Hero title="About Me">
-                <b
-                    ><span style="display: inline;"
-                        >임베디드의 미래를 만들고 싶은 엔지니어 <a
-                            href="https://github.com/dongwookkim3"
+                <b>
+                    <span style="display: inline;">
+                        하드웨어와 소프트웨어를 연결하는 로봇 개발자,
+                        <a
+                            href={siteConfig.github}
                             target="_blank"
                             rel="noopener"
-                            class="no-underline">김동욱</a
-                        >입니다.</span
-                    ></b
-                >
+                            class="no-underline"
+                        >김동욱</a>입니다.
+                    </span>
+                </b>
             </Hero>
 
+            <!-- Career -->
             <section>
-                <h2 class="section-title">Lead</h2>
-                <br />
+                <h2 class="section-title">Career</h2>
                 <div class="content">
-                    <div class="education-item">
-                        <h3 class="info-title">
-                            2025 부산소프트웨어마이스터고등학교 <a
-                                href="../../assets/certificates/20250401210558238-7_rotated.pdf"
-                                target="_blank"
-                                rel="noopener">전교부회장</a>
-                        </h3>
-                        <h3 class="info-title">
-                            2025 교내 임베디드소프트웨어 자율동아리 (
-                            창의융합메이커부 ) 부장
-                        </h3>
-                        <h3 class="info-title">
-                            2024 교내 자율주행 안내 및 운반 서비스 ( <a
-                                href="../project/peco">PECO</a
-                            > ) 팀장
-                        </h3>
-
-                        <h3 class="info-title">
-                            2024 교내 알고리즘 자율동아리 ( BSSM 알고리즘 ) 부장
-                        </h3>
-                    </div>
+                    {careerData.map((career) => (
+                        <div class="education-item">
+                            <h3>{career.company}</h3>
+                            <ul class="education-details">
+                                <li>{career.position}</li>
+                                <li>{career.period}</li>
+                                <li>{career.description}</li>
+                            </ul>
+                            {career.tasks && career.tasks.length > 0 && (
+                                <ul class="task-list">
+                                    {career.tasks.map((task) => (
+                                        <li>{task}</li>
+                                    ))}
+                                </ul>
+                            )}
+                            {career.techStack && career.techStack.length > 0 && (
+                                <div class="tech-tags">
+                                    {career.techStack.map((tech) => (
+                                        <span class="tech-tag">{tech}</span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </section>
+
+            <!-- Education -->
             <section>
                 <h2 class="section-title">Education</h2>
-                <br />
                 <div class="content">
-                    {
-                        educationData.map((edu) => (
-                            <div class="education-item">
-                                <h3>{edu.school}</h3>
-                                <ul class="education-details">
-                                    <li>{edu.period}</li>
-                                    {edu.department && (
-                                        <li>{edu.department}</li>
-                                    )}
-                                    {edu.certificate_pdf_ko && (
-                                        <div class="tab-container">
-                                            <a
-                                                href={edu.certificate_pdf_ko}
-                                                target="_blank"
-                                                rel="noopener"
-                                                class="tab-link"
-                                            >
-                                                증명서 (KOR)
-                                            </a>
-                                        </div>
-                                    )}
-                                    {edu.certificate_pdf_en && (
-                                        <div class="tab-container">
-                                            <a
-                                                href={edu.certificate_pdf_en}
-                                                target="_blank"
-                                                rel="noopener"
-                                                class="tab-link"
-                                            >
-                                                증명서 (ENG)
-                                            </a>
-                                        </div>
-                                    )}
-                                    {edu.certificate_web && (
-                                        <div class="tab-container">
-                                            <a
-                                                href={edu.certificate_web}
-                                                target="_blank"
-                                                rel="noopener"
-                                                class="tab-link"
-                                            >
-                                                증명서 (Web)
-                                            </a>
-                                        </div>
-                                    )}
-                                    {edu.good && (
-                                        <div class="tab-container">
-                                            <a
-                                                href={edu.good}
-                                                target="_blank"
-                                                rel="noopener"
-                                                class="tab-link"
-                                            >
-                                                장학증서 (KOR)
-                                            </a>
-                                        </div>
-                                    )}
-                                </ul>
+                    {educationData.map((edu) => (
+                        <div class="education-item">
+                            <h3>{edu.school}</h3>
+                            <ul class="education-details">
+                                <li>{edu.period}</li>
+                                {edu.department && <li>{edu.department}</li>}
+                            </ul>
+                            <div class="edu-links">
+                                {edu.certificate_pdf_ko && (
+                                    <div class="tab-container">
+                                        <a href={edu.certificate_pdf_ko} target="_blank" rel="noopener" class="tab-link">
+                                            증명서 (KOR)
+                                        </a>
+                                    </div>
+                                )}
+                                {edu.certificate_pdf_en && (
+                                    <div class="tab-container">
+                                        <a href={edu.certificate_pdf_en} target="_blank" rel="noopener" class="tab-link">
+                                            증명서 (ENG)
+                                        </a>
+                                    </div>
+                                )}
+                                {edu.certificate_web && (
+                                    <div class="tab-container">
+                                        <a href={edu.certificate_web} target="_blank" rel="noopener" class="tab-link">
+                                            증명서 (Web)
+                                        </a>
+                                    </div>
+                                )}
+                                {edu.good && (
+                                    <div class="tab-container">
+                                        <a href={edu.good} target="_blank" rel="noopener" class="tab-link">
+                                            장학증서 (KOR)
+                                        </a>
+                                    </div>
+                                )}
                             </div>
-                        ))
-                    }
+                        </div>
+                    ))}
                 </div>
             </section>
 
+            <!-- Certificate -->
             <section>
                 <h2 class="section-title">Certificate</h2>
-                <br />
                 <div class="content">
-                    <div class="algorithm-item3">
-                        <h3>국가기술자격</h3>
-                                <ul class="education-details">
-                        <div class="cert-container">
-                            {
-                                certificateData.national.map((cert) => (
-                                    <div class="cert-item">
-                                        <li>
-                                            {cert.title} ({cert.date})
-                                        </li>
-                                        {cert.link && (
-                                            <div class="tab-container">
-                                                <a
-                                                    href={cert.link}
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                    class="tab-link"
-                                                >
-                                                    인증서 보기
-                                                </a>
-                                            </div>
-                                        )}
-                                    </div>
-                                ))
-                            }
-                        </div>
-                                </ul>
-                    </div>
-                    <div class="algorithm-item3">
-                        <h3>국가전문자격</h3>
-                        <ul class="education-details">
+                    <CertSection title="국가기술자격" certs={certificateData.national} />
+                    <CertSection title="국가전문자격" certs={certificateData.specialty} />
+                    <CertSection title="민간자격" certs={certificateData.private} />
+                </div>
+            </section>
 
-                        <div class="cert-container">
-                            {
-                                certificateData.specialty.map((cert) => (
-                                    <div class="cert-item">
-                                        <li>
-                                            {cert.title} ({cert.date})
-                                        </li>
-                                        {cert.link && (
-                                            <div class="tab-container">
-                                                <a
-                                                    href={cert.link}
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                    class="tab-link"
-                                                >
-                                                    인증서 보기
-                                                </a>
-                                            </div>
-                                        )}
+            <!-- Achievements -->
+            <section>
+                <h2 class="section-title">Achievements</h2>
+                <div class="content">
+                    <div class="achievements-list">
+                        {achievementsData.map((award) => (
+                            <div class="achievement-card">
+                                <h3 class="achievement-title">{award.title}</h3>
+                                <p class="achievement-date">{award.date}</p>
+                                <p class="achievement-award">{award.award}</p>
+                                {award.isTeam && (
+                                    <div class="team-section">
+                                        <p class="team-detail">{award.teamDetail}</p>
+                                        <ul class="team-list">
+                                            {award.team?.map((member) => (
+                                                <li>{member}</li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                ))
-                            }
-                        </div>
-                    </ul>
-                    </div>
-                    <div class="algorithm-item3">
-                        <h3>민간자격</h3>
-                        <ul class="education-details">
-                        <div class="cert-container">
-                            {
-                                certificateData.private.map((cert) => (
-                                    <div class="cert-item">
-                                        <li>
-                                            {cert.title} ({cert.date})
-                                        </li>
-                                        <div class="tab-container">
-                                            <a
-                                                href={cert.link}
-                                                target="_blank"
-                                                rel="noopener"
-                                                class="tab-link"
-                                            >
-                                                인증서 보기
-                                            </a>
-                                        </div>
+                                )}
+                                {award.certificate_pdf_ko && (
+                                    <div class="tab-container">
+                                        <a href={award.certificate_pdf_ko} target="_blank" rel="noopener" class="tab-link">
+                                            증명서 보기
+                                        </a>
                                     </div>
-                                ))
-                            }
-                        </div>
-                    </ul>
+                                )}
+                                {award.certificate_pdf_ko2 && (
+                                    <div class="tab-container">
+                                        <a href={award.certificate_pdf_ko2} target="_blank" rel="noopener" class="tab-link">
+                                            증명서 보기
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -222,105 +163,7 @@ import "../styles/about.css";
     </div>
 </BaseLayout>
 
-<script>
-    function toggleProblems(id: string) {
-        const problemList = document.getElementById(id);
-        if (!problemList) return;
-
-        const button = problemList.previousElementSibling as HTMLButtonElement;
-        const arrow = button.querySelector(".arrow");
-
-        problemList.classList.toggle("active");
-        arrow?.classList.toggle("active");
-
-        // 각 li 요소에 인덱스 설정
-        problemList.querySelectorAll("li").forEach((li, index) => {
-            li.style.setProperty("--item-index", index.toString());
-        });
-    }
-
-    // 이벤트 위임을 사용하여 토글 버튼 클릭 처리
-    document.addEventListener("click", (e) => {
-        const target = e.target as HTMLElement;
-        const toggleBtn = target.closest(".toggle-btn");
-
-        if (toggleBtn) {
-            const id = toggleBtn.getAttribute("data-id");
-            if (id) toggleProblems(id);
-        }
-    });
-</script>
-
 <style>
-    .problem-list {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        padding-left: 2rem;
-        margin-top: 0.5rem;
-        transition:
-            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .problem-list.active {
-        max-height: 1000px;
-        opacity: 1;
-    }
-
-    .problem-list li {
-        margin: 0.5rem 0;
-        color: var(--gray-300);
-        transform: translateY(-10px);
-        opacity: 0;
-        transition:
-            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .problem-list.active li {
-        transform: translateY(0);
-        opacity: 1;
-        transition-delay: calc(0.05s * var(--item-index, 0));
-    }
-
-    /* Education bullet styling */
-    .education-details {
-        list-style: disc;
-        padding-left: 1.5rem;
-        margin-top: 0.5rem;
-    }
-
-    .education-details li {
-        color: var(--gray-300);
-        margin-bottom: 0.3rem;
-        display: list-item;
-    }
-
-    /* JavaScript로 동적으로 --item-index 설정 */
-
-    .arrow {
-        display: inline-block;
-        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .arrow.active {
-        transform: rotate(90deg);
-    }
-
-    .contest-link {
-        margin-bottom: 1rem !important;
-        font-weight: bold;
-    }
-
-    .contest-link a {
-        color: var(--gray-300);
-    }
-
-    .contest-link a:hover {
-        color: var(--accent-regular);
-    }
-
     .no-underline {
         text-decoration: none;
     }
@@ -329,11 +172,6 @@ import "../styles/about.css";
         color: var(--accent-regular);
     }
 
-    .info-title {
-        margin-bottom: 0.7rem;
-    }
-
-    /* 탭 스타일 */
     .tab-container {
         display: flex;
         margin: 0.2rem 0 0.3rem 0;
@@ -351,7 +189,6 @@ import "../styles/about.css";
 
     .tab-link:hover {
         color: var(--accent-regular);
-        transform: none;
     }
 
     .cert-container {
@@ -366,9 +203,88 @@ import "../styles/about.css";
         flex-direction: column;
     }
 
-    .cert-item p {
-        margin: 0;
-        padding: 0;
+    /* ─── Career ──────────────────────── */
+    .task-list {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin-top: 0.5rem;
         color: var(--gray-300);
+    }
+
+    .task-list li {
+        margin-bottom: 0.25rem;
+        font-size: var(--text-sm);
+    }
+
+    .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .tech-tag {
+        padding: 0.2rem 0.6rem;
+        font-size: var(--text-sm);
+        border: 1px solid var(--gray-800);
+        border-radius: 999rem;
+        color: var(--accent-regular);
+        background-color: var(--gray-999_40);
+    }
+
+    /* ─── Achievements ────────────────── */
+    .achievements-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    @media (max-width: 50em) {
+        .achievements-list {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .achievement-card {
+        padding: 1.5rem;
+        background: var(--gradient-subtle);
+        border: 1px solid var(--gray-800);
+        border-radius: 1rem;
+    }
+
+    .achievement-title {
+        font-size: var(--text-base) !important;
+        color: var(--gray-0);
+        margin-bottom: 0.25rem;
+    }
+
+    .achievement-date {
+        font-size: var(--text-sm);
+        color: var(--accent-regular);
+        margin: 0.25rem 0;
+    }
+
+    .achievement-award {
+        font-size: var(--text-sm);
+        color: var(--gray-300);
+        margin: 0.25rem 0;
+    }
+
+    .team-section {
+        margin-top: 0.5rem;
+    }
+
+    .team-detail {
+        font-size: var(--text-sm);
+        color: var(--accent-regular);
+        margin: 0;
+    }
+
+    .team-list {
+        padding: 0.5rem 0 0 1.5rem;
+        margin: 0;
+        list-style: disc;
+        color: var(--gray-400);
+        font-size: var(--text-sm);
     }
 </style>

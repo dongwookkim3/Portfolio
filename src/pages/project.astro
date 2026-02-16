@@ -1,45 +1,76 @@
 ---
-import { getCollection } from "astro:content";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
-const projects = (await getCollection("project")).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-);
+import { pageTitle } from "../data/site";
+import { getPublishedProjects } from "../data/projects";
+
+const projects = await getPublishedProjects();
+
+const categories = ["all", ...new Set(projects.map((p) => p.data.category ?? "etc"))];
 ---
 
 <BaseLayout
-	title="Dongwook Kim"
-	description="Learn about Jeanine White's most recent projects"
+	title={pageTitle('Project')}
+	description="Dongwook Kim's Projects"
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero title="Project" align="center" />
-			<br /><br /><br />
-			{ <Grid variant="offset">
+
+			<!-- Category Filter -->
+			<nav class="category-filter" aria-label="프로젝트 카테고리 필터">
+				{categories.map((cat) => (
+					<button
+						class={`filter-btn ${cat === "all" ? "active" : ""}`}
+						data-category={cat}
+					>
+						{cat === "all" ? "All" : cat.charAt(0).toUpperCase() + cat.slice(1)}
+					</button>
+				))}
+			</nav>
+
+			<Grid variant="offset">
 				{
 					projects.map((project) => (
-						<li class="project-item">
+						<li class="project-item" data-category={project.data.category ?? "etc"}>
 							<PortfolioPreview project={project} />
 						</li>
 					))
 				}
-			</Grid> }
+			</Grid>
 		</main>
 		<ContactCTA />
 	</div>
 </BaseLayout>
 
-<style>
-	.project-page {
-		min-height: 100vh;
-		padding-bottom: 5rem;
-	}
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+		const items = document.querySelectorAll<HTMLLIElement>(".project-item");
 
+		buttons.forEach((btn) => {
+			btn.addEventListener("click", () => {
+				buttons.forEach((b) => b.classList.remove("active"));
+				btn.classList.add("active");
+
+				const category = btn.dataset.category;
+				items.forEach((item) => {
+					if (category === "all" || item.dataset.category === category) {
+						item.style.display = "";
+					} else {
+						item.style.display = "none";
+					}
+				});
+			});
+		});
+	});
+</script>
+
+<style>
 	li {
 		list-style: none;
 		margin: 0;
@@ -57,49 +88,35 @@ const projects = (await getCollection("project")).sort(
 			grid-template-columns: 1fr !important;
 		}
 	}
+
+	/* Category filter */
+	.category-filter {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.filter-btn {
+		padding: 0.4rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+
+	.filter-btn:hover {
+		border-color: var(--accent-regular);
+		color: var(--accent-regular);
+	}
+
+	.filter-btn.active {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border-color: var(--accent-regular);
+	}
 </style>
-
-
-<!--
----
-import BaseLayout from '../layouts/BaseLayout.astro';
----
-
-<BaseLayout>
-    <div class="container">
-        <div class="message">
-            <h1>🚧 페이지 준비 중 🚧</h1>
-            <p>현재 이 페이지는 제작 중입니다.</p>
-            <p>조금만 기다려주세요!</p>
-        </div>
-    </div>
-</BaseLayout>
-
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 70vh;
-        text-align: center;
-    }
-
-    .message {
-        padding: 2rem;
-        border-radius: 1rem;
-        background: var(--gray-999_40);
-        border: 1px solid var(--gray-800);
-    }
-
-    h1 {
-        font-size: var(--text-2xl);
-        margin-bottom: 1rem;
-        color: var(--gray-0);
-    }
-
-    p {
-        color: var(--gray-300);
-        margin-bottom: 0.5rem;
-    }
-</style>
--->

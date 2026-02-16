@@ -253,3 +253,136 @@ h5 {
 		gap: 12rem;
 	}
 }
+
+/* ─── MDX Content Styles ─────────────────────── */
+.grid-layout {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.grid-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.grid-item p {
+	margin: 0 0 0.5rem 0;
+	font-weight: bold;
+}
+
+.grid-image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	aspect-ratio: 16/9;
+	border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+	.grid-layout {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.grid-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+.two-column-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.two-column-grid > div {
+	display: flex;
+	flex-direction: column;
+}
+
+.two-column-grid h5 {
+	margin-bottom: 0.5rem;
+}
+
+.smaller-image {
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	aspect-ratio: 16/9;
+}
+
+/* Toggle / Spec list (used in project content) */
+.content .toggle-btn {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	font-weight: bold;
+	color: var(--gray-0);
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.content .arrow {
+	display: inline-block;
+	margin-right: 0.5rem;
+	transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.content .arrow.active {
+	transform: rotate(90deg);
+}
+
+.spec-list {
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	margin-top: 0;
+	transition:
+		max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spec-list.active {
+	max-height: 400px;
+	opacity: 1;
+	margin-top: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.spec-list ul {
+	padding-left: 1.5rem;
+	margin: 0;
+}
+
+.spec-list li {
+	margin: 0.5rem 0;
+	color: var(--gray-300);
+	transform: translateY(-10px);
+	opacity: 0;
+	transition:
+		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+		opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spec-list.active li {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.spec-list.active li:nth-child(1) { transition-delay: 0.05s; }
+.spec-list.active li:nth-child(2) { transition-delay: 0.1s; }
+.spec-list.active li:nth-child(3) { transition-delay: 0.15s; }
+.spec-list.active li:nth-child(4) { transition-delay: 0.2s; }
+.spec-list.active li:nth-child(5) { transition-delay: 0.25s; }
+.spec-list.active li:nth-child(6) { transition-delay: 0.3s; }
+.spec-list.active li:nth-child(7) { transition-delay: 0.35s; }
+.spec-list.active li:nth-child(8) { transition-delay: 0.4s; }
+.spec-list.active li:nth-child(9) { transition-delay: 0.45s; }

@@ -1,372 +1,100 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import type { CollectionEntry } from "astro:content";
+import { skills } from "../data/skills";
+import { getSocialLinksFor } from "../data/social";
+import { siteConfig } from "../data/site";
+import { getPublishedProjects } from "../data/projects";
 
-const projects = (await getCollection("project"))
+const projects = (await getPublishedProjects()).slice(0, 2);
 
-	.sort(
-		(a: CollectionEntry<"project">, b: CollectionEntry<"project">) =>
-			b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
-	)
-	.slice(0, 4);
+const homeLinks = getSocialLinksFor("home");
 ---
 
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
+		<!-- Hero -->
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, I'm Dongwook Kim."
-					tagline="I'm a junior embedded developer who wants to create the future of embedded."
+					title={`Hello, I'm ${siteConfig.name}.`}
+					tagline="Robot Developer who bridges hardware and software to build real-world robotic systems."
 					align="start"
 				>
 					<div class="roles">
-						<Pill
-							><Icon icon="code" size="1.33em" /> Embedded Engineer</Pill
-						>
-						<Pill
-							><Icon icon="trophy" size="1.33em" /> Algorithm Expert</Pill
-						>
-						<Pill
-							><Icon icon="strategy" size="1.33em" /> Problem Solving</Pill
-						>
+						<Pill><Icon icon="code" size="1.33em" /> Robot Developer</Pill>
+						<Pill><Icon icon="strategy" size="1.33em" /> Embedded Engineer</Pill>
+						<Pill><Icon icon="trophy" size="1.33em" /> Problem Solver</Pill>
 					</div>
 				</Hero>
 
 				<img
-					alt="김동욱의 프로필 사진"
+					alt={`Portrait of ${siteConfig.name}`}
 					width="360"
 					height="465"
 					src="assets/portrait.jpg"
-					style={{ objectFit: "cover" }}
 				/>
 			</header>
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
-			<section>
-				<h3 class="section-title">Information</h3>
-				<div class="detail">
-					<div class="content">
-						<div class="education-item">
-							<div class="info-tab">
-								<h4 class="info-title">
-									Name : 김동욱 ( KIM DONG WOOK )
-								</h4>
-								<h4 class="info-title">
-									Age : 만 17세 ( 2007년생 )
-								</h4>
-								<h4 class="info-title">
-									Phone : 010 - 5872 - 7459
-								</h4>
-								<h4 class="info-title">
-									Email : dongwook7459@gmail.com
-								</h4>
-								<h4 class="info-title">
-									Affiliation : 부산소프트웨어마이스터고등학교
-								</h4>
-								<h4 class="info-title">
-									Github : <a
-										href="https://github.com/dongwookkim3"
-										>dongwookkim3</a>
-								</h4>
-								<h4 class="info-title">
-									개발블로그 : <a
-										href="https://swbsnewby7.tistory.com/"
-										>swbsnewby7</a>
-								</h4>
+			<!-- Tech Stack -->
+			<section class="tech-section">
+				<h3 class="section-title">Tech Stack</h3>
+				<div class="skills-grid">
+					{skills.map((group, i) => (
+						<div class="skill-group" style={`--group-index: ${i}`}>
+							<div class="skill-accent-bar"></div>
+							<div class="skill-body">
+								<h4 class="skill-category">{group.category}</h4>
+								<div class="skill-items">
+									{group.items.map((item) => (
+										<span class="skill-pill">{item}</span>
+									))}
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="content">
-						<div class="education-item">
-							<div class="info-tab">
-								<p class="info-description">
-									저는 임베디드 시스템과 펌웨어를 중심으로, <b
-										>하드웨어와 소프트웨어의 경계를 넘나드는
-										개발</b
-									>을 지향합니다. 회로 설계부터 펌웨어 작성,
-									통신 프로토콜 구현까지 직접 손으로
-									만들어내는 과정 속에서 기술의 본질을
-									이해하려고 노력했습니다. 프로젝트에서는
-									문제를 복잡하게 만들지 않고, 현실에 작동하는
-									결과를 빠르고 안정적으로 구현하는 것을
-									중요하게 생각합니다.
-
-									<b
-										>깊이 있게 파고들되, 끝까지 완성하는
-										개발자</b
-									>가 저의 목표입니다. 한 분야에 전문성을
-									갖추는 동시에, 새로운 기술과의 연결을
-									두려워하지 않는 유연함을 키워가고 있습니다.
-									저는 언제나 팀 안에서 신뢰받는 엔지니어로
-									성장하기 위해, 꾸준히 배우고 스스로
-									증명해나가고 있습니다.
-								</p>
-							</div>
-						</div>
-					</div>
+					))}
 				</div>
 			</section>
+
+			<!-- Latest Projects -->
 			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Achievements</h3>
-				</header>
+				<h3 class="section-title">Latest Projects</h3>
 
 				<div class="gallery">
 					<Grid variant="offset">
-						{
-							[
-							{
-									title: "2025 한국정보올림피아드 1차 대회",
-									date: "2025.07",
-									award: (
-										<>
-											일반고부문 동상 -
-											정보올림피아드위원회위원장상,
-											한국비버정보교육연합회회장상
-											<br />
-											전체부문 동상 -
-											정보올림피아드위원회위원장상,
-											한국비버정보교육연합회회장상
-										</>
-									),
-									isTeam: false,
-									certificate_pdf_ko:
-										"../../assets/certificates/20250730150155-1_rotated.pdf",
-									certificate_pdf_ko2:
-										"../../assets/certificates/20250730150155-2_rotated.pdf",
-								},
-								{
-									title: "CounterSpell in BUSAN GameJAM Track",
-									date: "2024.11",
-									award: "CounterSpell 지역 대상",
-									isTeam: true,
-									teamDetail: "Team : CounterAttack",
-									team: [
-										"김규민 (부산소프트웨어마이스터고등학교)",
-										"변정현 (광주소프트웨어마이스터고등학교)",
-										"조윤서 (부산소프트웨어마이스터고등학교)",
-										"이지우 (부산소프트웨어마이스터고등학교)",
-									],
-									certificate_pdf_ko:
-										"../../assets/certificates/B.pdf",
-								},
-								{
-									title: "2024 IT 꿈나무 성장지원사업 화이트해커 경진대회",
-									date: "2024.11",
-									award: "대상 - 부총리 겸 교육부장관상",
-									isTeam: true,
-									teamDetail: "Team : Worst Of the Worst",
-									team: [
-										"김민수 (공주마이스터고등학교)",
-										"김필립 (세명컴퓨터고등학교)",
-										"박지후 (서울디지텍고등학교)",
-									],
-									certificate_pdf_ko:
-										"../../assets/certificates/20250401210558238-8_rotated.pdf",
-								},
-								{
-									title: "2024 금정구 인구문제 해커톤",
-									date: "2024.08",
-									award: "최우수상 - 코드코리아대표상",
-									isTeam: true,
-									teamDetail:
-										"Team : 나 김동욱인데 조윤서 조금 좋아한다.",
-									team: [
-										"조윤서 (부산소프트웨어마이스터고등학교)",
-										"한예준 (부산소프트웨어마이스터고등학교)",
-										"홍예원 (부산센텀여자고등학교)",
-									],
-									certificate_pdf_ko:
-										"../../assets/certificates/achievements/2024_금정구_인구문제_해커톤.pdf",
-								},
-								{
-									title: "2024 한국정보올림피아드 1차 대회",
-									date: "2024.05",
-									award: (
-										<>
-											일반고부문 동상 -
-											정보올림피아드위원회위원장상,
-											한국비버정보교육연합회회장상
-											<br />
-											전체부문 장려상 -
-											정보올림피아드위원회위원장상,
-											한국비버정보교육연합회회장상
-										</>
-									),
-									isTeam: false,
-									certificate_pdf_ko:
-										"../../assets/certificates/20250401210558238-3_rotated.pdf",
-									certificate_pdf_ko2:
-										"../../assets/certificates/20250401210558238-4_rotated.pdf",
-								},
-								{
-									title: "2024 부산소프트웨어마이스터고등학교 AI SW 프로젝트 공모전",
-									date: "2024.04",
-									award: "장려상 - 부산소프트웨어마이스터고등학교장상",
-									isTeam: true,
-									teamDetail: "Team : 0.0",
-									team: [
-										"이지우 (부산소프트웨어마이스터고등학교)",
-										"박강은 (부산소프트웨어마이스터고등학교)",
-										"신희성 (부산소프트웨어마이스터고등학교)",
-									],
-									certificate_pdf_ko:
-										"../../assets/certificates/20250401210558238-5_rotated.pdf",
-								},
-								// {
-								// 	title: "2023 부산소프트웨어마이스터고등학교 교내 알고리즘 경진대회",
-								// 	date: "2023.09",
-								// 	award: "최우수상 - 부산소프트웨어마이스터고등학교장상",
-								// 	isTeam: false,
-								// 	certificate_pdf_ko:
-								// 		"../../assets/certificates/20250401210558238-6_rotated.pdf",
-								// },
-								{
-									title: "2023 부산 SW AI교육 중등학생 해카톤",
-									date: "2023.07",
-									award: "장려상 - 부산광역시교육청교육연구정보원장상",
-									isTeam: true,
-									teamDetail: "Team : 은둔자",
-									team: [
-										"안예성 (부산소프트웨어마이스터고등학교)",
-										"신희성 (부산소프트웨어마이스터고등학교)",
-										"이승현 (부산소프트웨어마이스터고등학교)",
-									],
-									certificate_pdf_ko:
-										"../../assets/certificates/20250401210558238-2_rotated.pdf",
-								},
-							].map((award) => (
-								<div class="award-wrapper">
-									<li class="award-card">
-										<h4>{award.title}</h4>
-										<p class="date">{award.date}</p>
-										<p class="award">{award.award}</p>
-										{award.isTeam && (
-											<div class="team-section">
-												<summary class="team-summary">
-													{award.teamDetail}
-												</summary>
-												<ul class="team-list">
-													{award.team?.map(
-														(member) => (
-															<li>{member}</li>
-														),
-													)}
-												</ul>
-
-												<br />
-											</div>
-										)}
-										{award.certificate_pdf_ko && (
-											<div class="tab-container">
-												<a
-													href={
-														award.certificate_pdf_ko
-													}
-													target="_blank"
-													rel="noopener"
-													class="tab-link"
-												>
-													증명서 보기
-												</a>
-											</div>
-										)}
-										{award.certificate_pdf_ko2 && (
-											<div class="tab-container">
-												<a
-													href={
-														award.certificate_pdf_ko2
-													}
-													target="_blank"
-													rel="noopener"
-													class="tab-link"
-												>
-													증명서 보기
-												</a>
-											</div>
-										)}
-									</li>
-								</div>
-							))
-						}
+						{projects.map((project) => (
+							<li>
+								<PortfolioPreview project={project} />
+							</li>
+						))}
 					</Grid>
 				</div>
+
 			</section>
 
+			<!-- Connect -->
 			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Connect With Me</h3>
-				</header>
+				<h3 class="section-title">Connect</h3>
 
 				<div class="gallery">
 					<Grid variant="small">
-						<a href="tel:+821058727459" class="contact-card">
-							<Icon icon="terminal-window" size="2.5rem" />
-							<p>010-5872-7459</p>
-						</a>
-						<a
-							href="mailto:dongwook.3.kim@gmail.com"
-							class="contact-card"
-						>
-							<Icon icon="paper-plane-tilt" size="2.5rem" />
-							<p>dongwook.3.kim@gmail.com</p>
-						</a>
-						<a
-							href="https://www.acmicpc.net/user/dongwook7"
-							target="_blank"
-							class="contact-card"
-						>
-							<Icon icon="code" size="2.5rem" />
-							<p>BOJ</p>
-						</a>
-						<a
-							href="https://github.com/dongwookkim3"
-							target="_blank"
-							class="contact-card"
-						>
-							<Icon icon="github-logo" size="2.5rem" />
-							<p>GitHub</p>
-						</a>
-						<a
-							href="https://swbsnewby7.tistory.com"
-							target="_blank"
-							class="contact-card"
-						>
-							<Icon icon="pencil-line" size="2.5rem" />
-							<p>Blog</p>
-						</a>
-						<a
-							href="https://www.linkedin.com/in/dongwook7/"
-							target="_blank"
-							class="contact-card"
-						>
-							<Icon icon="linkedin-logo" size="2.5rem" />
-							<p>LinkedIn</p>
-						</a>
-						<a
-							href="https://www.instagram.com/d0ngwook7/"
-							target="_blank"
-							class="contact-card"
-						>
-							<Icon icon="instagram-logo" size="2.5rem" />
-							<p>Instagram</p>
-						</a>
-						<a
-							href="https://discord.com/users/bssm_dongwook"
-							target="_blank"
-							class="contact-card"
-						>
-							<Icon icon="discord-logo" size="2.5rem" />
-							<p>Discord</p>
-						</a>
+						{homeLinks.map((link) => (
+							<a
+								href={link.href}
+								target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+								class="contact-card"
+							>
+								<Icon icon={link.icon} size="2.5rem" />
+								<p>{link.label}</p>
+							</a>
+						))}
 					</Grid>
 				</div>
 			</section>
@@ -377,6 +105,7 @@ const projects = (await getCollection("project"))
 </BaseLayout>
 
 <style>
+	/* ─── Hero ─────────────────────────────────── */
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -417,9 +146,112 @@ const projects = (await getCollection("project"))
 		}
 	}
 
+	/* ─── Section Title ────────────────────────── */
+	.section-title {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+		margin-bottom: 1.5rem;
+	}
+
+	/* ─── Tech Stack ──────────────────────────── */
+	.tech-section {
+		position: relative;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	@media (min-width: 50em) {
+		.skills-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.25rem;
+		}
+	}
+
+	@media (min-width: 72em) {
+		.skills-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.skill-group {
+		display: flex;
+		overflow: hidden;
+		border-radius: 0.75rem;
+		border: 1px solid var(--gray-800);
+		background: var(--gray-999_40);
+		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+		animation: fadeSlideUp 0.4s ease both;
+		animation-delay: calc(0.08s * var(--group-index, 0));
+	}
+
+	.skill-group:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-md);
+		border-color: var(--accent-regular);
+	}
+
+	@keyframes fadeSlideUp {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.skill-accent-bar {
+		width: 4px;
+		flex-shrink: 0;
+		background: var(--gradient-accent);
+	}
+
+	.skill-body {
+		padding: 1.25rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		flex: 1;
+	}
+
+	.skill-category {
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin: 0;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+	}
+
+	.skill-items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+
+	.skill-pill {
+		padding: 0.3rem 0.7rem;
+		font-size: var(--text-sm);
+		border-radius: 0.4rem;
+		color: var(--gray-200);
+		background-color: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		transition: color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.skill-group:hover .skill-pill {
+		border-color: var(--accent-overlay);
+		color: var(--gray-100);
+	}
+
+	/* ─── Section Layout ──────────────────────── */
 	.section {
 		display: grid;
-		gap: 2rem;
+		gap: 0.75rem;
 	}
 
 	.with-background {
@@ -449,137 +281,19 @@ const projects = (await getCollection("project"))
 		--hero-bg: var(--bg-image-subtle-1);
 	}
 
-	.section-header {
-		justify-self: center;
-		text-align: center;
-		max-width: 50ch;
-		font-size: var(--text-md);
-		color: var(--gray-300);
-	}
-
-	.section-header h3 {
-		font-size: var(--text-2xl);
-	}
-
 	@media (min-width: 50em) {
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: "header header header header" "gallery gallery gallery gallery";
-			gap: 5rem;
-		}
-
-		.section.with-cta {
-			grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
-		}
-
-		.section-header {
-			grid-area: header;
-			font-size: var(--text-lg);
-		}
-
-		.section-header h3 {
-			font-size: var(--text-4xl);
-		}
-
-		.with-cta .section-header {
-			justify-self: flex-start;
-			text-align: left;
+			gap: 2rem;
 		}
 
 		.gallery {
 			grid-area: gallery;
 		}
-
-		.cta {
-			grid-area: cta;
-		}
 	}
 
-	.award-wrapper {
-		height: auto;
-		width: 100%;
-	}
-	.info-tab {
-		margin-top: 1.5rem;
-		padding-left: 3rem;
-		border-left: 2px solid var(--accent-regular);
-	}
-
-	.info-title {
-		margin-bottom: 0.7rem;
-		line-height: 1.5;
-	}
-
-	.award-card {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		padding: 1.5rem;
-		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-	}
-
-	:global(.grid) {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
-	}
-
-	@media (max-width: 50em) {
-		:global(.grid) {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	.team-section {
-		margin-top: 0.5rem;
-	}
-
-	.team-details {
-		width: 100%;
-	}
-
-	.team-summary {
-		color: var(--accent-regular);
-		list-style: none;
-		padding: 0.5rem 0;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.team-details[open] .team-summary::before {
-		transform: rotate(90deg);
-	}
-
-	.team-list {
-		padding: 0.5rem 0 0 1.5rem;
-		margin: 0;
-		list-style: disc;
-		color: var(--gray-300);
-		font-size: var(--text-sm);
-	}
-
-	h4 {
-		margin: 0;
-		font-size: var(--text-lg);
-		color: var(--gray-0);
-	}
-
-	.date {
-		color: var(--accent-regular);
-		font-size: var(--text-sm);
-		margin: 0.5rem 0;
-	}
-
-	.award {
-		color: var(--gray-200);
-		font-size: var(--text-sm);
-		margin: 0.5rem 0;
-	}
-
+	/* ─── Contact Card ────────────────────────── */
 	.contact-card {
 		display: flex;
 		flex-direction: column;
@@ -599,7 +313,6 @@ const projects = (await getCollection("project"))
 		transform: translateY(-3px);
 		box-shadow: var(--shadow-md);
 		color: var(--gray-0);
-		background-color: var(--gray-999_60);
 	}
 
 	.contact-card [data-icon] {
@@ -612,139 +325,12 @@ const projects = (await getCollection("project"))
 		line-height: 1.3;
 	}
 
-	.awards_container {
-		position: relative;
-		margin-bottom: 300px;
-		min-height: 100vh;
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 20px;
-		padding: 20px;
-	}
-
-	.tab-container {
-		display: flex;
-		margin: 0.2rem 0 0.3rem 0;
-	}
-
-	.tab-link {
-		display: inline-block;
-		padding: 0.3rem 0.6rem;
-		background-color: var(--gray-999);
-		color: var(--accent-regular);
-		font-weight: 600;
-		text-decoration: none;
-		border-radius: 4px;
-		transition: none;
-	}
-
-	.tab-link:hover {
-		color: var(--accent-regular);
-	}
-
-	.no-underline {
-		text-decoration: none;
-	}
-
-	.no-underline:hover {
-		color: var(--accent-regular);
-	}
-
-	.awards_section {
-		margin-bottom: 200px;
-		width: 100%;
-	}
-
-	.connect_section {
-		position: relative;
-		width: 100%;
-		padding: 50px 0;
-		background: transparent;
-		z-index: 1;
-	}
-
 	.gallery {
 		width: 100%;
-		margin-top: 2rem;
 	}
 
-	.team-container {
-		margin-top: 0.5rem;
-	}
-
-	.toggle-btn {
-		width: 100%;
-		text-align: left;
-		background: none;
-		border: none;
-		color: var(--gray-200);
-		cursor: pointer;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0.5rem;
-	}
-
-	.arrow {
-		transition: transform 0.3s ease;
-	}
-	.details {
-		display: flex;
-		flex-direction: column;
-		padding: 0.5rem;
-		gap: 1.5rem;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.toggle-btn.active .arrow {
-		transform: rotate(180deg);
-	}
-
-	.team-info {
-		padding: 0.5rem;
-		margin-top: 0.5rem;
-	}
-
-	.hidden {
-		display: none;
-	}
-
-	:global(.grid) {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 2rem;
-	}
-
-	@media (max-width: 50em) {
-		:global(.grid) {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	.detail {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2rem;
-	}
-
-	.info-description {
-		color: var(--gray-300);
-		line-height: 2;
-		margin-top: 1rem;
-	}
-
-	@media (max-width: 50em) {
-		.detail {
-			grid-template-columns: 1fr;
-		}
+	li {
+		list-style: none;
 	}
 </style>
-<script>
-	function toggleTeam(btn) {
-		btn.classList.toggle("active");
-		const teamInfo = btn.nextElementSibling;
-		teamInfo.classList.toggle("hidden");
-	}
-</script>
 

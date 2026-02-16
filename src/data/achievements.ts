@@ -1,0 +1,86 @@
+import type { AchievementItem } from './types';
+
+export const achievementsData: AchievementItem[] = [
+    {
+        title: '2025 한국정보올림피아드 1차 대회',
+        date: '2025.07',
+        award: '일반고부문 동상 - 정보올림피아드위원회위원장상, 한국비버정보교육연합회회장상 / 전체부문 동상 - 정보올림피아드위원회위원장상, 한국비버정보교육연합회회장상',
+        isTeam: false,
+        certificate_pdf_ko: '../../assets/certificates/20250730150155-1_rotated.pdf',
+        certificate_pdf_ko2: '../../assets/certificates/20250730150155-2_rotated.pdf',
+    },
+    {
+        title: 'CounterSpell in BUSAN GameJAM Track',
+        date: '2024.11',
+        award: 'CounterSpell 지역 대상',
+        isTeam: true,
+        teamDetail: 'Team : CounterAttack',
+        team: [
+            '김규민 (부산소프트웨어마이스터고등학교)',
+            '변정현 (광주소프트웨어마이스터고등학교)',
+            '조윤서 (부산소프트웨어마이스터고등학교)',
+            '이지우 (부산소프트웨어마이스터고등학교)',
+        ],
+        certificate_pdf_ko: '../../assets/certificates/B.pdf',
+    },
+    {
+        title: '2024 IT 꿈나무 성장지원사업 화이트해커 경진대회',
+        date: '2024.11',
+        award: '대상 - 부총리 겸 교육부장관상',
+        isTeam: true,
+        teamDetail: 'Team : Worst Of the Worst',
+        team: [
+            '김민수 (공주마이스터고등학교)',
+            '김필립 (세명컴퓨터고등학교)',
+            '박지후 (서울디지텍고등학교)',
+        ],
+        certificate_pdf_ko: '../../assets/certificates/20250401210558238-8_rotated.pdf',
+    },
+    {
+        title: '2024 금정구 인구문제 해커톤',
+        date: '2024.08',
+        award: '최우수상 - 코드코리아대표상',
+        isTeam: true,
+        teamDetail: 'Team : 나 김동욱인데 조윤서 조금 좋아한다.',
+        team: [
+            '조윤서 (부산소프트웨어마이스터고등학교)',
+            '한예준 (부산소프트웨어마이스터고등학교)',
+            '홍예원 (부산센텀여자고등학교)',
+        ],
+        certificate_pdf_ko: '../../assets/certificates/achievements/2024_금정구_인구문제_해커톤.pdf',
+    },
+    {
+        title: '2024 한국정보올림피아드 1차 대회',
+        date: '2024.05',
+        award: '일반고부문 동상 - 정보올림피아드위원회위원장상, 한국비버정보교육연합회회장상 / 전체부문 장려상 - 정보올림피아드위원회위원장상, 한국비버정보교육연합회회장상',
+        isTeam: false,
+        certificate_pdf_ko: '../../assets/certificates/20250401210558238-3_rotated.pdf',
+        certificate_pdf_ko2: '../../assets/certificates/20250401210558238-4_rotated.pdf',
+    },
+    {
+        title: '2024 부산소프트웨어마이스터고등학교 AI SW 프로젝트 공모전',
+        date: '2024.04',
+        award: '장려상 - 부산소프트웨어마이스터고등학교장상',
+        isTeam: true,
+        teamDetail: 'Team : 0.0',
+        team: [
+            '이지우 (부산소프트웨어마이스터고등학교)',
+            '박강은 (부산소프트웨어마이스터고등학교)',
+            '신희성 (부산소프트웨어마이스터고등학교)',
+        ],
+        certificate_pdf_ko: '../../assets/certificates/20250401210558238-5_rotated.pdf',
+    },
+    {
+        title: '2023 부산 SW AI교육 중등학생 해카톤',
+        date: '2023.07',
+        award: '장려상 - 부산광역시교육청교육연구정보원장상',
+        isTeam: true,
+        teamDetail: 'Team : 은둔자',
+        team: [
+            '안예성 (부산소프트웨어마이스터고등학교)',
+            '신희성 (부산소프트웨어마이스터고등학교)',
+            '이승현 (부산소프트웨어마이스터고등학교)',
+        ],
+        certificate_pdf_ko: '../../assets/certificates/20250401210558238-2_rotated.pdf',
+    },
+];

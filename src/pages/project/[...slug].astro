@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -8,15 +8,14 @@ import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 import Pill from "../../components/Pill.astro";
 import { render } from "astro:content";
+import { getPublishedProjects } from "../../data/projects";
+
 interface Props {
 	entry: CollectionEntry<"project">;
 }
 
-// This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
-// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-	const project = await getCollection("project");
+	const project = await getPublishedProjects();
 	return project.map((entry) => ({
 		params: { slug: entry.id },
 		props: { entry },
@@ -38,26 +37,26 @@ const { Content } = await render(entry);
 					>
 				</h5>
 					<Hero title={entry.data.title} align="start">
-						<h3 style="color:var(--gray-200);">{entry.data.projectName}</entry></h2>
+						<h3 style="color:var(--gray-200);">{entry.data.projectName}</h3>
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
+							{entry.data.role && (
+								<p class="role-label">역할: {entry.data.role}</p>
+							)}
 							<p class="description">{entry.data.description}</p>
+							{entry.data.github && (
+								<a href={entry.data.github} target="_blank" rel="noopener" class="github-link">
+									<Icon icon="github-logo" /> GitHub
+								</a>
+							)}
 						</div>
 					</Hero>
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					<!-- {
-						entry.data.img && (
-							<img
-								src={entry.data.img}
-								alt={entry.data.img_alt || ""}
-							/>
-						)
-					} -->
 					<div class="content">
 						{entry.data.status === "진행중" && (
 							<div class="status-notice">
@@ -65,7 +64,7 @@ const { Content } = await render(entry);
 								<p>이 프로젝트는 현재 진행 중인 프로젝트이므로 자료가 부족할 수 있습니다.</p>
 							</div>
 						)}
-						<br>
+						<br />
 						<Content />
 					</div>
 				</div>
@@ -126,8 +125,33 @@ const { Content } = await render(entry);
 		-webkit-box-orient: vertical;
 	}
 
+	.role-label {
+		font-size: var(--text-sm);
+		color: var(--accent-regular);
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.github-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.4rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+		transition: all 0.2s;
+	}
+
+	.github-link:hover {
+		border-color: var(--accent-regular);
+		color: var(--accent-regular);
+		text-decoration: none !important;
+	}
+
 	.content {
-		max-width: auto;
+		max-width: none;
 		margin-inline: auto;
 	}
 
