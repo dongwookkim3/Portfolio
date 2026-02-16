@@ -1,0 +1,28 @@
+---
+import type { CertificateItem } from '../data/types';
+
+interface Props {
+    title: string;
+    certs: CertificateItem[];
+}
+
+const { title, certs } = Astro.props;
+---
+
+<div class="algorithm-item3">
+    <h3>{title}</h3>
+    <div class="cert-container">
+        {certs.map((cert) => (
+            <div class="cert-item">
+                <p class="cert-title">{cert.title} ({cert.date})</p>
+                {cert.link && (
+                    <div class="tab-container">
+                        <a href={cert.link} target="_blank" rel="noopener" class="tab-link">
+                            인증서 보기
+                        </a>
+                    </div>
+                )}
+            </div>
+        ))}
+    </div>
+</div>

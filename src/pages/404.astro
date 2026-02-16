@@ -1,8 +1,15 @@
 ---
 import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CallToAction from "../components/CallToAction.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
+	<Hero title="Page Not Found" tagline="요청하신 페이지를 찾을 수 없습니다.">
+		<CallToAction href="/">
+			홈으로 돌아가기
+			<Icon icon="arrow-left" size="1.2em" />
+		</CallToAction>
+	</Hero>
 </BaseLayout>

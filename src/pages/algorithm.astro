@@ -4,39 +4,36 @@ import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 import {
     contestData,
-    contestData2,
-    educationData,
-    certificateData, 
+    organizedContests,
     algorithmContestData,
+    onlineJudgeProfiles,
     problemCreationData,
-    OnlineJudgeProfile,
-} from "../data/about";
+} from "../data/algorithm";
+import { pageTitle } from "../data/site";
 import "../styles/about.css";
 ---
 
 <BaseLayout
-    title="Dongwook Kim"
-    description="About Dongwook Kim - Junior Embedded Developer"
+    title={pageTitle('Algorithm')}
+    description="Algorithm | Dongwook Kim"
 >
     <div class="stack gap-20">
         <main class="wrapper about">
             <Hero title="Algorithm" />
-            <div style={{ margin: "4.5rem 0" }}></div>
             <section>
                 <h2 class="section-title"><span style="white-space: nowrap;">온라인저지 프로필</span></h2>
-                <br />
                 <div class="content">
                     <div class="algorithm-item2">
                         <ul>
                             {
-                                OnlineJudgeProfile.map((Profile) => (
+                                onlineJudgeProfiles.map((profile) => (
                                     <li style={{ margin: "0.7rem 0" }}>
                                         <a
-                                            href={`${Profile.Profile}`}
+                                            href={profile.url}
                                             target="_blank"
                                             rel="noopener"
                                         >
-                                            {Profile.title} ( {Profile.rank} )
+                                            {profile.title} ( {profile.rank} )
                                         </a>
                                     </li>
                                 ))
@@ -47,16 +44,17 @@ import "../styles/about.css";
             </section>
             <section>
                 <h2 class="section-title">대회 개최</h2>
-                <br />
                 <div class="content">
                     <div class="algorithm-item">
                         <ul class="contest-list">
                             {
-                                contestData2.map((contest) => (
+                                organizedContests.map((contest) => (
                                     <li style={{ margin: "0.7rem 0" }}>
                                         <button
                                             class="toggle-btn"
                                             data-id={contest.id}
+                                            aria-expanded="false"
+                                            aria-controls={contest.id}
                                         >
                                             <span class="arrow">▶</span>{" "}
                                             {contest.title} ( {contest.date} )
@@ -76,7 +74,7 @@ import "../styles/about.css";
                                             {contest.problems.map(
                                                 (problem, index) => (
                                                     <li>
-                                                        {contest.Nums?.[
+                                                        {contest.nums?.[
                                                             index
                                                         ] ?? index + 1}{" "}
                                                         :
@@ -100,7 +98,6 @@ import "../styles/about.css";
             </section>
             <section>
                 <h2 class="section-title">문제 출제</h2>
-                <br />
                 <div class="content">
                     <div class="algorithm-item">
                         <ul>
@@ -118,12 +115,85 @@ import "../styles/about.css";
                                         </a>
                                         &nbsp;&nbsp;
                                         <a
-                                            href={problem.NotionLink}
+                                            href={problem.notionLink}
                                             target="_blank"
                                             rel="noopener"
                                         >
                                             Notion
                                         </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 대회 참가 기록 (BOJ) -->
+            <section>
+                <h2 class="section-title">대회 참가 기록</h2>
+                <div class="content">
+                    <div class="algorithm-item">
+                        <ul class="contest-list">
+                            {
+                                contestData.map((contest) => (
+                                    <li style={{ margin: "0.7rem 0" }}>
+                                        <button
+                                            class="toggle-btn"
+                                            data-id={`participation-${contest.id}`}
+                                            aria-expanded="false"
+                                            aria-controls={`participation-${contest.id}`}
+                                        >
+                                            <span class="arrow">▶</span>{" "}
+                                            {contest.title} ( {contest.date} )
+                                        </button>
+                                        <ul
+                                            class="problem-list"
+                                            id={`participation-${contest.id}`}
+                                        >
+                                            <li class="contest-link">
+                                                <a
+                                                    href={contest.link}
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                >
+                                                    대회 링크
+                                                </a>
+                                            </li>
+                                            {contest.problems.map(
+                                                (problem, index) => (
+                                                    <li>
+                                                        {contest.nums?.[index] ?? index + 1}{" "}
+                                                        :
+                                                        <a
+                                                            href={`https://www.acmicpc.net/problem/${contest.problemsNum?.[index]}`}
+                                                            target="_blank"
+                                                            rel="noopener"
+                                                        >
+                                                            {problem}
+                                                        </a>
+                                                    </li>
+                                                ),
+                                            )}
+                                        </ul>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 참가한 알고리즘 대회 -->
+            <section>
+                <h2 class="section-title">알고리즘 대회</h2>
+                <div class="content">
+                    <div class="algorithm-item">
+                        <ul>
+                            {
+                                algorithmContestData.map((contest) => (
+                                    <li style={{ margin: "0.5rem 0" }}>
+                                        {contest.title} ({contest.date})
                                     </li>
                                 ))
                             }
@@ -144,9 +214,11 @@ import "../styles/about.css";
 
         const button = problemList.previousElementSibling as HTMLButtonElement;
         const arrow = button.querySelector(".arrow");
+        const isExpanded = problemList.classList.contains("active");
 
         problemList.classList.toggle("active");
         arrow?.classList.toggle("active");
+        button.setAttribute("aria-expanded", (!isExpanded).toString());
 
         // 각 li 요소에 인덱스 설정
         problemList.querySelectorAll("li").forEach((li, index) => {
@@ -220,14 +292,6 @@ import "../styles/about.css";
     }
 
     .contest-link a:hover {
-        color: var(--accent-regular);
-    }
-
-    .no-underline {
-        text-decoration: none;
-    }
-
-    .no-underline:hover {
         color: var(--accent-regular);
     }
 </style>

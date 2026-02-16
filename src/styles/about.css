@@ -21,6 +21,7 @@
         grid-column-start: 1;
         font-size: var(--text-xl);
         color: var(--gray-0);
+        margin-bottom: 0.5rem;
     }
 
     .content {
@@ -99,37 +100,6 @@
         font-size: inherit;
         font-family: inherit;
         font-weight: inherit;
-    }
-
-    .arrow {
-        display: inline-block;
-        transition: transform 0.2s cubic-bezier(0, 1, 0, 1);
-    }
-
-    .arrow.active {
-        transform: rotate(90deg);
-    }
-
-    .problem-list {
-        max-height: 0;
-        overflow: hidden;
-        margin-left: 2rem !important;
-        margin-top: 0;
-        margin-bottom: 0;
-        transition: max-height 0.2s cubic-bezier(0, 1, 0, 1),
-                    opacity 0.2s ease-in-out,
-                    margin 0.2s ease-in-out;
-        opacity: 0;
-    }
-
-    .problem-list.active {
-        max-height: 200px;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-        opacity: 1;
-        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                    opacity 0.2s ease-in-out,
-                    margin 0.2s ease-in-out;
     }
 
     @media (min-width: 50em) {

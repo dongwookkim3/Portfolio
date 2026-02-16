@@ -1,22 +1,26 @@
 ---
 import Icon from './Icon.astro';
+import { getSocialLinksFor } from '../data/social';
+import { siteConfig } from '../data/site';
+
 const currentYear = new Date().getFullYear();
+const footerLinks = getSocialLinksFor('footer');
 ---
 
 <footer>
 	<div class="group">
 		<p>
-			Designed & Developed in Portland with <a href="https://astro.build/">Astro</a>
+			Designed & Developed with <a href="https://astro.build/">Astro</a>
 			<Icon icon="rocket-launch" size="1.2em" />
 		</p>
-		<p>&copy; {currentYear} Dongwook Kim</p>
+		<p>&copy; {currentYear} {siteConfig.name}</p>
 	</div>
 	<p class="socials">
-		<a href="mailto:dongwook.3.kim@gmail.com"> Email</a>
-		<a href="https://github.com/dongwookkim3" target="_blank"> GitHub</a>
-		<a href="https://www.linkedin.com/in/dongwook7/" target="_blank"> LinkedIn</a>
-		<a href="https://www.instagram.com/d0ngwook7/" target="_blank"> Instagram</a>
-		<a href="https://discord.com/users/bssm_dongwook" target="_blank"> Discord</a>
+		{footerLinks.map((link) => (
+			<a href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'}>
+				{link.label}
+			</a>
+		))}
 	</p>
 </footer>
 <style>
